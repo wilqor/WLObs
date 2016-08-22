@@ -14,28 +14,17 @@
  * limitations under the License.
  */
 
-group 'com.wlobs.wilqor'
-version '1.0'
+package com.wlobs.wilqor.server;
 
-buildscript {
-    repositories {
-        mavenCentral()
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * @author wilqor
+ */
+@SpringBootApplication
+public class Server {
+    public static void main(String[] args) {
+        SpringApplication.run(Server.class, args);
     }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
-    }
-}
-
-repositories {
-    mavenCentral()
-    maven { url "https://repo.spring.io/snapshot" }
-    maven { url "https://repo.spring.io/milestone" }
-}
-
-apply plugin: 'java'
-apply plugin: 'spring-boot'
-
-dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE'
-    testCompile 'org.springframework.boot:spring-boot-starter-test:1.4.0.RELEASE'
 }

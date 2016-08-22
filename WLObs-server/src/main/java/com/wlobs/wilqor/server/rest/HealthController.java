@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server;
+package com.wlobs.wilqor.server.rest;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author wilqor
  */
-public class Application {
-    public static void main(String[] args) {
-        System.out.println("Hello WLObs!");
+@RestController
+@RequestMapping("/health")
+public class HealthController {
+    @RequestMapping(method = RequestMethod.GET)
+    public String ok() {
+        return "Healthy!";
     }
 }
