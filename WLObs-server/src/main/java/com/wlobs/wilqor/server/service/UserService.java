@@ -14,21 +14,19 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.config;
+package com.wlobs.wilqor.server.service;
 
-import java.util.concurrent.TimeUnit;
+import com.wlobs.wilqor.server.rest.model.*;
 
 /**
  * @author wilqor
  */
-public final class AuthConstants {
-    private AuthConstants() {
-    }
+public interface UserService {
+    AuthAndRefreshTokensDto register(final CredentialsDto credentialsDto);
 
-    public static final long JWT_EXPIRATION_PERIOD_IN_MILLIS = TimeUnit.HOURS.toMillis(12);
-    public static final String SECRET_IN_BASE64 = "SECRET_IN_BASE64";
-    public static final String JWT_ROLES_SEPARATOR = ",";
-    public static final String JWT_ROLES_KEY = "roles";
-    public static final String JWT_TOKEN_PREFIX = "Bearer ";
-    public static final String AUTH_HEADER = "Authorization";
+    AuthAndRefreshTokensDto resetPassword(String login, final ResetPasswordDto resetPasswordDto);
+
+    AuthAndRefreshTokensDto authorize(final CredentialsDto credentialsDto);
+
+    AuthTokenDto refreshToken(final LoginAndRefreshTokenDto loginAndRefreshTokenDto);
 }

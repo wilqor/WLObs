@@ -14,21 +14,13 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.config;
-
-import java.util.concurrent.TimeUnit;
+package com.wlobs.wilqor.server.service.exceptions;
 
 /**
  * @author wilqor
  */
-public final class AuthConstants {
-    private AuthConstants() {
+public class LoginAlreadyTakenException extends RuntimeException {
+    public LoginAlreadyTakenException(String login) {
+        super(String.format("Cannot register, a user with login: %s already exists!", login));
     }
-
-    public static final long JWT_EXPIRATION_PERIOD_IN_MILLIS = TimeUnit.HOURS.toMillis(12);
-    public static final String SECRET_IN_BASE64 = "SECRET_IN_BASE64";
-    public static final String JWT_ROLES_SEPARATOR = ",";
-    public static final String JWT_ROLES_KEY = "roles";
-    public static final String JWT_TOKEN_PREFIX = "Bearer ";
-    public static final String AUTH_HEADER = "Authorization";
 }

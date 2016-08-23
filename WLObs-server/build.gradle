@@ -38,6 +38,7 @@ apply plugin: 'spring-boot'
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE'
     compile 'org.springframework.boot:spring-boot-starter-security:1.4.0.RELEASE'
+    compile 'org.springframework.data:spring-data-mongodb:1.9.2.RELEASE'
     compile 'io.jsonwebtoken:jjwt:0.6.0'
     testCompile 'org.springframework.boot:spring-boot-starter-test:1.4.0.RELEASE'
 }

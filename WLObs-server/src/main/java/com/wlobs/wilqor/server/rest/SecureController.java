@@ -17,6 +17,8 @@
 package com.wlobs.wilqor.server.rest;
 
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SecureController {
     @RequestMapping(method = RequestMethod.GET)
     public String secure() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         return "Secure!";
     }
 

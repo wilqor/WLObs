@@ -14,21 +14,16 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.config;
+package com.wlobs.wilqor.server.persistence.repository;
 
-import java.util.concurrent.TimeUnit;
+import com.wlobs.wilqor.server.persistence.model.User;
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.Optional;
 
 /**
  * @author wilqor
  */
-public final class AuthConstants {
-    private AuthConstants() {
-    }
-
-    public static final long JWT_EXPIRATION_PERIOD_IN_MILLIS = TimeUnit.HOURS.toMillis(12);
-    public static final String SECRET_IN_BASE64 = "SECRET_IN_BASE64";
-    public static final String JWT_ROLES_SEPARATOR = ",";
-    public static final String JWT_ROLES_KEY = "roles";
-    public static final String JWT_TOKEN_PREFIX = "Bearer ";
-    public static final String AUTH_HEADER = "Authorization";
+public interface UserRepository extends CrudRepository<User, String> {
+    Optional<User> findByLogin(String login);
 }

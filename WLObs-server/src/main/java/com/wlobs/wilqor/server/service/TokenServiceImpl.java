@@ -14,24 +14,31 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.auth;
+package com.wlobs.wilqor.server.service;
 
 import com.wlobs.wilqor.server.config.AuthConstants;
+import com.wlobs.wilqor.server.persistence.model.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
  * @author wilqor
  */
-public final class JwtAuthenticationExtractorImpl implements AuthenticationExtractor {
+@Service
+public class TokenServiceImpl implements TokenService {
     @Override
     public Optional<Authentication> extract(String content) {
         Optional<Authentication> result = Optional.empty();
@@ -48,5 +55,26 @@ public final class JwtAuthenticationExtractorImpl implements AuthenticationExtra
             // just do not set result
         }
         return result;
+    }
+
+    @Override
+    public String buildAuthToken(String login, List<User.Role> roles) {
+        Date now = new Date();
+        Date expiration = new Date(now.getTime() + AuthConstants.JWT_EXPIRATION_PERIOD_IN_MILLIS);
+        return Jwts.builder()
+                .claim(AuthConstants.JWT_ROLES_KEY, roles
+                        .stream()
+                        .map(Enum::name)
+                        .collect(Collectors.joining(AuthConstants.JWT_ROLES_SEPARATOR)))
+                .setSubject(login)
+                .setIssuedAt(now)
+                .setExpiration(expiration)
+                .signWith(SignatureAlgorithm.HS512, AuthConstants.SECRET_IN_BASE64)
+                .compact();
+    }
+
+    @Override
+    public String generateRefreshToken() {
+        return UUID.randomUUID().toString();
     }
 }

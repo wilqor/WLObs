@@ -17,9 +17,10 @@
 package com.wlobs.wilqor.server.config;
 
 import com.wlobs.wilqor.server.auth.CustomAuthenticationEntryPoint;
-import com.wlobs.wilqor.server.auth.JwtAuthenticationExtractorImpl;
 import com.wlobs.wilqor.server.auth.OuterAuthenticationExtractor;
 import com.wlobs.wilqor.server.auth.TokenAuthenticationAttachingFilter;
+import com.wlobs.wilqor.server.service.TokenService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -44,6 +45,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+    @Autowired
+    private TokenService tokenService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -74,7 +78,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private TokenAuthenticationAttachingFilter tokenAuthenticationAttachingFilter() {
         return new TokenAuthenticationAttachingFilter(new OuterAuthenticationExtractor(
-                new JwtAuthenticationExtractorImpl()
+                tokenService
         ));
     }
 }

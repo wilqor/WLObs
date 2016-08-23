@@ -19,6 +19,8 @@ package com.wlobs.wilqor.server.rest;
 import com.wlobs.wilqor.server.rest.model.AuthAndRefreshTokensDto;
 import com.wlobs.wilqor.server.rest.model.CredentialsDto;
 import com.wlobs.wilqor.server.rest.model.ResetPasswordDto;
+import com.wlobs.wilqor.server.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -28,20 +30,23 @@ import javax.validation.Valid;
  */
 @RestController
 @RequestMapping("/users")
-public class UsersController {
+public class UserController {
+    private final UserService userService;
+
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public AuthAndRefreshTokensDto register(@RequestBody @Valid final CredentialsDto credentialsDto) {
-        return new AuthAndRefreshTokensDto(
-                "some auth token",
-                "some refresh token"
-        );
+        // upsert register and login stats
+        return userService.register(credentialsDto);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/{login}/resetPassword")
     public AuthAndRefreshTokensDto resetPassword(@PathVariable("login") String login, @RequestBody @Valid final ResetPasswordDto resetPasswordDto) {
-        return new AuthAndRefreshTokensDto(
-                "some auth token with login: " + login,
-                "some refresh token"
-        );
+        // upsert password changes
+        return userService.resetPassword(login, resetPasswordDto);
     }
 }

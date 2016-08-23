@@ -20,6 +20,8 @@ import com.wlobs.wilqor.server.rest.model.AuthAndRefreshTokensDto;
 import com.wlobs.wilqor.server.rest.model.AuthTokenDto;
 import com.wlobs.wilqor.server.rest.model.CredentialsDto;
 import com.wlobs.wilqor.server.rest.model.LoginAndRefreshTokenDto;
+import com.wlobs.wilqor.server.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,18 +35,21 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
+    private final UserService userService;
+
+    @Autowired
+    public AuthController(UserService userService) {
+        this.userService = userService;
+    }
+
     @RequestMapping(method = RequestMethod.POST, value = "/authorize")
     public AuthAndRefreshTokensDto authorize(@RequestBody @Valid final CredentialsDto credentialsDto) {
-        return new AuthAndRefreshTokensDto(
-                "new auth token",
-                "new refresh token"
-        );
+        // upsert daily logins
+        return userService.authorize(credentialsDto);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/refresh")
     public AuthTokenDto refreshToken(@RequestBody @Valid final LoginAndRefreshTokenDto loginAndRefreshTokenDto) {
-        return new AuthTokenDto(
-                "refreshed auth token"
-        );
+        return userService.refreshToken(loginAndRefreshTokenDto);
     }
 }

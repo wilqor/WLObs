@@ -14,21 +14,13 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.config;
-
-import java.util.concurrent.TimeUnit;
+package com.wlobs.wilqor.server.service.exceptions;
 
 /**
  * @author wilqor
  */
-public final class AuthConstants {
-    private AuthConstants() {
+public class InvalidRefreshTokenException extends RuntimeException {
+    public InvalidRefreshTokenException(String login, String refreshToken) {
+        super(String.format("Invalid refresh token: %s for user with login: %s!", login, refreshToken));
     }
-
-    public static final long JWT_EXPIRATION_PERIOD_IN_MILLIS = TimeUnit.HOURS.toMillis(12);
-    public static final String SECRET_IN_BASE64 = "SECRET_IN_BASE64";
-    public static final String JWT_ROLES_SEPARATOR = ",";
-    public static final String JWT_ROLES_KEY = "roles";
-    public static final String JWT_TOKEN_PREFIX = "Bearer ";
-    public static final String AUTH_HEADER = "Authorization";
 }
