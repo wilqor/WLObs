@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.server.auth;
 
+import com.wlobs.wilqor.server.config.AuthConstants;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 

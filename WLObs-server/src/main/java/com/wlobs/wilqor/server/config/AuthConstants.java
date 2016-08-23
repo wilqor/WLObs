@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.auth;
+package com.wlobs.wilqor.server.config;
 
 /**
  * @author wilqor
  */
-final class AuthConstants {
+public final class AuthConstants {
     private AuthConstants() {
     }
 
-    static final String JWT_ROLES_KEY = "roles";
-    static final String JWT_TOKEN_PREFIX = "Bearer ";
-    static final String AUTH_HEADER = "Authorization";
-    static final String SECRET_IN_BASE64 = "SECRET_IN_BASE64";
+    public static final String JWT_ROLES_KEY = "roles";
+    public static final String JWT_TOKEN_PREFIX = "Bearer ";
+    public static final String AUTH_HEADER = "Authorization";
+    public static final String SECRET_IN_BASE64 = "SECRET_IN_BASE64";
 }

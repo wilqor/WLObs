@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.server.auth;
 
+import com.wlobs.wilqor.server.config.AuthConstants;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
