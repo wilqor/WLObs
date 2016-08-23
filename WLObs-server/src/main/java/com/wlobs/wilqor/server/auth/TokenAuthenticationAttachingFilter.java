@@ -28,7 +28,6 @@ import java.util.Optional;
  * @author wilqor
  */
 public class TokenAuthenticationAttachingFilter implements Filter {
-    private static final String AUTH_HEADER = "Authorization";
     private final AuthenticationExtractor authenticationExtractor;
 
     public TokenAuthenticationAttachingFilter(AuthenticationExtractor authenticationExtractor) {
@@ -42,7 +41,7 @@ public class TokenAuthenticationAttachingFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpReq = (HttpServletRequest) request;
-        Optional<Authentication> auth = authenticationExtractor.extract(httpReq.getHeader(AUTH_HEADER));
+        Optional<Authentication> auth = authenticationExtractor.extract(httpReq.getHeader(AuthConstants.AUTH_HEADER));
         auth.ifPresent(a -> SecurityContextHolder.getContext().setAuthentication(a));
         chain.doFilter(request, response);
     }

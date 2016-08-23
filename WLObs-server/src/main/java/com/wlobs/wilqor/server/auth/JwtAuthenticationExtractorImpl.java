@@ -31,19 +31,16 @@ import java.util.Optional;
  * @author wilqor
  */
 public class JwtAuthenticationExtractorImpl implements AuthenticationExtractor {
-    private static final String SECRET_IN_BASE64 = "SECRET_IN_BASE64";
-    private static final String ROLES_KEY = "roles";
-
     @Override
     public Optional<Authentication> extract(String content) {
         Optional<Authentication> result = Optional.empty();
         try {
             Claims body = Jwts.parser()
-                    .setSigningKey(SECRET_IN_BASE64)
+                    .setSigningKey(AuthConstants.SECRET_IN_BASE64)
                     .parseClaimsJws(content)
                     .getBody();
             String userName = body.getSubject();
-            String roles = body.get(ROLES_KEY, String.class);
+            String roles = body.get(AuthConstants.JWT_ROLES_KEY, String.class);
             List<GrantedAuthority> authorities = AuthorityUtils.commaSeparatedStringToAuthorityList(roles);
             result = Optional.of(new UsernamePasswordAuthenticationToken(userName, userName, authorities));
         } catch (JwtException ignored) {

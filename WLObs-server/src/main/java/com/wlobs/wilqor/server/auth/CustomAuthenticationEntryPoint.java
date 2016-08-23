@@ -31,7 +31,7 @@ public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
         // Accessing secured REST resource without any credentials should result in 403 Forbidden response
-        // instead of redirecting
+        // instead of default Spring redirecting behavior
         response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access forbidden");
     }
 }

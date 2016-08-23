@@ -16,7 +16,10 @@
 
 package com.wlobs.wilqor.server.config;
 
-import com.wlobs.wilqor.server.auth.*;
+import com.wlobs.wilqor.server.auth.CustomAuthenticationEntryPoint;
+import com.wlobs.wilqor.server.auth.JwtAuthenticationExtractorImpl;
+import com.wlobs.wilqor.server.auth.OuterAuthenticationExtractor;
+import com.wlobs.wilqor.server.auth.TokenAuthenticationAttachingFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -49,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint(authEntryPoint()).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                // allow anonymous requests
+                // allow anonymous requests to specified paths
                 .antMatchers(
                         HttpMethod.GET,
                         "/health"
@@ -64,9 +67,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private TokenAuthenticationAttachingFilter tokenAuthenticationAttachingFilter() {
-        AuthenticationExtractor extractor = new OuterAuthenticationExtractor(
+        return new TokenAuthenticationAttachingFilter(new OuterAuthenticationExtractor(
                 new JwtAuthenticationExtractorImpl()
-        );
-        return new TokenAuthenticationAttachingFilter(extractor);
+        ));
     }
 }

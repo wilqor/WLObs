@@ -25,8 +25,6 @@ import java.util.Optional;
  * @author wilqor
  */
 public class OuterAuthenticationExtractor implements AuthenticationExtractor {
-    private static final String TOKEN_PREFIX = "Bearer ";
-
     private final AuthenticationExtractor decorated;
 
     public OuterAuthenticationExtractor(AuthenticationExtractor decorated) {
@@ -36,8 +34,8 @@ public class OuterAuthenticationExtractor implements AuthenticationExtractor {
     @Override
     public Optional<Authentication> extract(String content) {
         Optional<Authentication> result = Optional.empty();
-        if (!StringUtils.isEmpty(content) && content.startsWith(TOKEN_PREFIX)) {
-            String token = content.substring(TOKEN_PREFIX.length());
+        if (!StringUtils.isEmpty(content) && content.startsWith(AuthConstants.JWT_TOKEN_PREFIX)) {
+            String token = content.substring(AuthConstants.JWT_TOKEN_PREFIX.length());
             result = decorated.extract(token);
         }
         return result;
