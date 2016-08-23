@@ -56,7 +56,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(
                         HttpMethod.GET,
                         "/health"
-                ).permitAll()
+                ).
+                permitAll()
+                .antMatchers(
+                        "/users/**",
+                        "/auth/**"
+                )
+                .permitAll()
                 .anyRequest().authenticated().and()
                 .addFilterBefore(tokenAuthenticationAttachingFilter(), UsernamePasswordAuthenticationFilter.class)
                 .headers().cacheControl();
