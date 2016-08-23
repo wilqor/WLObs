@@ -24,7 +24,7 @@ import javax.validation.constraints.NotNull;
 /**
  * @author wilqor
  */
-public class ResetPasswordDto {
+public final class ResetPasswordDto {
     @NotNull
     @JsonProperty("old_password")
     private String oldPassword;

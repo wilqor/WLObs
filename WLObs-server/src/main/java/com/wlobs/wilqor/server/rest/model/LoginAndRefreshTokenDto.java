@@ -23,7 +23,7 @@ import javax.validation.constraints.NotNull;
 /**
  * @author wilqor
  */
-public class LoginAndRefreshTokenDto {
+public final class LoginAndRefreshTokenDto {
     @NotNull
     @JsonProperty("login")
     private String login;

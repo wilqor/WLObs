@@ -25,7 +25,7 @@ import javax.validation.constraints.Pattern;
 /**
  * @author wilqor
  */
-public class CredentialsDto {
+public final class CredentialsDto {
     @NotNull
     @Length(min = 4, max = 25)
     @Pattern(regexp = "^[A-Za-z0-9]*$")

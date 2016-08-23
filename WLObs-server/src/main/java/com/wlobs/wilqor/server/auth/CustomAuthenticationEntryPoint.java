@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * @author wilqor
  */
-public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
+public final class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
         // Accessing secured REST resource without any credentials should result in 403 Forbidden response

@@ -27,7 +27,7 @@ import java.util.Optional;
 /**
  * @author wilqor
  */
-public class TokenAuthenticationAttachingFilter implements Filter {
+public final class TokenAuthenticationAttachingFilter implements Filter {
     private final AuthenticationExtractor authenticationExtractor;
 
     public TokenAuthenticationAttachingFilter(AuthenticationExtractor authenticationExtractor) {

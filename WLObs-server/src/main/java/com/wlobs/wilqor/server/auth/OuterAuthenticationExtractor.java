@@ -24,7 +24,7 @@ import java.util.Optional;
 /**
  * @author wilqor
  */
-public class OuterAuthenticationExtractor implements AuthenticationExtractor {
+public final class OuterAuthenticationExtractor implements AuthenticationExtractor {
     private final AuthenticationExtractor decorated;
 
     public OuterAuthenticationExtractor(AuthenticationExtractor decorated) {

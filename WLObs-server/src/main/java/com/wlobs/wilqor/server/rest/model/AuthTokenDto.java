@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * @author wilqor
  */
-public class AuthTokenDto {
+public final class AuthTokenDto {
     @JsonProperty("auth_token")
     private final String authToken;
 

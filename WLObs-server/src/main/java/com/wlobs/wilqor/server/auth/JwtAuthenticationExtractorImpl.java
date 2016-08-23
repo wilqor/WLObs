@@ -30,7 +30,7 @@ import java.util.Optional;
 /**
  * @author wilqor
  */
-public class JwtAuthenticationExtractorImpl implements AuthenticationExtractor {
+public final class JwtAuthenticationExtractorImpl implements AuthenticationExtractor {
     @Override
     public Optional<Authentication> extract(String content) {
         Optional<Authentication> result = Optional.empty();

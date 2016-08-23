@@ -19,7 +19,7 @@ package com.wlobs.wilqor.server.auth;
 /**
  * @author wilqor
  */
-class AuthConstants {
+final class AuthConstants {
     private AuthConstants() {
     }
 
