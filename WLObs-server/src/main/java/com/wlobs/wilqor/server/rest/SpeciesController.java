@@ -16,13 +16,14 @@
 
 package com.wlobs.wilqor.server.rest;
 
+import com.wlobs.wilqor.server.auth.annotations.RequiredAdminRole;
+import com.wlobs.wilqor.server.auth.annotations.RequiredUserOrAdminRole;
 import com.wlobs.wilqor.server.config.LocaleConstants;
 import com.wlobs.wilqor.server.persistence.model.Species;
 import com.wlobs.wilqor.server.rest.model.LocalizedSpeciesDto;
 import com.wlobs.wilqor.server.rest.model.SpeciesListDto;
 import com.wlobs.wilqor.server.service.SpeciesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -35,7 +36,7 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping("/species")
-@PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+@RequiredUserOrAdminRole
 public class SpeciesController {
     private final SpeciesService speciesService;
 
@@ -44,7 +45,7 @@ public class SpeciesController {
         this.speciesService = speciesService;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @RequiredAdminRole
     @RequestMapping(method = RequestMethod.POST)
     public void addSpecies(@RequestBody @Valid SpeciesListDto speciesListDto) {
         speciesService.addSpecies(speciesListDto.getSpeciesDtoList());

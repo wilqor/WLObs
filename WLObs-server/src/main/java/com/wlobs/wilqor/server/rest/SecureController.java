@@ -16,9 +16,11 @@
 
 package com.wlobs.wilqor.server.rest;
 
-import org.springframework.security.access.prepost.PreAuthorize;
+import com.wlobs.wilqor.server.auth.annotations.RequiredAdminRole;
+import com.wlobs.wilqor.server.auth.annotations.RequiredIdentityMatchingLogin;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,9 +37,15 @@ public class SecureController {
         return "Secure!";
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @RequiredAdminRole
     @RequestMapping("/admin")
     public String admin() {
         return "Only for admins";
+    }
+
+    @RequiredIdentityMatchingLogin
+    @RequestMapping("/us/{login}")
+    public String matchingLogin(@PathVariable("login") String login) {
+        return "only for authenticated users with login identity!";
     }
 }
