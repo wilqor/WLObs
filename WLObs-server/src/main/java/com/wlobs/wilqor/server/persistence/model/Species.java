@@ -16,10 +16,29 @@
 
 package com.wlobs.wilqor.server.persistence.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Locale;
+import java.util.Map;
+
 /**
  * @author wilqor
  */
+@Document
 public class Species {
+    @Id
+    private String id;
+
+    @Indexed
+    private Class speciesClass;
+
+    @Indexed
+    private String latinName;
+
+    private Map<Locale, String> localizedNames;
+
     /**
      * Localized on the client side, since all values are known in advance
      */
@@ -29,5 +48,43 @@ public class Species {
         REPTILE,
         BIRD,
         MAMMAL
+    }
+
+    public void setSpeciesClass(Class speciesClass) {
+        this.speciesClass = speciesClass;
+    }
+
+    public void setLatinName(String latinName) {
+        this.latinName = latinName;
+    }
+
+    public void setLocalizedNames(Map<Locale, String> localizedNames) {
+        this.localizedNames = localizedNames;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public Class getSpeciesClass() {
+        return speciesClass;
+    }
+
+    public String getLatinName() {
+        return latinName;
+    }
+
+    public Map<Locale, String> getLocalizedNames() {
+        return localizedNames;
+    }
+
+    @Override
+    public String toString() {
+        return "Species{" +
+                "id='" + id + '\'' +
+                ", speciesClass=" + speciesClass +
+                ", latinName='" + latinName + '\'' +
+                ", localizedNames=" + localizedNames +
+                '}';
     }
 }

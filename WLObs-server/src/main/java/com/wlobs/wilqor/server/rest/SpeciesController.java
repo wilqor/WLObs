@@ -20,11 +20,12 @@ import com.wlobs.wilqor.server.config.LocaleConstants;
 import com.wlobs.wilqor.server.persistence.model.Species;
 import com.wlobs.wilqor.server.rest.model.LocalizedSpeciesDto;
 import com.wlobs.wilqor.server.rest.model.SpeciesListDto;
+import com.wlobs.wilqor.server.service.SpeciesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
@@ -36,20 +37,22 @@ import java.util.Optional;
 @RequestMapping("/species")
 @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
 public class SpeciesController {
+    private final SpeciesService speciesService;
+
+    @Autowired
+    public SpeciesController(SpeciesService speciesService) {
+        this.speciesService = speciesService;
+    }
+
     @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping(method = RequestMethod.POST)
-    public String addSpecies(@RequestBody @Valid SpeciesListDto speciesListDto) {
-        // TODO actually add received species
-        return "add species";
+    public void addSpecies(@RequestBody @Valid SpeciesListDto speciesListDto) {
+        speciesService.addSpecies(speciesListDto.getSpeciesDtoList());
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{class}")
     public List<LocalizedSpeciesDto> getSpecies(@RequestHeader(value = "Accept-Language", defaultValue = "en") String locale, @PathVariable("class") Species.Class speciesClass) {
-        Locale target = getTargetLocale(locale);
-        // TODO return actual species retrieved for provided class and locale
-        return Arrays.asList(
-                new LocalizedSpeciesDto(Species.Class.MAMMAL, "canis lupus", "wolf")
-        );
+        return speciesService.findSpeciesForLocaleAndClass(getTargetLocale(locale), speciesClass);
     }
 
     private Locale getTargetLocale(String requestHeaderLocale) {
