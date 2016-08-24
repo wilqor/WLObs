@@ -16,9 +16,13 @@
 
 package com.wlobs.wilqor.server.service.exceptions;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
 /**
  * @author wilqor
  */
+@ResponseStatus(HttpStatus.NOT_FOUND)
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException(String login) {
         super(String.format("User with login: %s does not exist!", login));

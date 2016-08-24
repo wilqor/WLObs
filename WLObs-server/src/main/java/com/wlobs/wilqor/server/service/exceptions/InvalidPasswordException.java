@@ -16,9 +16,13 @@
 
 package com.wlobs.wilqor.server.service.exceptions;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
 /**
  * @author wilqor
  */
+@ResponseStatus(HttpStatus.FORBIDDEN)
 public class InvalidPasswordException extends RuntimeException {
     public InvalidPasswordException() {
         super("Provided password does not match!");

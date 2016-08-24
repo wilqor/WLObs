@@ -16,9 +16,13 @@
 
 package com.wlobs.wilqor.server.service.exceptions;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
 /**
  * @author wilqor
  */
+@ResponseStatus(HttpStatus.FORBIDDEN)
 public class InvalidRefreshTokenException extends RuntimeException {
     public InvalidRefreshTokenException(String login, String refreshToken) {
         super(String.format("Invalid refresh token: %s for user with login: %s!", login, refreshToken));

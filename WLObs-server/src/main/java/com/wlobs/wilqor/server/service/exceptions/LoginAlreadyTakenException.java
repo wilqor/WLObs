@@ -16,9 +16,13 @@
 
 package com.wlobs.wilqor.server.service.exceptions;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
 /**
  * @author wilqor
  */
+@ResponseStatus(HttpStatus.BAD_REQUEST)
 public class LoginAlreadyTakenException extends RuntimeException {
     public LoginAlreadyTakenException(String login) {
         super(String.format("Cannot register, a user with login: %s already exists!", login));
