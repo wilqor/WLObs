@@ -16,7 +16,7 @@
 
 package com.wlobs.wilqor.server.persistence.repository;
 
-import com.wlobs.wilqor.server.persistence.model.Species;
+import com.wlobs.wilqor.server.persistence.model.Observation;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -25,8 +25,10 @@ import java.util.Optional;
 /**
  * @author wilqor
  */
-public interface SpeciesRepository extends CrudRepository<Species, String>, CustomSpeciesRepository {
-    List<Species> findBySpeciesClass(Species.Class speciesClass);
+public interface ObservationRepository extends CrudRepository<Observation, String> {
+    List<Observation> findByAuthor(String author);
 
-    Optional<Species> findBySpeciesClassAndLatinName(Species.Class speciesClass, String latinName);
+    Optional<Observation> findByAuthorAndId(String author, String id);
+
+    Optional<Observation> findByAuthorAndDateTimestampAndGeoHashAndSpeciesStub(String author, long dateTimestamp, String geoHash, Observation.SpeciesStub speciesStub);
 }

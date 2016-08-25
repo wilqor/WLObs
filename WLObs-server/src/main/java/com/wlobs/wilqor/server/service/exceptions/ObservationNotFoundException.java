@@ -14,19 +14,17 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.persistence.repository;
+package com.wlobs.wilqor.server.service.exceptions;
 
-import com.wlobs.wilqor.server.persistence.model.Species;
-import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
-import java.util.Optional;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
  * @author wilqor
  */
-public interface SpeciesRepository extends CrudRepository<Species, String>, CustomSpeciesRepository {
-    List<Species> findBySpeciesClass(Species.Class speciesClass);
-
-    Optional<Species> findBySpeciesClassAndLatinName(Species.Class speciesClass, String latinName);
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class ObservationNotFoundException extends RuntimeException {
+    public ObservationNotFoundException(String observationId) {
+        super(String.format("Observation with id: %s could not be found!", observationId));
+    }
 }

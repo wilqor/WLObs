@@ -16,22 +16,23 @@
 
 package com.wlobs.wilqor.server.service;
 
-import com.wlobs.wilqor.server.persistence.model.Observation;
-import com.wlobs.wilqor.server.persistence.model.Species;
-import com.wlobs.wilqor.server.rest.model.LocalizedSpeciesDto;
-import com.wlobs.wilqor.server.rest.model.SpeciesDto;
+import com.wlobs.wilqor.server.rest.model.ExistingObservationDto;
+import com.wlobs.wilqor.server.rest.model.NewObservationDto;
+import com.wlobs.wilqor.server.rest.model.ObservationRestrictionDto;
 
 import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
 
 /**
  * @author wilqor
  */
-public interface SpeciesService {
-    void addSpecies(List<SpeciesDto> speciesDtoList);
+public interface ObservationService {
+    void addObservation(String login, NewObservationDto observationDto);
 
-    List<LocalizedSpeciesDto> findSpeciesForLocaleAndClass(Locale locale, Species.Class speciesClass);
+    void updateObservationRestriction(String login, String id, ObservationRestrictionDto observationRestrictionDto);
 
-    Optional<Species> findSpeciesForStub(Observation.SpeciesStub speciesStub);
+    void removeObservation(String login, String id);
+
+    List<ExistingObservationDto> getUserObservations(String login);
+
+    ExistingObservationDto getUserObservation(String principalLogin, String login, String observationId);
 }

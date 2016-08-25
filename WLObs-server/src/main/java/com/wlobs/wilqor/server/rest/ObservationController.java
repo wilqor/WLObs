@@ -21,6 +21,9 @@ import com.wlobs.wilqor.server.auth.annotations.RequiredUserOrAdminRole;
 import com.wlobs.wilqor.server.rest.model.ExistingObservationDto;
 import com.wlobs.wilqor.server.rest.model.NewObservationDto;
 import com.wlobs.wilqor.server.rest.model.ObservationRestrictionDto;
+import com.wlobs.wilqor.server.service.ObservationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -33,43 +36,46 @@ import java.util.List;
 @RequestMapping("/observations")
 @RequiredUserOrAdminRole
 public class ObservationController {
+    private final ObservationService observationService;
+
+    @Autowired
+    public ObservationController(ObservationService observationService) {
+        this.observationService = observationService;
+    }
+
     @RequiredIdentityMatchingLogin
     @RequestMapping(method = RequestMethod.POST, value = "/{login}")
     public void addObservation(@PathVariable("login") String login, @RequestBody @Valid NewObservationDto observationDto) {
-        // try to create, looking for match (login, date, species stub, location)
-        // created? increment user count
-        // created? increment created statistics
+        observationService.addObservation(login, observationDto);
+        // increment user count of observations
+        // increment created statistics
     }
 
     @RequiredIdentityMatchingLogin
     @RequestMapping(method = RequestMethod.PUT, value = "/{login}/{id}")
     public void changeObservationRestriction(@PathVariable("login") String login, @PathVariable("id") String observationId,
                                              @RequestBody ObservationRestrictionDto observationRestrictionDto) {
-        // check if observation exists (id)
-        // exists? change restriction
-        // changed? increment changed statistics
+        observationService.updateObservationRestriction(login, observationId, observationRestrictionDto);
+        // increment changed statistics
     }
 
     @RequiredIdentityMatchingLogin
     @RequestMapping(method = RequestMethod.DELETE, value = "/{login}/{id}")
     public void removeObservation(@PathVariable("login") String login, @PathVariable("id") String observationId) {
-        // check if exists (id)
-        // exists? delete
-        // deleted? decrement user count
-        // deleted? increment deleted statistics
+        observationService.removeObservation(login, observationId);
+        // decrement user count
+        // increment deleted statistics
     }
 
     @RequiredIdentityMatchingLogin
     @RequestMapping(method = RequestMethod.GET, value = "/{login}")
     public List<ExistingObservationDto> getUserObservations(@PathVariable("login") String login) {
-        // simply return all for user
-        return null;
+        return observationService.getUserObservations(login);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{login}/{id}")
     public ExistingObservationDto getObservation(@PathVariable("login") String login, @PathVariable("id") String observationId) {
-        // login matches? get always
-        // login does not match? only if not restricted
-        return null;
+        String principalLogin = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return observationService.getUserObservation(principalLogin, login, observationId);
     }
 }

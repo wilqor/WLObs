@@ -14,19 +14,15 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.persistence.repository;
-
-import com.wlobs.wilqor.server.persistence.model.Species;
-import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
-import java.util.Optional;
+package com.wlobs.wilqor.server.config;
 
 /**
  * @author wilqor
  */
-public interface SpeciesRepository extends CrudRepository<Species, String>, CustomSpeciesRepository {
-    List<Species> findBySpeciesClass(Species.Class speciesClass);
+public class GeoHashConstants {
+    private GeoHashConstants() {
+    }
 
-    Optional<Species> findBySpeciesClassAndLatinName(Species.Class speciesClass, String latinName);
+    public static final int GEO_HASH_PRECISION = 12;
+    public static final int CLUSTERING_POWER = 2;
 }

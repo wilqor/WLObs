@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.persistence.repository;
+package com.wlobs.wilqor.server.service;
 
-import com.wlobs.wilqor.server.persistence.model.Species;
-import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
-import java.util.Optional;
+import ch.hsr.geohash.GeoHash;
+import com.wlobs.wilqor.server.config.GeoHashConstants;
+import org.springframework.stereotype.Service;
 
 /**
  * @author wilqor
  */
-public interface SpeciesRepository extends CrudRepository<Species, String>, CustomSpeciesRepository {
-    List<Species> findBySpeciesClass(Species.Class speciesClass);
-
-    Optional<Species> findBySpeciesClassAndLatinName(Species.Class speciesClass, String latinName);
+@Service
+public class GeoHashServiceImpl implements GeoHashService {
+    @Override
+    public String getGeoHashForLocation(double latitude, double longitude) {
+        return GeoHash.geoHashStringWithCharacterPrecision(latitude, longitude, GeoHashConstants.GEO_HASH_PRECISION);
+    }
 }

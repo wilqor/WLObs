@@ -17,6 +17,7 @@
 package com.wlobs.wilqor.server.service;
 
 import com.wlobs.wilqor.server.config.LocaleConstants;
+import com.wlobs.wilqor.server.persistence.model.Observation;
 import com.wlobs.wilqor.server.persistence.model.Species;
 import com.wlobs.wilqor.server.persistence.repository.SpeciesRepository;
 import com.wlobs.wilqor.server.rest.model.LocalizedSpeciesDto;
@@ -27,6 +28,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -57,6 +59,11 @@ public class SpeciesServiceImpl implements SpeciesService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public Optional<Species> findSpeciesForStub(Observation.SpeciesStub speciesStub) {
+        return speciesRepository.findBySpeciesClassAndLatinName(speciesStub.getSpeciesClass(), speciesStub.getLatinName());
+    }
+
     private String getRequestedOrDefaultLocale(Locale locale, Species species) {
         return species.getLocalizedNames().getOrDefault(locale, species.getLocalizedNames().get(LocaleConstants.DEFAULT_LOCALE));
     }
@@ -67,7 +74,7 @@ public class SpeciesServiceImpl implements SpeciesService {
                 .collect(
                         Collectors.toMap(
                                 e -> new Locale(e.getKey()),
-                                e -> e.getValue()
+                                Map.Entry::getValue
                         )
                 );
     }

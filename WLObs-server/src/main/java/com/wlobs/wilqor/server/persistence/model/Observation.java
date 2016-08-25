@@ -22,10 +22,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 /**
  * @author wilqor
@@ -35,10 +35,12 @@ public class Observation {
     @Id
     private String id;
 
-    private Date date;
+    @Indexed
+    private long dateTimestamp;
 
     private boolean restricted;
 
+    @Indexed
     private String author;
 
     private long votesCount;
@@ -55,6 +57,7 @@ public class Observation {
     @GeoSpatialIndexed(type = GeoSpatialIndexType.GEO_2DSPHERE)
     private GeoJsonPoint location;
 
+    @Indexed
     private SpeciesStub speciesStub;
 
     public static class SpeciesStub {
@@ -102,12 +105,12 @@ public class Observation {
         return id;
     }
 
-    public Date getDate() {
-        return date;
+    public long getDateTimestamp() {
+        return dateTimestamp;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDateTimestamp(long dateTimestamp) {
+        this.dateTimestamp = dateTimestamp;
     }
 
     public boolean isRestricted() {
@@ -162,7 +165,7 @@ public class Observation {
     public String toString() {
         return "Observation{" +
                 "id='" + id + '\'' +
-                ", date=" + date +
+                ", date=" + dateTimestamp +
                 ", restricted=" + restricted +
                 ", author='" + author + '\'' +
                 ", votesCount=" + votesCount +
@@ -172,7 +175,7 @@ public class Observation {
     }
 
     public static class Builder {
-        private Date date;
+        private long dateTimestamp;
         private boolean restricted;
         private String author;
         private long votesCount;
@@ -181,7 +184,7 @@ public class Observation {
         private SpeciesStub speciesStub;
 
         public Builder() {
-            date = new Date();
+            dateTimestamp = 0;
             restricted = false;
             author = "";
             votesCount = 0;
@@ -190,8 +193,8 @@ public class Observation {
             speciesStub = new SpeciesStub();
         }
 
-        public Builder date(Date date) {
-            this.date = date;
+        public Builder dateTimestamp(long dateTimestamp) {
+            this.dateTimestamp = dateTimestamp;
             return this;
         }
 
@@ -227,7 +230,7 @@ public class Observation {
 
         public Observation build() {
             Observation created = new Observation();
-            created.setDate(date);
+            created.setDateTimestamp(dateTimestamp);
             created.setRestricted(restricted);
             created.setAuthor(author);
             created.setVotesCount(votesCount);

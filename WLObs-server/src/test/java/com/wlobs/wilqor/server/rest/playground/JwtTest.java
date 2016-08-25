@@ -16,6 +16,8 @@
 
 package com.wlobs.wilqor.server.rest.playground;
 
+import ch.hsr.geohash.GeoHash;
+import ch.hsr.geohash.WGS84Point;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -88,5 +90,36 @@ public class JwtTest {
                 .signWith(SignatureAlgorithm.HS512, secret)
                 .compact();
         System.out.println(builtJwt);
+    }
+
+    @Test
+    public void geoHashTest() {
+        System.out.println(new Date().getTime());
+
+        // that's the way to calculate GeoHash for a new point!
+        String leftBottom = GeoHash.geoHashStringWithCharacterPrecision(53.396, 16.716, 12);
+        String topRight = GeoHash.geoHashStringWithCharacterPrecision(54.435, 19.210, 12);
+        // now the common prefix
+
+        System.out.println("left bottom: " + leftBottom);
+        System.out.println("top right: " + topRight);
+        System.out.println("Common prefix length: " + calculateCommonPrefixLength(leftBottom, topRight));
+
+        GeoHash hash = GeoHash.fromGeohashString(leftBottom);
+        WGS84Point centerPoint = hash.getBoundingBox().getCenterPoint();
+        System.out.println("Center point, lat: " + centerPoint.getLatitude() + " , lon: " + centerPoint.getLongitude());
+    }
+
+    private int calculateCommonPrefixLength(String leftBottomGeoHash, String topRightGeoHash) {
+        int prefixLength = 0;
+        int minLength = Math.min(leftBottomGeoHash.length(), topRightGeoHash.length());
+        for (int i = 0; i < minLength; i++) {
+            if (leftBottomGeoHash.charAt(i) == topRightGeoHash.charAt(i)) {
+                prefixLength++;
+            } else {
+                break;
+            }
+        }
+        return prefixLength + 2;
     }
 }
