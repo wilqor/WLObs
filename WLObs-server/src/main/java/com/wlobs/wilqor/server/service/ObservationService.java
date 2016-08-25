@@ -16,11 +16,13 @@
 
 package com.wlobs.wilqor.server.service;
 
+import com.wlobs.wilqor.server.persistence.model.Observation;
 import com.wlobs.wilqor.server.rest.model.ExistingObservationDto;
 import com.wlobs.wilqor.server.rest.model.NewObservationDto;
 import com.wlobs.wilqor.server.rest.model.ObservationRestrictionDto;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author wilqor
@@ -35,4 +37,6 @@ public interface ObservationService {
     List<ExistingObservationDto> getUserObservations(String login);
 
     ExistingObservationDto getUserObservation(String principalLogin, String login, String observationId);
+
+    Optional<Observation> getObservation(String observationId);
 }

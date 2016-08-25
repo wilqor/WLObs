@@ -113,6 +113,11 @@ public class ObservationServiceImpl implements ObservationService {
         return convertToDto(observation);
     }
 
+    @Override
+    public Optional<Observation> getObservation(String observationId) {
+        return observationRepository.findById(observationId);
+    }
+
     private ExistingObservationDto convertToDto(Observation observation) {
         return new ExistingObservationDto.Builder()
                 .id(observation.getId())

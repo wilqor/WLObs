@@ -16,7 +16,7 @@
 
 package com.wlobs.wilqor.server.persistence.repository;
 
-import com.wlobs.wilqor.server.persistence.model.Observation;
+import com.wlobs.wilqor.server.persistence.model.Vote;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -25,12 +25,10 @@ import java.util.Optional;
 /**
  * @author wilqor
  */
-public interface ObservationRepository extends CrudRepository<Observation, String> {
-    List<Observation> findByAuthor(String author);
+public interface VoteRepository extends CrudRepository<Vote, String> {
+    Optional<Vote> findByVoterAndObservationId(String voter, String observationId);
 
-    Optional<Observation> findByAuthorAndId(String author, String id);
+    Optional<Vote> findByVoterAndId(String voter, String id);
 
-    Optional<Observation> findByAuthorAndDateTimestampAndGeoHashAndSpeciesStub(String author, long dateTimestamp, String geoHash, Observation.SpeciesStub speciesStub);
-
-    Optional<Observation> findById(String id);
+    List<Vote> findByVoter(String voter);
 }

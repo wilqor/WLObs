@@ -14,23 +14,20 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.persistence.repository;
+package com.wlobs.wilqor.server.service;
 
-import com.wlobs.wilqor.server.persistence.model.Observation;
-import org.springframework.data.repository.CrudRepository;
+import com.wlobs.wilqor.server.rest.model.ExistingVoteDto;
+import com.wlobs.wilqor.server.rest.model.NewVoteDto;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author wilqor
  */
-public interface ObservationRepository extends CrudRepository<Observation, String> {
-    List<Observation> findByAuthor(String author);
+public interface VoteService {
+    void castVote(String login, NewVoteDto newVoteDto);
 
-    Optional<Observation> findByAuthorAndId(String author, String id);
+    void removeVote(String login, String voteId);
 
-    Optional<Observation> findByAuthorAndDateTimestampAndGeoHashAndSpeciesStub(String author, long dateTimestamp, String geoHash, Observation.SpeciesStub speciesStub);
-
-    Optional<Observation> findById(String id);
+    List<ExistingVoteDto> getUserVotes(String login);
 }
