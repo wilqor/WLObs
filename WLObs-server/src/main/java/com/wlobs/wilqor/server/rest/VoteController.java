@@ -18,8 +18,11 @@ package com.wlobs.wilqor.server.rest;
 
 import com.wlobs.wilqor.server.auth.annotations.RequiredIdentityMatchingLogin;
 import com.wlobs.wilqor.server.auth.annotations.RequiredUserOrAdminRole;
+import com.wlobs.wilqor.server.persistence.model.UserStatType;
 import com.wlobs.wilqor.server.rest.model.ExistingVoteDto;
 import com.wlobs.wilqor.server.rest.model.NewVoteDto;
+import com.wlobs.wilqor.server.service.ObservationService;
+import com.wlobs.wilqor.server.service.UserService;
 import com.wlobs.wilqor.server.service.VoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -35,31 +38,33 @@ import java.util.List;
 @RequiredUserOrAdminRole
 public class VoteController {
     private final VoteService voteService;
+    private final UserService userService;
+    private final ObservationService observationService;
 
     @Autowired
-    public VoteController(VoteService voteService) {
+    public VoteController(VoteService voteService, UserService userService, ObservationService observationService) {
         this.voteService = voteService;
+        this.userService = userService;
+        this.observationService = observationService;
     }
 
     @RequiredIdentityMatchingLogin
     @RequestMapping(method = RequestMethod.POST, value = "/{login}")
     public void castVote(@PathVariable("login") String login, @RequestBody @Valid NewVoteDto newVoteDto) {
-        voteService.castVote(login, newVoteDto);
-
-        // inc observation votes
-        // inc owner received votes
-        // inc voter casted votes
+        ExistingVoteDto voteDto = voteService.castAndReturnVote(login, newVoteDto);
+        observationService.incrementObservationVotesCount(voteDto.getObservationId());
+        userService.incrementUserStat(voteDto.getVoter(), UserStatType.VOTES_CASTED);
+        userService.incrementUserStat(voteDto.getObservationOwner(), UserStatType.VOTES_RECEIVED);
         // increment casted votes statistics
     }
 
     @RequiredIdentityMatchingLogin
     @RequestMapping(method = RequestMethod.DELETE, value = "/{login}/{vote_id}")
     public void removeVote(@PathVariable("login") String login, @PathVariable("vote_id") String voteId) {
-        voteService.removeVote(login, voteId);
-
-        // dec observation votes
-        // dec owner received votes
-        // dec voter casted votes
+        ExistingVoteDto voteDto = voteService.removeAndReturnVote(login, voteId);
+        observationService.decrementObservationVotesCount(voteDto.getObservationId());
+        userService.decrementUserStat(voteDto.getVoter(), UserStatType.VOTES_CASTED);
+        userService.decrementUserStat(voteDto.getObservationOwner(), UserStatType.VOTES_RECEIVED);
         // increment removed votes statistics
     }
 

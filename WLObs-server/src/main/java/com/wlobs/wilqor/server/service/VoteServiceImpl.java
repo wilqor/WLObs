@@ -47,7 +47,7 @@ public class VoteServiceImpl implements VoteService {
     }
 
     @Override
-    public void castVote(String login, NewVoteDto newVoteDto) {
+    public ExistingVoteDto castAndReturnVote(String login, NewVoteDto newVoteDto) {
         Optional<Observation> voteSubjectOptional = observationService.getObservation(newVoteDto.getObservationId());
         Observation voteSubject = voteSubjectOptional.orElseThrow(() -> new ObservationNotFoundException(newVoteDto.getObservationId()));
         if (voteSubject.getAuthor().equals(login)) {
@@ -57,37 +57,42 @@ public class VoteServiceImpl implements VoteService {
         possibleDuplicate.ifPresent(p -> {
             throw new VoteAlreadyCastedException(login, voteSubject.getId());
         });
-        voteRepository.save(
-                new Vote.Builder()
-                        .voter(login)
-                        .dateUtcTimestamp(newVoteDto.getDateUtcTimestamp())
-                        .observationId(newVoteDto.getObservationId())
-                        .observationOwner(voteSubject.getAuthor())
-                        .speciesStub(voteSubject.getSpeciesStub())
-                        .build()
-        );
+        Vote created = new Vote.Builder()
+                .voter(login)
+                .dateUtcTimestamp(newVoteDto.getDateUtcTimestamp())
+                .observationId(newVoteDto.getObservationId())
+                .observationOwner(voteSubject.getAuthor())
+                .speciesStub(voteSubject.getSpeciesStub())
+                .build();
+        voteRepository.save(created);
+        return convertVoteToDto(created);
     }
 
     @Override
-    public void removeVote(String login, String voteId) {
+    public ExistingVoteDto removeAndReturnVote(String login, String voteId) {
         Optional<Vote> foundOptional = voteRepository.findByVoterAndId(login, voteId);
         Vote found = foundOptional.orElseThrow(() -> new VoteNotFoundException(voteId));
         voteRepository.delete(found);
+        return convertVoteToDto(found);
     }
 
     @Override
     public List<ExistingVoteDto> getUserVotes(String login) {
         return voteRepository.findByVoter(login).stream()
                 .map(
-                        v -> new ExistingVoteDto.Builder()
-                                .id(v.getId())
-                                .dateUtcTimestamp(v.getDateUtcTimestamp())
-                                .voter(v.getVoter())
-                                .observationId(v.getObservationId())
-                                .observationOwner(v.getObservationOwner())
-                                .speciesStub(v.getSpeciesStub())
-                                .build()
+                        this::convertVoteToDto
                 )
                 .collect(Collectors.toList());
+    }
+
+    private ExistingVoteDto convertVoteToDto(Vote v) {
+        return new ExistingVoteDto.Builder()
+                .id(v.getId())
+                .dateUtcTimestamp(v.getDateUtcTimestamp())
+                .voter(v.getVoter())
+                .observationId(v.getObservationId())
+                .observationOwner(v.getObservationOwner())
+                .speciesStub(v.getSpeciesStub())
+                .build();
     }
 }

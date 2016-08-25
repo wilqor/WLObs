@@ -18,10 +18,12 @@ package com.wlobs.wilqor.server.rest;
 
 import com.wlobs.wilqor.server.auth.annotations.RequiredIdentityMatchingLogin;
 import com.wlobs.wilqor.server.auth.annotations.RequiredUserOrAdminRole;
+import com.wlobs.wilqor.server.persistence.model.UserStatType;
 import com.wlobs.wilqor.server.rest.model.ExistingObservationDto;
 import com.wlobs.wilqor.server.rest.model.NewObservationDto;
 import com.wlobs.wilqor.server.rest.model.ObservationRestrictionDto;
 import com.wlobs.wilqor.server.service.ObservationService;
+import com.wlobs.wilqor.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -37,17 +39,19 @@ import java.util.List;
 @RequiredUserOrAdminRole
 public class ObservationController {
     private final ObservationService observationService;
+    private final UserService userService;
 
     @Autowired
-    public ObservationController(ObservationService observationService) {
+    public ObservationController(ObservationService observationService, UserService userService) {
         this.observationService = observationService;
+        this.userService = userService;
     }
 
     @RequiredIdentityMatchingLogin
     @RequestMapping(method = RequestMethod.POST, value = "/{login}")
     public void addObservation(@PathVariable("login") String login, @RequestBody @Valid NewObservationDto observationDto) {
         observationService.addObservation(login, observationDto);
-        // increment user count of observations
+        userService.incrementUserStat(login, UserStatType.OBSERVATIONS_COUNT);
         // increment created statistics
     }
 
@@ -63,7 +67,7 @@ public class ObservationController {
     @RequestMapping(method = RequestMethod.DELETE, value = "/{login}/{id}")
     public void removeObservation(@PathVariable("login") String login, @PathVariable("id") String observationId) {
         observationService.removeObservation(login, observationId);
-        // decrement user count
+        userService.decrementUserStat(login, UserStatType.OBSERVATIONS_COUNT);
         // increment deleted statistics
     }
 

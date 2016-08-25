@@ -16,12 +16,13 @@
 
 package com.wlobs.wilqor.server.service;
 
+import com.wlobs.wilqor.server.persistence.repository.UserStatsModifier;
 import com.wlobs.wilqor.server.rest.model.*;
 
 /**
  * @author wilqor
  */
-public interface UserService {
+public interface UserService extends UserStatsModifier {
     AuthAndRefreshTokensDto register(final CredentialsDto credentialsDto);
 
     AuthAndRefreshTokensDto resetPassword(String login, final ResetPasswordDto resetPasswordDto);

@@ -14,20 +14,23 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.service;
-
-import com.wlobs.wilqor.server.rest.model.ExistingVoteDto;
-import com.wlobs.wilqor.server.rest.model.NewVoteDto;
-
-import java.util.List;
+package com.wlobs.wilqor.server.persistence.model;
 
 /**
  * @author wilqor
  */
-public interface VoteService {
-    ExistingVoteDto castAndReturnVote(String login, NewVoteDto newVoteDto);
+public enum UserStatType {
+    OBSERVATIONS_COUNT("observationsCount"),
+    VOTES_CASTED("votesCasted"),
+    VOTES_RECEIVED("votesReceived");
 
-    ExistingVoteDto removeAndReturnVote(String login, String voteId);
+    private final String mongoTemplateKey;
 
-    List<ExistingVoteDto> getUserVotes(String login);
+    UserStatType(String mongoTemplateKey) {
+        this.mongoTemplateKey = mongoTemplateKey;
+    }
+
+    public String getMongoTemplateKey() {
+        return mongoTemplateKey;
+    }
 }

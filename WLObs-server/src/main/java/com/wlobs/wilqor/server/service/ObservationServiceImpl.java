@@ -118,6 +118,16 @@ public class ObservationServiceImpl implements ObservationService {
         return observationRepository.findById(observationId);
     }
 
+    @Override
+    public void incrementObservationVotesCount(String observationId) {
+        observationRepository.incrementObservationVotesCount(observationId);
+    }
+
+    @Override
+    public void decrementObservationVotesCount(String observationId) {
+        observationRepository.decrementObservationVotesCount(observationId);
+    }
+
     private ExistingObservationDto convertToDto(Observation observation) {
         return new ExistingObservationDto.Builder()
                 .id(observation.getId())

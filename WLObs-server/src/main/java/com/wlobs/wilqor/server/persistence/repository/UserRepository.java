@@ -24,6 +24,6 @@ import java.util.Optional;
 /**
  * @author wilqor
  */
-public interface UserRepository extends CrudRepository<User, String> {
+public interface UserRepository extends CrudRepository<User, String>, CustomUserRepository {
     Optional<User> findByLogin(String login);
 }

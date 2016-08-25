@@ -17,6 +17,7 @@
 package com.wlobs.wilqor.server.service;
 
 import com.wlobs.wilqor.server.persistence.model.Observation;
+import com.wlobs.wilqor.server.persistence.repository.ObservationStatsModifier;
 import com.wlobs.wilqor.server.rest.model.ExistingObservationDto;
 import com.wlobs.wilqor.server.rest.model.NewObservationDto;
 import com.wlobs.wilqor.server.rest.model.ObservationRestrictionDto;
@@ -27,7 +28,7 @@ import java.util.Optional;
 /**
  * @author wilqor
  */
-public interface ObservationService {
+public interface ObservationService extends ObservationStatsModifier {
     void addObservation(String login, NewObservationDto observationDto);
 
     void updateObservationRestriction(String login, String id, ObservationRestrictionDto observationRestrictionDto);

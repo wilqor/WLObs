@@ -25,7 +25,7 @@ import java.util.Optional;
 /**
  * @author wilqor
  */
-public interface ObservationRepository extends CrudRepository<Observation, String> {
+public interface ObservationRepository extends CrudRepository<Observation, String>, CustomObservationRepository {
     List<Observation> findByAuthor(String author);
 
     Optional<Observation> findByAuthorAndId(String author, String id);

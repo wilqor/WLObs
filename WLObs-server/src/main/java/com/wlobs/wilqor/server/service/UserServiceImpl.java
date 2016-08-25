@@ -17,6 +17,7 @@
 package com.wlobs.wilqor.server.service;
 
 import com.wlobs.wilqor.server.persistence.model.User;
+import com.wlobs.wilqor.server.persistence.model.UserStatType;
 import com.wlobs.wilqor.server.persistence.repository.UserRepository;
 import com.wlobs.wilqor.server.rest.model.*;
 import com.wlobs.wilqor.server.service.exceptions.InvalidPasswordException;
@@ -103,6 +104,16 @@ public final class UserServiceImpl implements UserService {
             throw new InvalidRefreshTokenException(loginAndRefreshTokenDto.getLogin(), loginAndRefreshTokenDto.getRefreshToken());
         }
         return new AuthTokenDto(tokenService.buildAuthToken(user.getLogin(), user.getRoles()));
+    }
+
+    @Override
+    public void incrementUserStat(String login, UserStatType statType) {
+        userRepository.incrementUserStat(login, statType);
+    }
+
+    @Override
+    public void decrementUserStat(String login, UserStatType statType) {
+        userRepository.decrementUserStat(login, statType);
     }
 
     private User findUserWithMatchingPasswordOrThrow(String login, String password) {

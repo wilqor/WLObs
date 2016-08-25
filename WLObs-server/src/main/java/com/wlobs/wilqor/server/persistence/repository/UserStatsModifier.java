@@ -14,20 +14,15 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.service;
+package com.wlobs.wilqor.server.persistence.repository;
 
-import com.wlobs.wilqor.server.rest.model.ExistingVoteDto;
-import com.wlobs.wilqor.server.rest.model.NewVoteDto;
-
-import java.util.List;
+import com.wlobs.wilqor.server.persistence.model.UserStatType;
 
 /**
  * @author wilqor
  */
-public interface VoteService {
-    ExistingVoteDto castAndReturnVote(String login, NewVoteDto newVoteDto);
+public interface UserStatsModifier {
+    void incrementUserStat(String login, UserStatType statType);
 
-    ExistingVoteDto removeAndReturnVote(String login, String voteId);
-
-    List<ExistingVoteDto> getUserVotes(String login);
+    void decrementUserStat(String login, UserStatType statType);
 }
