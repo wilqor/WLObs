@@ -17,13 +17,13 @@
 package com.wlobs.wilqor.server.persistence.repository;
 
 import com.wlobs.wilqor.server.persistence.model.User;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.Optional;
 
 /**
  * @author wilqor
  */
-public interface UserRepository extends CrudRepository<User, String>, CustomUserRepository {
+public interface UserRepository extends PagingAndSortingRepository<User, String>, CustomUserRepository {
     Optional<User> findByLogin(String login);
 }

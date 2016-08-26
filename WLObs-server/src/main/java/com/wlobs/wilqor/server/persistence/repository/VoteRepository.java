@@ -17,7 +17,7 @@
 package com.wlobs.wilqor.server.persistence.repository;
 
 import com.wlobs.wilqor.server.persistence.model.Vote;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +25,7 @@ import java.util.Optional;
 /**
  * @author wilqor
  */
-public interface VoteRepository extends CrudRepository<Vote, String> {
+public interface VoteRepository extends PagingAndSortingRepository<Vote, String> {
     Optional<Vote> findByVoterAndObservationId(String voter, String observationId);
 
     Optional<Vote> findByVoterAndId(String voter, String id);

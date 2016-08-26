@@ -20,10 +20,10 @@ import com.wlobs.wilqor.server.auth.annotations.RequiredAdminRole;
 import com.wlobs.wilqor.server.auth.annotations.RequiredUserOrAdminRole;
 import com.wlobs.wilqor.server.config.LocaleConstants;
 import com.wlobs.wilqor.server.persistence.model.Species;
-import com.wlobs.wilqor.server.rest.model.LocalizedSpeciesDto;
-import com.wlobs.wilqor.server.rest.model.SpeciesListDto;
+import com.wlobs.wilqor.server.rest.model.*;
 import com.wlobs.wilqor.server.service.SpeciesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -59,5 +59,16 @@ public class SpeciesController {
     private Locale getTargetLocale(String requestHeaderLocale) {
         Optional<Locale> matched = Optional.ofNullable(Locale.lookup(Locale.LanguageRange.parse(requestHeaderLocale), LocaleConstants.supportedLocale));
         return matched.orElse(LocaleConstants.DEFAULT_LOCALE);
+    }
+
+    @RequiredAdminRole
+    @RequestMapping(method = RequestMethod.GET)
+    public RecordsPageDto<FlatSpeciesDto> getSpeciesPage(@RequestParam(value = "pageNo") Optional<Integer> pageNumber,
+                                                         @RequestParam(value = "sortBy") Optional<SortParameters.SpeciesSort> sort,
+                                                         @RequestParam(value = "direction") Optional<Sort.Direction> direction) {
+        int requestPageNumber = pageNumber.orElse(RecordsPageDto.DEFAULT_PAGE_NUMBER);
+        SortParameters.SpeciesSort requestSort = sort.orElse(SortParameters.SpeciesSort.LATIN_NAME);
+        Sort.Direction requestDirection = direction.orElse(Sort.Direction.ASC);
+        return speciesService.getSpeciesPage(requestPageNumber, requestSort.asParameter(), requestDirection);
     }
 }

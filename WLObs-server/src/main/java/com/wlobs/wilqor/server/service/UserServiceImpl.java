@@ -25,6 +25,9 @@ import com.wlobs.wilqor.server.service.exceptions.InvalidRefreshTokenException;
 import com.wlobs.wilqor.server.service.exceptions.LoginAlreadyTakenException;
 import com.wlobs.wilqor.server.service.exceptions.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +35,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * @author wilqor
@@ -116,6 +120,15 @@ public final class UserServiceImpl implements UserService {
         userRepository.decrementUserStat(login, statType);
     }
 
+    @Override
+    public RecordsPageDto<FlatUserDto> getUsersPage(int pageNumber, String sort, Sort.Direction direction) {
+        Page<User> page = userRepository.findAll(new PageRequest(pageNumber, RecordsPageDto.RECORDS_PAGE_SIZE, new Sort(direction, sort)));
+        List<FlatUserDto> flatUserDtos = page.getContent().stream()
+                .map(this::convertToFlatDto)
+                .collect(Collectors.toList());
+        return new RecordsPageDto<>(flatUserDtos, page.getTotalElements(), page.getTotalPages());
+    }
+
     private User findUserWithMatchingPasswordOrThrow(String login, String password) {
         User user = findUserOrThrow(login);
         if (!passwordMatching(user.getPasswordHash(), password)) {
@@ -137,5 +150,16 @@ public final class UserServiceImpl implements UserService {
         List<String> result = new ArrayList<>(existingTokens);
         result.add(newToken);
         return result;
+    }
+
+    private FlatUserDto convertToFlatDto(User u) {
+        return new FlatUserDto.Builder()
+                .id(u.getId())
+                .login(u.getLogin())
+                .rolesCsv(u.getRoles().stream().map(Enum::name).collect(Collectors.joining(FlatUserDto.ROLES_JOINER)))
+                .observationsCount(u.getUserStats().getObservationsCount())
+                .votesCasted(u.getUserStats().getVotesCasted())
+                .votesReceived(u.getUserStats().getVotesReceived())
+                .build();
     }
 }

@@ -17,7 +17,7 @@
 package com.wlobs.wilqor.server.persistence.repository;
 
 import com.wlobs.wilqor.server.persistence.model.Species;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +25,7 @@ import java.util.Optional;
 /**
  * @author wilqor
  */
-public interface SpeciesRepository extends CrudRepository<Species, String>, CustomSpeciesRepository {
+public interface SpeciesRepository extends PagingAndSortingRepository<Species, String>, CustomSpeciesRepository {
     List<Species> findBySpeciesClass(Species.Class speciesClass);
 
     Optional<Species> findBySpeciesClassAndLatinName(Species.Class speciesClass, String latinName);

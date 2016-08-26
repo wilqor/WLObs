@@ -29,6 +29,9 @@ import com.wlobs.wilqor.server.service.exceptions.ObservationRestrictedException
 import com.wlobs.wilqor.server.service.exceptions.ObservedSpeciesNotFoundException;
 import com.wlobs.wilqor.server.service.model.AggregationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.stereotype.Service;
 
@@ -102,7 +105,7 @@ public class ObservationServiceImpl implements ObservationService {
     public List<ExistingObservationDto> getUserObservations(String login) {
         return observationRepository.findByAuthor(login)
                 .stream()
-                .map(this::convertToDto)
+                .map(this::convertToExistingObservationDto)
                 .collect(Collectors.toList());
     }
 
@@ -113,7 +116,7 @@ public class ObservationServiceImpl implements ObservationService {
         if (!observation.getAuthor().equals(principalLogin) && observation.isRestricted()) {
             throw new ObservationRestrictedException(observationId);
         }
-        return convertToDto(observation);
+        return convertToExistingObservationDto(observation);
     }
 
     @Override
@@ -145,18 +148,41 @@ public class ObservationServiceImpl implements ObservationService {
         if (commonPrefixLength >= GeoHashConstants.GEO_HASH_AGGREGATION_THRESHOLD) {
             existingObservationDtoList = observationRepository.getRawObservations(request)
                     .stream()
-                    .map(this::convertToDto)
+                    .map(this::convertToExistingObservationDto)
                     .collect(Collectors.toList());
         } else {
             aggregatedObservationDtoList = observationRepository.getAggregatedObservations(request, commonPrefixLength)
                     .stream()
-                    .map(this::convertToDto)
+                    .map(this::convertToAggregatedObservationDto)
                     .collect(Collectors.toList());
         }
         return new AggregationResponseDto(existingObservationDtoList, aggregatedObservationDtoList);
     }
 
-    private ExistingObservationDto convertToDto(Observation observation) {
+    @Override
+    public RecordsPageDto<FlatObservationDto> getObservationsPage(int pageNumber, String sort, Sort.Direction direction) {
+        Page<Observation> page = observationRepository.findAll(new PageRequest(pageNumber, RecordsPageDto.RECORDS_PAGE_SIZE, new Sort(direction, sort)));
+        List<FlatObservationDto> flatObservationDtos = page.getContent().stream()
+                .map(this::convertToFlatObservationDto)
+                .collect(Collectors.toList());
+        return new RecordsPageDto<>(flatObservationDtos, page.getTotalElements(), page.getTotalPages());
+    }
+
+    private FlatObservationDto convertToFlatObservationDto(Observation o) {
+        return new FlatObservationDto.Builder()
+                .id(o.getId())
+                .dateTimestamp(o.getDateTimestamp())
+                .restricted(o.isRestricted())
+                .author(o.getAuthor())
+                .votesCount(o.getVotesCount())
+                .speciesClass(o.getSpeciesStub().getSpeciesClass().name())
+                .speciesLatinName(o.getSpeciesStub().getLatinName())
+                .longitude(o.getLocation().getX())
+                .latitude(o.getLocation().getY())
+                .build();
+    }
+
+    private ExistingObservationDto convertToExistingObservationDto(Observation observation) {
         return new ExistingObservationDto.Builder()
                 .id(observation.getId())
                 .author(observation.getAuthor())
@@ -169,7 +195,7 @@ public class ObservationServiceImpl implements ObservationService {
                 .build();
     }
 
-    private AggregatedObservationDto convertToDto(AggregatedObservation aggregatedObservation) {
+    private AggregatedObservationDto convertToAggregatedObservationDto(AggregatedObservation aggregatedObservation) {
         WGS84Point point = geoHashService.getPointFromGeoHash(aggregatedObservation.get_id());
         return new AggregatedObservationDto(
                 aggregatedObservation.getCount(),

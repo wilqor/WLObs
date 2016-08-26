@@ -20,12 +20,17 @@ import com.wlobs.wilqor.server.persistence.model.Observation;
 import com.wlobs.wilqor.server.persistence.model.Vote;
 import com.wlobs.wilqor.server.persistence.repository.VoteRepository;
 import com.wlobs.wilqor.server.rest.model.ExistingVoteDto;
+import com.wlobs.wilqor.server.rest.model.FlatVoteDto;
 import com.wlobs.wilqor.server.rest.model.NewVoteDto;
+import com.wlobs.wilqor.server.rest.model.RecordsPageDto;
 import com.wlobs.wilqor.server.service.exceptions.ObservationNotFoundException;
 import com.wlobs.wilqor.server.service.exceptions.VoteAlreadyCastedException;
 import com.wlobs.wilqor.server.service.exceptions.VoteNotFoundException;
 import com.wlobs.wilqor.server.service.exceptions.VoteOnSelfException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -65,7 +70,7 @@ public class VoteServiceImpl implements VoteService {
                 .speciesStub(voteSubject.getSpeciesStub())
                 .build();
         voteRepository.save(created);
-        return convertVoteToDto(created);
+        return convertToExistingVoteDto(created);
     }
 
     @Override
@@ -73,19 +78,41 @@ public class VoteServiceImpl implements VoteService {
         Optional<Vote> foundOptional = voteRepository.findByVoterAndId(login, voteId);
         Vote found = foundOptional.orElseThrow(() -> new VoteNotFoundException(voteId));
         voteRepository.delete(found);
-        return convertVoteToDto(found);
+        return convertToExistingVoteDto(found);
     }
 
     @Override
     public List<ExistingVoteDto> getUserVotes(String login) {
         return voteRepository.findByVoter(login).stream()
                 .map(
-                        this::convertVoteToDto
+                        this::convertToExistingVoteDto
                 )
                 .collect(Collectors.toList());
     }
 
-    private ExistingVoteDto convertVoteToDto(Vote v) {
+    @Override
+    public RecordsPageDto<FlatVoteDto> getVotesPage(int pageNumber, String sort, Sort.Direction direction) {
+        Page<Vote> page = voteRepository.findAll(new PageRequest(pageNumber, RecordsPageDto.RECORDS_PAGE_SIZE, new Sort(direction, sort)));
+        List<FlatVoteDto> flatVoteDtos = page.getContent().stream()
+                .map(this::convertToFlatVoteDto)
+                .collect(Collectors.toList());
+        return new RecordsPageDto<>(flatVoteDtos, page.getTotalElements(), page.getTotalPages());
+
+    }
+
+    private FlatVoteDto convertToFlatVoteDto(Vote v) {
+        return new FlatVoteDto.Builder()
+                .id(v.getId())
+                .observationId(v.getObservationId())
+                .dateUtcTimestamp(v.getDateUtcTimestamp())
+                .voter(v.getVoter())
+                .observationOwner(v.getObservationOwner())
+                .speciesClass(v.getSpeciesStub().getSpeciesClass().name())
+                .speciesLatinName(v.getSpeciesStub().getLatinName())
+                .build();
+    }
+
+    private ExistingVoteDto convertToExistingVoteDto(Vote v) {
         return new ExistingVoteDto.Builder()
                 .id(v.getId())
                 .dateUtcTimestamp(v.getDateUtcTimestamp())

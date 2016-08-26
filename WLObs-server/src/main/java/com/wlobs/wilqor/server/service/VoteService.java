@@ -17,7 +17,10 @@
 package com.wlobs.wilqor.server.service;
 
 import com.wlobs.wilqor.server.rest.model.ExistingVoteDto;
+import com.wlobs.wilqor.server.rest.model.FlatVoteDto;
 import com.wlobs.wilqor.server.rest.model.NewVoteDto;
+import com.wlobs.wilqor.server.rest.model.RecordsPageDto;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -30,4 +33,6 @@ public interface VoteService {
     ExistingVoteDto removeAndReturnVote(String login, String voteId);
 
     List<ExistingVoteDto> getUserVotes(String login);
+
+    RecordsPageDto<FlatVoteDto> getVotesPage(int pageNumber, String sort, Sort.Direction direction);
 }

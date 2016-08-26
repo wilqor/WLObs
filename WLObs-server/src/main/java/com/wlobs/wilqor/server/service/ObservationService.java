@@ -19,6 +19,7 @@ package com.wlobs.wilqor.server.service;
 import com.wlobs.wilqor.server.persistence.model.Observation;
 import com.wlobs.wilqor.server.persistence.repository.ObservationStatsModifier;
 import com.wlobs.wilqor.server.rest.model.*;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Optional;
@@ -40,4 +41,6 @@ public interface ObservationService extends ObservationStatsModifier {
     Optional<Observation> getObservation(String observationId);
 
     AggregationResponseDto getAggregatedObservations(AggregationRequestDto aggregationRequestDto);
+
+    RecordsPageDto<FlatObservationDto> getObservationsPage(int pageNumber, String sort, Sort.Direction direction);
 }

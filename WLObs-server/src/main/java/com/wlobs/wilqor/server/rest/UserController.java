@@ -16,14 +16,15 @@
 
 package com.wlobs.wilqor.server.rest;
 
-import com.wlobs.wilqor.server.rest.model.AuthAndRefreshTokensDto;
-import com.wlobs.wilqor.server.rest.model.CredentialsDto;
-import com.wlobs.wilqor.server.rest.model.ResetPasswordDto;
+import com.wlobs.wilqor.server.auth.annotations.RequiredAdminRole;
+import com.wlobs.wilqor.server.rest.model.*;
 import com.wlobs.wilqor.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 /**
  * @author wilqor
@@ -48,5 +49,16 @@ public class UserController {
     public AuthAndRefreshTokensDto resetPassword(@PathVariable("login") String login, @RequestBody @Valid final ResetPasswordDto resetPasswordDto) {
         // upsert password changes
         return userService.resetPassword(login, resetPasswordDto);
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    @RequiredAdminRole
+    public RecordsPageDto<FlatUserDto> getUsersPage(@RequestParam(value = "pageNo") Optional<Integer> pageNumber,
+                                                    @RequestParam(value = "sortBy") Optional<SortParameters.UserSort> sort,
+                                                    @RequestParam(value = "direction") Optional<Sort.Direction> direction) {
+        int requestPageNumber = pageNumber.orElse(RecordsPageDto.DEFAULT_PAGE_NUMBER);
+        SortParameters.UserSort requestSort = sort.orElse(SortParameters.UserSort.LOGIN);
+        Sort.Direction requestDirection = direction.orElse(Sort.Direction.ASC);
+        return userService.getUsersPage(requestPageNumber, requestSort.asParameter(), requestDirection);
     }
 }

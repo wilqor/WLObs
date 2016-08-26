@@ -18,8 +18,11 @@ package com.wlobs.wilqor.server.service;
 
 import com.wlobs.wilqor.server.persistence.model.Observation;
 import com.wlobs.wilqor.server.persistence.model.Species;
+import com.wlobs.wilqor.server.rest.model.FlatSpeciesDto;
 import com.wlobs.wilqor.server.rest.model.LocalizedSpeciesDto;
+import com.wlobs.wilqor.server.rest.model.RecordsPageDto;
 import com.wlobs.wilqor.server.rest.model.SpeciesDto;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Locale;
@@ -34,4 +37,6 @@ public interface SpeciesService {
     List<LocalizedSpeciesDto> findSpeciesForLocaleAndClass(Locale locale, Species.Class speciesClass);
 
     Optional<Species> findSpeciesForStub(Observation.SpeciesStub speciesStub);
+
+    RecordsPageDto<FlatSpeciesDto> getSpeciesPage(int pageNumber, String sort, Sort.Direction direction);
 }

@@ -16,20 +16,21 @@
 
 package com.wlobs.wilqor.server.rest;
 
+import com.wlobs.wilqor.server.auth.annotations.RequiredAdminRole;
 import com.wlobs.wilqor.server.auth.annotations.RequiredIdentityMatchingLogin;
 import com.wlobs.wilqor.server.auth.annotations.RequiredUserOrAdminRole;
 import com.wlobs.wilqor.server.persistence.model.UserStatType;
-import com.wlobs.wilqor.server.rest.model.ExistingObservationDto;
-import com.wlobs.wilqor.server.rest.model.NewObservationDto;
-import com.wlobs.wilqor.server.rest.model.ObservationRestrictionDto;
+import com.wlobs.wilqor.server.rest.model.*;
 import com.wlobs.wilqor.server.service.ObservationService;
 import com.wlobs.wilqor.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author wilqor
@@ -81,5 +82,16 @@ public class ObservationController {
     public ExistingObservationDto getObservation(@PathVariable("login") String login, @PathVariable("id") String observationId) {
         String principalLogin = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return observationService.getUserObservation(principalLogin, login, observationId);
+    }
+
+    @RequiredAdminRole
+    @RequestMapping(method = RequestMethod.GET)
+    public RecordsPageDto<FlatObservationDto> getObservationsPage(@RequestParam(value = "pageNo") Optional<Integer> pageNumber,
+                                                                  @RequestParam(value = "sortBy") Optional<SortParameters.ObservationSort> sort,
+                                                                  @RequestParam(value = "direction") Optional<Sort.Direction> direction) {
+        int requestPageNumber = pageNumber.orElse(RecordsPageDto.DEFAULT_PAGE_NUMBER);
+        SortParameters.ObservationSort requestSort = sort.orElse(SortParameters.ObservationSort.AUTHOR);
+        Sort.Direction requestDirection = direction.orElse(Sort.Direction.ASC);
+        return observationService.getObservationsPage(requestPageNumber, requestSort.asParameter(), requestDirection);
     }
 }

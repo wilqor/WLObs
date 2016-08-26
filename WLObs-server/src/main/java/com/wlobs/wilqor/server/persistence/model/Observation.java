@@ -44,11 +44,13 @@ public class Observation {
     @Indexed
     private long dateTimestamp;
 
+    @Indexed
     private boolean restricted;
 
     @Indexed
     private String author;
 
+    @Indexed
     private long votesCount;
 
     private String geoHash;

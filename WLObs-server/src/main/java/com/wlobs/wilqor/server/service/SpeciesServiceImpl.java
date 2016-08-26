@@ -20,9 +20,14 @@ import com.wlobs.wilqor.server.config.LocaleConstants;
 import com.wlobs.wilqor.server.persistence.model.Observation;
 import com.wlobs.wilqor.server.persistence.model.Species;
 import com.wlobs.wilqor.server.persistence.repository.SpeciesRepository;
+import com.wlobs.wilqor.server.rest.model.FlatSpeciesDto;
 import com.wlobs.wilqor.server.rest.model.LocalizedSpeciesDto;
+import com.wlobs.wilqor.server.rest.model.RecordsPageDto;
 import com.wlobs.wilqor.server.rest.model.SpeciesDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -52,16 +57,37 @@ public class SpeciesServiceImpl implements SpeciesService {
     public List<LocalizedSpeciesDto> findSpeciesForLocaleAndClass(Locale locale, Species.Class speciesClass) {
         return speciesRepository.findBySpeciesClass(speciesClass)
                 .stream()
-                .map(f -> new LocalizedSpeciesDto(
-                        f.getSpeciesClass(),
-                        f.getLatinName(),
-                        getRequestedOrDefaultLocale(locale, f)))
+                .map(f -> convertToLocalizedSpeciesDto(locale, f))
                 .collect(Collectors.toList());
     }
 
     @Override
     public Optional<Species> findSpeciesForStub(Observation.SpeciesStub speciesStub) {
         return speciesRepository.findBySpeciesClassAndLatinName(speciesStub.getSpeciesClass(), speciesStub.getLatinName());
+    }
+
+    @Override
+    public RecordsPageDto<FlatSpeciesDto> getSpeciesPage(int pageNumber, String sort, Sort.Direction direction) {
+        Page<Species> page = speciesRepository.findAll(new PageRequest(pageNumber, RecordsPageDto.RECORDS_PAGE_SIZE, new Sort(direction, sort)));
+        List<FlatSpeciesDto> flatSpeciesDtos = page.getContent().stream()
+                .map(this::convertToFlatSpeciesDto)
+                .collect(Collectors.toList());
+        return new RecordsPageDto<>(flatSpeciesDtos, page.getTotalElements(), page.getTotalPages());
+    }
+
+    private FlatSpeciesDto convertToFlatSpeciesDto(Species species) {
+        return new FlatSpeciesDto(species.getId(),
+                species.getSpeciesClass().name(),
+                species.getLatinName(),
+                species.getLocalizedNames().
+                        get(LocaleConstants.DEFAULT_LOCALE));
+    }
+
+    private LocalizedSpeciesDto convertToLocalizedSpeciesDto(Locale locale, Species f) {
+        return new LocalizedSpeciesDto(
+                f.getSpeciesClass(),
+                f.getLatinName(),
+                getRequestedOrDefaultLocale(locale, f));
     }
 
     private String getRequestedOrDefaultLocale(Locale locale, Species species) {

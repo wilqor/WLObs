@@ -37,6 +37,7 @@ public class Species {
     @Indexed
     private String latinName;
 
+    @Indexed
     private Map<Locale, String> localizedNames;
 
     /**

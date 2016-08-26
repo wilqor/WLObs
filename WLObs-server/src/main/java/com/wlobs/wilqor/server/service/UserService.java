@@ -18,6 +18,7 @@ package com.wlobs.wilqor.server.service;
 
 import com.wlobs.wilqor.server.persistence.repository.UserStatsModifier;
 import com.wlobs.wilqor.server.rest.model.*;
+import org.springframework.data.domain.Sort;
 
 /**
  * @author wilqor
@@ -30,4 +31,6 @@ public interface UserService extends UserStatsModifier {
     AuthAndRefreshTokensDto authorize(final CredentialsDto credentialsDto);
 
     AuthTokenDto refreshToken(final LoginAndRefreshTokenDto loginAndRefreshTokenDto);
+
+    RecordsPageDto<FlatUserDto> getUsersPage(int pageNumber, String sort, Sort.Direction direction);
 }

@@ -36,6 +36,7 @@ public class User {
     @Indexed(unique = true)
     private String login;
 
+    @Indexed
     private String passwordHash;
 
     @CreatedDate
@@ -43,6 +44,7 @@ public class User {
 
     private List<String> refreshTokens;
 
+    @Indexed
     private List<Role> roles;
 
     public enum Role {
@@ -50,6 +52,7 @@ public class User {
         ROLE_ADMIN
     }
 
+    @Indexed
     private UserStats userStats;
 
     public static class UserStats {

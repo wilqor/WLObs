@@ -16,19 +16,21 @@
 
 package com.wlobs.wilqor.server.rest;
 
+import com.wlobs.wilqor.server.auth.annotations.RequiredAdminRole;
 import com.wlobs.wilqor.server.auth.annotations.RequiredIdentityMatchingLogin;
 import com.wlobs.wilqor.server.auth.annotations.RequiredUserOrAdminRole;
 import com.wlobs.wilqor.server.persistence.model.UserStatType;
-import com.wlobs.wilqor.server.rest.model.ExistingVoteDto;
-import com.wlobs.wilqor.server.rest.model.NewVoteDto;
+import com.wlobs.wilqor.server.rest.model.*;
 import com.wlobs.wilqor.server.service.ObservationService;
 import com.wlobs.wilqor.server.service.UserService;
 import com.wlobs.wilqor.server.service.VoteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author wilqor
@@ -72,5 +74,16 @@ public class VoteController {
     @RequestMapping(method = RequestMethod.GET, value = "/{login}")
     public List<ExistingVoteDto> getUserVotes(@PathVariable("login") String login) {
         return voteService.getUserVotes(login);
+    }
+
+    @RequiredAdminRole
+    @RequestMapping(method = RequestMethod.GET)
+    public RecordsPageDto<FlatVoteDto> getObservationsPage(@RequestParam(value = "pageNo") Optional<Integer> pageNumber,
+                                                           @RequestParam(value = "sortBy") Optional<SortParameters.VoteSort> sort,
+                                                           @RequestParam(value = "direction") Optional<Sort.Direction> direction) {
+        int requestPageNumber = pageNumber.orElse(RecordsPageDto.DEFAULT_PAGE_NUMBER);
+        SortParameters.VoteSort requestSort = sort.orElse(SortParameters.VoteSort.VOTER);
+        Sort.Direction requestDirection = direction.orElse(Sort.Direction.ASC);
+        return voteService.getVotesPage(requestPageNumber, requestSort.asParameter(), requestDirection);
     }
 }
