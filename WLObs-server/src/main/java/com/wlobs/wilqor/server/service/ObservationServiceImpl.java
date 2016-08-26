@@ -16,20 +16,23 @@
 
 package com.wlobs.wilqor.server.service;
 
+import ch.hsr.geohash.WGS84Point;
+import com.wlobs.wilqor.server.config.GeoHashConstants;
+import com.wlobs.wilqor.server.persistence.model.AggregatedObservation;
 import com.wlobs.wilqor.server.persistence.model.Observation;
 import com.wlobs.wilqor.server.persistence.model.Species;
 import com.wlobs.wilqor.server.persistence.repository.ObservationRepository;
-import com.wlobs.wilqor.server.rest.model.ExistingObservationDto;
-import com.wlobs.wilqor.server.rest.model.NewObservationDto;
-import com.wlobs.wilqor.server.rest.model.ObservationRestrictionDto;
+import com.wlobs.wilqor.server.rest.model.*;
 import com.wlobs.wilqor.server.service.exceptions.ObservationAlreadyExistsException;
 import com.wlobs.wilqor.server.service.exceptions.ObservationNotFoundException;
 import com.wlobs.wilqor.server.service.exceptions.ObservationRestrictedException;
 import com.wlobs.wilqor.server.service.exceptions.ObservedSpeciesNotFoundException;
+import com.wlobs.wilqor.server.service.model.AggregationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -128,6 +131,31 @@ public class ObservationServiceImpl implements ObservationService {
         observationRepository.decrementObservationVotesCount(observationId);
     }
 
+    @Override
+    public AggregationResponseDto getAggregatedObservations(AggregationRequestDto aggregationRequestDto) {
+        AggregationRequest request = new AggregationRequest.Builder()
+                .area(aggregationRequestDto.getArea())
+                .timeRange(aggregationRequestDto.getTimeRange())
+                .speciesClass(aggregationRequestDto.getSpeciesClass())
+                .speciesLatinName(aggregationRequestDto.getSpeciesLatinName())
+                .build();
+        List<ExistingObservationDto> existingObservationDtoList = new ArrayList<>();
+        List<AggregatedObservationDto> aggregatedObservationDtoList = new ArrayList<>();
+        int commonPrefixLength = geoHashService.getCommonPrefixLength(request.getArea());
+        if (commonPrefixLength >= GeoHashConstants.GEO_HASH_AGGREGATION_THRESHOLD) {
+            existingObservationDtoList = observationRepository.getRawObservations(request)
+                    .stream()
+                    .map(this::convertToDto)
+                    .collect(Collectors.toList());
+        } else {
+            aggregatedObservationDtoList = observationRepository.getAggregatedObservations(request, commonPrefixLength)
+                    .stream()
+                    .map(this::convertToDto)
+                    .collect(Collectors.toList());
+        }
+        return new AggregationResponseDto(existingObservationDtoList, aggregatedObservationDtoList);
+    }
+
     private ExistingObservationDto convertToDto(Observation observation) {
         return new ExistingObservationDto.Builder()
                 .id(observation.getId())
@@ -139,5 +167,14 @@ public class ObservationServiceImpl implements ObservationService {
                 .longitude(observation.getLocation().getX())
                 .latitude(observation.getLocation().getY())
                 .build();
+    }
+
+    private AggregatedObservationDto convertToDto(AggregatedObservation aggregatedObservation) {
+        WGS84Point point = geoHashService.getPointFromGeoHash(aggregatedObservation.get_id());
+        return new AggregatedObservationDto(
+                aggregatedObservation.getCount(),
+                point.getLongitude(),
+                point.getLatitude()
+        );
     }
 }

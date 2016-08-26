@@ -20,9 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
-import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
-import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
-import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.index.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotNull;
@@ -31,6 +29,14 @@ import javax.validation.constraints.NotNull;
  * @author wilqor
  */
 @Document
+@CompoundIndexes({
+        @CompoundIndex(name = "aggr_idx",
+                def = "{'restricted': 1, " +
+                        "'speciesStub.speciesClass': 1, " +
+                        "'speciesStub.latinName': 1, " +
+                        "'dateTimestamp': 1, " +
+                        "'location': '2dsphere'}")
+})
 public class Observation {
     @Id
     private String id;

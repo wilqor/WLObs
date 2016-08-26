@@ -16,9 +16,16 @@
 
 package com.wlobs.wilqor.server.service;
 
+import ch.hsr.geohash.WGS84Point;
+import com.wlobs.wilqor.server.service.model.AggregationRequest;
+
 /**
  * @author wilqor
  */
 public interface GeoHashService {
     String getGeoHashForLocation(double latitude, double longitude);
+
+    int getCommonPrefixLength(AggregationRequest.Area area);
+
+    WGS84Point getPointFromGeoHash(String geoHash);
 }

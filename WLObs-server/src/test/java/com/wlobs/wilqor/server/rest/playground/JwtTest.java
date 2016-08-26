@@ -18,6 +18,7 @@ package com.wlobs.wilqor.server.rest.playground;
 
 import ch.hsr.geohash.GeoHash;
 import ch.hsr.geohash.WGS84Point;
+import com.wlobs.wilqor.server.config.GeoHashConstants;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -97,8 +98,8 @@ public class JwtTest {
         System.out.println(new Date().getTime());
 
         // that's the way to calculate GeoHash for a new point!
-        String leftBottom = GeoHash.geoHashStringWithCharacterPrecision(53.396, 16.716, 12);
-        String topRight = GeoHash.geoHashStringWithCharacterPrecision(54.435, 19.210, 12);
+        String leftBottom = GeoHash.geoHashStringWithCharacterPrecision(54.514444, 18.527013, 12);
+        String topRight = GeoHash.geoHashStringWithCharacterPrecision(54.514498, 18.527454, 12);
         // now the common prefix
 
         System.out.println("left bottom: " + leftBottom);
@@ -120,6 +121,6 @@ public class JwtTest {
                 break;
             }
         }
-        return prefixLength + 2;
+        return prefixLength + GeoHashConstants.CLUSTERING_POWER;
     }
 }

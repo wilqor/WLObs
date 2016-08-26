@@ -14,16 +14,36 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.config;
+package com.wlobs.wilqor.server.persistence.model;
 
 /**
  * @author wilqor
  */
-public class GeoHashConstants {
-    private GeoHashConstants() {
+public class AggregatedObservation {
+    private String _id;
+    private int count;
+
+    public AggregatedObservation() {
     }
 
-    public static final int GEO_HASH_PRECISION = 12;
-    public static final int CLUSTERING_POWER = 2;
-    public static final int GEO_HASH_AGGREGATION_THRESHOLD = 7;
+    public AggregatedObservation(String _id, int count) {
+        this._id = _id;
+        this.count = count;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    @Override
+    public String toString() {
+        return "AggregatedObservation{" +
+                "_id='" + _id + '\'' +
+                ", count=" + count +
+                '}';
+    }
 }

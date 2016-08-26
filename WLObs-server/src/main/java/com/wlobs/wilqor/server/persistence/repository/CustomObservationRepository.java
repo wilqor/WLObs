@@ -16,8 +16,17 @@
 
 package com.wlobs.wilqor.server.persistence.repository;
 
+import com.wlobs.wilqor.server.persistence.model.AggregatedObservation;
+import com.wlobs.wilqor.server.persistence.model.Observation;
+import com.wlobs.wilqor.server.service.model.AggregationRequest;
+
+import java.util.List;
+
 /**
  * @author wilqor
  */
 public interface CustomObservationRepository extends ObservationStatsModifier {
+    List<AggregatedObservation> getAggregatedObservations(AggregationRequest request, int commonPrefixLength);
+
+    List<Observation> getRawObservations(AggregationRequest request);
 }

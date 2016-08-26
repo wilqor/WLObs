@@ -40,7 +40,7 @@ public class SpeciesRepositoryImpl implements CustomSpeciesRepository {
 
     @Override
     public void upsertSpecies(Species.Class speciesClass, String latinName, Map<Locale, String> localizedNames) {
-        Query query = new Query(Criteria.where("speciesClass").is(speciesClass)
+        Query query = new Query(Criteria.where("speciesClass").is(speciesClass.name())
                 .and("latinName").is(latinName));
         Update update = new Update().set("localizedNames", localizedNames);
         mongoTemplate.findAndModify(query, update, new FindAndModifyOptions().upsert(true), Species.class);
