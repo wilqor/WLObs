@@ -15,3 +15,4 @@ hs_err_pid*
 WLObs-server/.idea/
 WLObs-server/.gradle/
 WLObs-server/build/
+WLobs-server/src/main/resources/application.properties
