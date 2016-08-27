@@ -16,10 +16,12 @@
 
 package com.wlobs.wilqor.server.rest;
 
+import com.wlobs.wilqor.server.persistence.model.StatMetaData;
 import com.wlobs.wilqor.server.rest.model.AuthAndRefreshTokensDto;
 import com.wlobs.wilqor.server.rest.model.AuthTokenDto;
 import com.wlobs.wilqor.server.rest.model.CredentialsDto;
 import com.wlobs.wilqor.server.rest.model.LoginAndRefreshTokenDto;
+import com.wlobs.wilqor.server.service.StatsService;
 import com.wlobs.wilqor.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,16 +38,19 @@ import javax.validation.Valid;
 @RequestMapping("/auth")
 public class AuthController {
     private final UserService userService;
+    private final StatsService statsService;
 
     @Autowired
-    public AuthController(UserService userService) {
+    public AuthController(UserService userService, StatsService statsService) {
         this.userService = userService;
+        this.statsService = statsService;
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/authorize")
     public AuthAndRefreshTokensDto authorize(@RequestBody @Valid final CredentialsDto credentialsDto) {
-        // upsert daily logins
-        return userService.authorize(credentialsDto);
+        AuthAndRefreshTokensDto tokensDto = userService.authorize(credentialsDto);
+        statsService.incrementOperationStats(StatMetaData.StatOperation.USER_AUTHORIZATION);
+        return tokensDto;
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/refresh")

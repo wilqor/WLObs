@@ -17,7 +17,9 @@
 package com.wlobs.wilqor.server.rest;
 
 import com.wlobs.wilqor.server.auth.annotations.RequiredAdminRole;
+import com.wlobs.wilqor.server.persistence.model.StatMetaData;
 import com.wlobs.wilqor.server.rest.model.*;
+import com.wlobs.wilqor.server.service.StatsService;
 import com.wlobs.wilqor.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -33,22 +35,27 @@ import java.util.Optional;
 @RequestMapping("/users")
 public class UserController {
     private final UserService userService;
+    private final StatsService statsService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService, StatsService statsService) {
         this.userService = userService;
+        this.statsService = statsService;
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public AuthAndRefreshTokensDto register(@RequestBody @Valid final CredentialsDto credentialsDto) {
-        // upsert register and login stats
-        return userService.register(credentialsDto);
+        AuthAndRefreshTokensDto tokensDto = userService.register(credentialsDto);
+        statsService.incrementOperationStats(StatMetaData.StatOperation.USER_REGISTRATION);
+        statsService.incrementOperationStats(StatMetaData.StatOperation.USER_AUTHORIZATION);
+        return tokensDto;
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/{login}/resetPassword")
     public AuthAndRefreshTokensDto resetPassword(@PathVariable("login") String login, @RequestBody @Valid final ResetPasswordDto resetPasswordDto) {
-        // upsert password changes
-        return userService.resetPassword(login, resetPasswordDto);
+        AuthAndRefreshTokensDto tokensDto = userService.resetPassword(login, resetPasswordDto);
+        statsService.incrementOperationStats(StatMetaData.StatOperation.USER_PASSWORD_CHANGE);
+        return tokensDto;
     }
 
     @RequestMapping(method = RequestMethod.GET)

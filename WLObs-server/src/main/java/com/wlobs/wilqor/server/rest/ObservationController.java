@@ -19,9 +19,11 @@ package com.wlobs.wilqor.server.rest;
 import com.wlobs.wilqor.server.auth.annotations.RequiredAdminRole;
 import com.wlobs.wilqor.server.auth.annotations.RequiredIdentityMatchingLogin;
 import com.wlobs.wilqor.server.auth.annotations.RequiredUserOrAdminRole;
+import com.wlobs.wilqor.server.persistence.model.StatMetaData;
 import com.wlobs.wilqor.server.persistence.model.UserStatType;
 import com.wlobs.wilqor.server.rest.model.*;
 import com.wlobs.wilqor.server.service.ObservationService;
+import com.wlobs.wilqor.server.service.StatsService;
 import com.wlobs.wilqor.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -41,11 +43,13 @@ import java.util.Optional;
 public class ObservationController {
     private final ObservationService observationService;
     private final UserService userService;
+    private final StatsService statsService;
 
     @Autowired
-    public ObservationController(ObservationService observationService, UserService userService) {
+    public ObservationController(ObservationService observationService, UserService userService, StatsService statsService) {
         this.observationService = observationService;
         this.userService = userService;
+        this.statsService = statsService;
     }
 
     @RequiredIdentityMatchingLogin
@@ -53,7 +57,7 @@ public class ObservationController {
     public void addObservation(@PathVariable("login") String login, @RequestBody @Valid NewObservationDto observationDto) {
         observationService.addObservation(login, observationDto);
         userService.incrementUserStat(login, UserStatType.OBSERVATIONS_COUNT);
-        // increment created statistics
+        statsService.incrementOperationStats(StatMetaData.StatOperation.OBSERVATION_CREATION);
     }
 
     @RequiredIdentityMatchingLogin
@@ -61,7 +65,7 @@ public class ObservationController {
     public void changeObservationRestriction(@PathVariable("login") String login, @PathVariable("id") String observationId,
                                              @RequestBody ObservationRestrictionDto observationRestrictionDto) {
         observationService.updateObservationRestriction(login, observationId, observationRestrictionDto);
-        // increment changed statistics
+        statsService.incrementOperationStats(StatMetaData.StatOperation.OBSERVATION_RESTRICTION_CHANGE);
     }
 
     @RequiredIdentityMatchingLogin
@@ -69,7 +73,7 @@ public class ObservationController {
     public void removeObservation(@PathVariable("login") String login, @PathVariable("id") String observationId) {
         observationService.removeObservation(login, observationId);
         userService.decrementUserStat(login, UserStatType.OBSERVATIONS_COUNT);
-        // increment deleted statistics
+        statsService.incrementOperationStats(StatMetaData.StatOperation.OBSERVATION_REMOVAL);
     }
 
     @RequiredIdentityMatchingLogin

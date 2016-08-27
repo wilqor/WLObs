@@ -17,9 +17,11 @@
 package com.wlobs.wilqor.server.rest;
 
 import com.wlobs.wilqor.server.auth.annotations.RequiredUserOrAdminRole;
+import com.wlobs.wilqor.server.persistence.model.StatMetaData;
 import com.wlobs.wilqor.server.rest.model.AggregationRequestDto;
 import com.wlobs.wilqor.server.rest.model.AggregationResponseDto;
 import com.wlobs.wilqor.server.service.ObservationService;
+import com.wlobs.wilqor.server.service.StatsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,14 +38,18 @@ import javax.validation.Valid;
 @RequiredUserOrAdminRole
 public class AggregationController {
     private final ObservationService observationService;
+    private final StatsService statsService;
 
     @Autowired
-    public AggregationController(ObservationService observationService) {
+    public AggregationController(ObservationService observationService, StatsService statsService) {
         this.observationService = observationService;
+        this.statsService = statsService;
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public AggregationResponseDto getAggregatedObservations(@RequestBody @Valid AggregationRequestDto aggregationRequestDto) {
-        return observationService.getAggregatedObservations(aggregationRequestDto);
+        AggregationResponseDto responseDto = observationService.getAggregatedObservations(aggregationRequestDto);
+        statsService.incrementOperationStats(StatMetaData.StatOperation.AGGREGATION_REQUEST);
+        return responseDto;
     }
 }

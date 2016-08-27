@@ -19,9 +19,11 @@ package com.wlobs.wilqor.server.rest;
 import com.wlobs.wilqor.server.auth.annotations.RequiredAdminRole;
 import com.wlobs.wilqor.server.auth.annotations.RequiredIdentityMatchingLogin;
 import com.wlobs.wilqor.server.auth.annotations.RequiredUserOrAdminRole;
+import com.wlobs.wilqor.server.persistence.model.StatMetaData;
 import com.wlobs.wilqor.server.persistence.model.UserStatType;
 import com.wlobs.wilqor.server.rest.model.*;
 import com.wlobs.wilqor.server.service.ObservationService;
+import com.wlobs.wilqor.server.service.StatsService;
 import com.wlobs.wilqor.server.service.UserService;
 import com.wlobs.wilqor.server.service.VoteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,12 +44,14 @@ public class VoteController {
     private final VoteService voteService;
     private final UserService userService;
     private final ObservationService observationService;
+    private final StatsService statsService;
 
     @Autowired
-    public VoteController(VoteService voteService, UserService userService, ObservationService observationService) {
+    public VoteController(VoteService voteService, UserService userService, ObservationService observationService, StatsService statsService) {
         this.voteService = voteService;
         this.userService = userService;
         this.observationService = observationService;
+        this.statsService = statsService;
     }
 
     @RequiredIdentityMatchingLogin
@@ -57,7 +61,7 @@ public class VoteController {
         observationService.incrementObservationVotesCount(voteDto.getObservationId());
         userService.incrementUserStat(voteDto.getVoter(), UserStatType.VOTES_CASTED);
         userService.incrementUserStat(voteDto.getObservationOwner(), UserStatType.VOTES_RECEIVED);
-        // increment casted votes statistics
+        statsService.incrementOperationStats(StatMetaData.StatOperation.VOTE_ADDING);
     }
 
     @RequiredIdentityMatchingLogin
@@ -67,7 +71,7 @@ public class VoteController {
         observationService.decrementObservationVotesCount(voteDto.getObservationId());
         userService.decrementUserStat(voteDto.getVoter(), UserStatType.VOTES_CASTED);
         userService.decrementUserStat(voteDto.getObservationOwner(), UserStatType.VOTES_RECEIVED);
-        // increment removed votes statistics
+        statsService.incrementOperationStats(StatMetaData.StatOperation.VOTE_REMOVAL);
     }
 
     @RequiredIdentityMatchingLogin
