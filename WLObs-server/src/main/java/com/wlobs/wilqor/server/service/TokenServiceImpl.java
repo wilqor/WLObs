@@ -22,6 +22,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -39,12 +41,19 @@ import java.util.stream.Collectors;
  */
 @Service
 public class TokenServiceImpl implements TokenService {
+    private final String base64SecretKey;
+
+    @Autowired
+    public TokenServiceImpl(@Value("${jwt.secret}") String base64SecretKey) {
+        this.base64SecretKey = base64SecretKey;
+    }
+
     @Override
     public Optional<Authentication> extract(String content) {
         Optional<Authentication> result = Optional.empty();
         try {
             Claims body = Jwts.parser()
-                    .setSigningKey(AuthConstants.SECRET_IN_BASE64)
+                    .setSigningKey(base64SecretKey)
                     .parseClaimsJws(content)
                     .getBody();
             String userName = body.getSubject();
@@ -69,7 +78,7 @@ public class TokenServiceImpl implements TokenService {
                 .setSubject(login)
                 .setIssuedAt(now)
                 .setExpiration(expiration)
-                .signWith(SignatureAlgorithm.HS512, AuthConstants.SECRET_IN_BASE64)
+                .signWith(SignatureAlgorithm.HS512, base64SecretKey)
                 .compact();
     }
 
