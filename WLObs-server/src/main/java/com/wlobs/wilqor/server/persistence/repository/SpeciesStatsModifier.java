@@ -16,14 +16,13 @@
 
 package com.wlobs.wilqor.server.persistence.repository;
 
-import com.wlobs.wilqor.server.persistence.model.Species;
-
-import java.util.Locale;
-import java.util.Map;
+import com.wlobs.wilqor.server.persistence.model.Observation;
 
 /**
  * @author wilqor
  */
-public interface CustomSpeciesRepository extends SpeciesStatsModifier {
-    void upsertSpecies(Species.Class speciesClass, String latinName, Map<Locale, String> localizedNames);
+public interface SpeciesStatsModifier {
+    void incrementObservationsCount(Observation.SpeciesStub speciesStub);
+
+    void decrementObservationsCount(Observation.SpeciesStub speciesStub);
 }

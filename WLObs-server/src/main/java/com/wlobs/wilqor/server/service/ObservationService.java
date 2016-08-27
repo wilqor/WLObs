@@ -32,7 +32,7 @@ public interface ObservationService extends ObservationStatsModifier {
 
     void updateObservationRestriction(String login, String id, ObservationRestrictionDto observationRestrictionDto);
 
-    void removeObservation(String login, String id);
+    ExistingObservationDto removeAndReturnObservation(String login, String id);
 
     List<ExistingObservationDto> getUserObservations(String login);
 

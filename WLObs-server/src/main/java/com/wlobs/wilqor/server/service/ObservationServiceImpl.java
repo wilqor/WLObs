@@ -95,10 +95,12 @@ public class ObservationServiceImpl implements ObservationService {
     }
 
     @Override
-    public void removeObservation(String login, String id) {
+    public ExistingObservationDto removeAndReturnObservation(String login, String id) {
         Optional<Observation> found = observationRepository.findByAuthorAndId(login, id);
         Observation observation = found.orElseThrow(() -> new ObservationNotFoundException(id));
+        ExistingObservationDto asDto = convertToExistingObservationDto(observation);
         observationRepository.delete(observation);
+        return asDto;
     }
 
     @Override

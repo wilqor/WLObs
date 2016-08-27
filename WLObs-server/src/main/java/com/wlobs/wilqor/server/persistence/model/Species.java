@@ -38,6 +38,9 @@ public class Species {
     private String latinName;
 
     @Indexed
+    private int observationsCount;
+
+    @Indexed
     private Map<Locale, String> localizedNames;
 
     /**
@@ -79,12 +82,21 @@ public class Species {
         return localizedNames;
     }
 
+    public int getObservationsCount() {
+        return observationsCount;
+    }
+
+    public void setObservationsCount(int observationsCount) {
+        this.observationsCount = observationsCount;
+    }
+
     @Override
     public String toString() {
         return "Species{" +
                 "id='" + id + '\'' +
                 ", speciesClass=" + speciesClass +
                 ", latinName='" + latinName + '\'' +
+                ", observationsCount=" + observationsCount +
                 ", localizedNames=" + localizedNames +
                 '}';
     }

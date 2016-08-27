@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.server.persistence.repository;
 
+import com.wlobs.wilqor.server.persistence.model.Observation;
 import com.wlobs.wilqor.server.persistence.model.Species;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.FindAndModifyOptions;
@@ -40,9 +41,33 @@ public class SpeciesRepositoryImpl implements CustomSpeciesRepository {
 
     @Override
     public void upsertSpecies(Species.Class speciesClass, String latinName, Map<Locale, String> localizedNames) {
-        Query query = new Query(Criteria.where("speciesClass").is(speciesClass.name())
-                .and("latinName").is(latinName));
+        Query query = getQueryForSpecies(speciesClass, latinName);
         Update update = new Update().set("localizedNames", localizedNames);
+        executeUpsertForSpecies(query, update);
+    }
+
+    @Override
+    public void incrementObservationsCount(Observation.SpeciesStub speciesStub) {
+        doModifyObservationsCount(speciesStub, true);
+    }
+
+    @Override
+    public void decrementObservationsCount(Observation.SpeciesStub speciesStub) {
+        doModifyObservationsCount(speciesStub, false);
+    }
+
+    private void doModifyObservationsCount(Observation.SpeciesStub speciesStub, boolean increment) {
+        Query query = getQueryForSpecies(speciesStub.getSpeciesClass(), speciesStub.getLatinName());
+        Update update = new Update().inc("observationsCount", increment ? 1 : -1);
+        executeUpsertForSpecies(query, update);
+    }
+
+    private Query getQueryForSpecies(Species.Class speciesClass, String latinName) {
+        return new Query(Criteria.where("speciesClass").is(speciesClass.name())
+                .and("latinName").is(latinName));
+    }
+
+    private void executeUpsertForSpecies(Query query, Update update) {
         mongoTemplate.findAndModify(query, update, new FindAndModifyOptions().upsert(true), Species.class);
     }
 }

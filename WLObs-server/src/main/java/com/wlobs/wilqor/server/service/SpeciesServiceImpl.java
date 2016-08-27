@@ -75,12 +75,23 @@ public class SpeciesServiceImpl implements SpeciesService {
         return new RecordsPageDto<>(flatSpeciesDtos, page.getTotalElements(), page.getTotalPages());
     }
 
+    @Override
+    public void incrementObservationsCount(Observation.SpeciesStub speciesStub) {
+        speciesRepository.incrementObservationsCount(speciesStub);
+    }
+
+    @Override
+    public void decrementObservationsCount(Observation.SpeciesStub speciesStub) {
+        speciesRepository.decrementObservationsCount(speciesStub);
+    }
+
     private FlatSpeciesDto convertToFlatSpeciesDto(Species species) {
         return new FlatSpeciesDto(species.getId(),
                 species.getSpeciesClass().name(),
                 species.getLatinName(),
                 species.getLocalizedNames().
-                        get(LocaleConstants.DEFAULT_LOCALE));
+                        get(LocaleConstants.DEFAULT_LOCALE),
+                species.getObservationsCount());
     }
 
     private LocalizedSpeciesDto convertToLocalizedSpeciesDto(Locale locale, Species f) {

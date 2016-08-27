@@ -34,11 +34,15 @@ public class FlatSpeciesDto {
     @JsonProperty("english_name")
     private final String englishName;
 
-    public FlatSpeciesDto(String id, String speciesClass, String latinName, String englishName) {
+    @JsonProperty("observations_count")
+    private final int observationsCount;
+
+    public FlatSpeciesDto(String id, String speciesClass, String latinName, String englishName, int observationsCount) {
         this.id = id;
         this.speciesClass = speciesClass;
         this.latinName = latinName;
         this.englishName = englishName;
+        this.observationsCount = observationsCount;
     }
 
     public String getId() {
@@ -57,6 +61,10 @@ public class FlatSpeciesDto {
         return speciesClass;
     }
 
+    public int getObservationsCount() {
+        return observationsCount;
+    }
+
     @Override
     public String toString() {
         return "FlatSpeciesDto{" +
@@ -64,6 +72,7 @@ public class FlatSpeciesDto {
                 ", speciesClass='" + speciesClass + '\'' +
                 ", latinName='" + latinName + '\'' +
                 ", englishName='" + englishName + '\'' +
+                ", observationsCount=" + observationsCount +
                 '}';
     }
 }

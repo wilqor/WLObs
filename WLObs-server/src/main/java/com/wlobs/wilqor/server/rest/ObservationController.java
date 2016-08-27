@@ -23,6 +23,7 @@ import com.wlobs.wilqor.server.persistence.model.StatMetaData;
 import com.wlobs.wilqor.server.persistence.model.UserStatType;
 import com.wlobs.wilqor.server.rest.model.*;
 import com.wlobs.wilqor.server.service.ObservationService;
+import com.wlobs.wilqor.server.service.SpeciesService;
 import com.wlobs.wilqor.server.service.StatsService;
 import com.wlobs.wilqor.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,12 +45,14 @@ public class ObservationController {
     private final ObservationService observationService;
     private final UserService userService;
     private final StatsService statsService;
+    private final SpeciesService speciesService;
 
     @Autowired
-    public ObservationController(ObservationService observationService, UserService userService, StatsService statsService) {
+    public ObservationController(ObservationService observationService, UserService userService, StatsService statsService, SpeciesService speciesService) {
         this.observationService = observationService;
         this.userService = userService;
         this.statsService = statsService;
+        this.speciesService = speciesService;
     }
 
     @RequiredIdentityMatchingLogin
@@ -57,6 +60,7 @@ public class ObservationController {
     public void addObservation(@PathVariable("login") String login, @RequestBody @Valid NewObservationDto observationDto) {
         observationService.addObservation(login, observationDto);
         userService.incrementUserStat(login, UserStatType.OBSERVATIONS_COUNT);
+        speciesService.incrementObservationsCount(observationDto.getSpeciesStub());
         statsService.incrementOperationStats(StatMetaData.StatOperation.OBSERVATION_CREATION);
     }
 
@@ -71,8 +75,9 @@ public class ObservationController {
     @RequiredIdentityMatchingLogin
     @RequestMapping(method = RequestMethod.DELETE, value = "/{login}/{id}")
     public void removeObservation(@PathVariable("login") String login, @PathVariable("id") String observationId) {
-        observationService.removeObservation(login, observationId);
+        ExistingObservationDto removedObservationDto = observationService.removeAndReturnObservation(login, observationId);
         userService.decrementUserStat(login, UserStatType.OBSERVATIONS_COUNT);
+        speciesService.decrementObservationsCount(removedObservationDto.getSpeciesStub());
         statsService.incrementOperationStats(StatMetaData.StatOperation.OBSERVATION_REMOVAL);
     }
 
