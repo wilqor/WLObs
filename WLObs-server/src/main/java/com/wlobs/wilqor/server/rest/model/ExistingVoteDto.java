@@ -16,29 +16,17 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wlobs.wilqor.server.persistence.model.Observation;
 
 /**
  * @author wilqor
  */
 public class ExistingVoteDto {
-    @JsonProperty("id")
     private final String id;
-
-    @JsonProperty("observation_id")
     private final String observationId;
-
-    @JsonProperty("date_utc_timestamp")
     private final long dateUtcTimestamp;
-
-    @JsonProperty("voter")
     private final String voter;
-
-    @JsonProperty("observation_owner")
     private final String observationOwner;
-
-    @JsonProperty("species_stub")
     private final Observation.SpeciesStub speciesStub;
 
     ExistingVoteDto(String id, String observationId, long dateUtcTimestamp, String voter, String observationOwner, Observation.SpeciesStub speciesStub) {

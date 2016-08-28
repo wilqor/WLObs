@@ -16,13 +16,10 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * @author wilqor
  */
 public class ObservationRestrictionDto {
-    @JsonProperty("restricted")
     private boolean restricted;
 
     public boolean isRestricted() {

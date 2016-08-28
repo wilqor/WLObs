@@ -16,27 +16,16 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wlobs.wilqor.server.persistence.model.Species;
 import com.wlobs.wilqor.server.service.model.AggregationRequest;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * @author wilqor
  */
 public class AggregationRequestDto {
-    @NotNull
-    @JsonProperty("area")
     private AggregationRequest.Area area;
-
-    @JsonProperty("time_range")
     private AggregationRequest.TimeRange timeRange;
-
-    @JsonProperty("species_class")
     private Species.Class speciesClass;
-
-    @JsonProperty("species_latin_name")
     private String speciesLatinName;
 
     public AggregationRequest.Area getArea() {

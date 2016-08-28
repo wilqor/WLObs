@@ -16,20 +16,14 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wlobs.wilqor.server.persistence.model.Species;
 
 /**
  * @author wilqor
  */
 public class LocalizedSpeciesDto {
-    @JsonProperty("class")
     private final Species.Class speciesClass;
-
-    @JsonProperty("latin_name")
     private final String latinName;
-
-    @JsonProperty("localized_name")
     private final String localizedName;
 
     public LocalizedSpeciesDto(Species.Class speciesClass, String latinName, String localizedName) {

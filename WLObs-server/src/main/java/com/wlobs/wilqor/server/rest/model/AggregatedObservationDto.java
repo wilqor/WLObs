@@ -16,19 +16,12 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * @author wilqor
  */
 public class AggregatedObservationDto {
-    @JsonProperty("count")
     private final int count;
-
-    @JsonProperty("longitude")
     private final double longitude;
-
-    @JsonProperty("latitude")
     private final double latitude;
 
     public AggregatedObservationDto(int count, double longitude, double latitude) {

@@ -16,7 +16,6 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wlobs.wilqor.server.persistence.model.Species;
 import com.wlobs.wilqor.server.rest.validation.ContainsEnglishLocale;
 import com.wlobs.wilqor.server.rest.validation.HasOnlySupportedLocale;
@@ -31,18 +30,15 @@ import java.util.Map;
  */
 public class SpeciesDto {
     @NotNull
-    @JsonProperty("class")
     private Species.Class speciesClass;
 
     @NotNull
     @Pattern(regexp = "^[A-Za-z ]*$")
-    @JsonProperty("latin_name")
     private String latinName;
 
     @NotEmpty
     @ContainsEnglishLocale
     @HasOnlySupportedLocale
-    @JsonProperty("localized_names")
     private Map<String, String> localizedNames;
 
     public Species.Class getSpeciesClass() {

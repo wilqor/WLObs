@@ -16,8 +16,6 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.validation.constraints.NotNull;
 
 /**
@@ -25,11 +23,9 @@ import javax.validation.constraints.NotNull;
  */
 public final class LoginAndRefreshTokenDto {
     @NotNull
-    @JsonProperty("login")
     private String login;
 
     @NotNull
-    @JsonProperty("refresh_token")
     private String refreshToken;
 
     public String getLogin() {

@@ -16,30 +16,17 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * @author wilqor
  */
 public class FlatUserDto {
     public static final String ROLES_JOINER = ",";
 
-    @JsonProperty("id")
     private final String id;
-
-    @JsonProperty("login")
     private final String login;
-
-    @JsonProperty("roles")
     private final String rolesCsv;
-
-    @JsonProperty("observations_count")
     private final int observationsCount;
-
-    @JsonProperty("votes_casted")
     private final int votesCasted;
-
-    @JsonProperty("votes_received")
     private final int votesReceived;
 
     private FlatUserDto(String id, String login, String rolesCsv, int observationsCount, int votesCasted, int votesReceived) {

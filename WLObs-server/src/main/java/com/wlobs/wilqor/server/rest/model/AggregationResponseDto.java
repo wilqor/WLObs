@@ -16,17 +16,13 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
 /**
  * @author wilqor
  */
 public class AggregationResponseDto {
-    @JsonProperty("raw_observations")
     private final List<ExistingObservationDto> rawObservations;
-    @JsonProperty("aggregated_observations")
     private final List<AggregatedObservationDto> aggregatedObservations;
 
     public AggregationResponseDto(List<ExistingObservationDto> rawObservations, List<AggregatedObservationDto> aggregatedObservations) {

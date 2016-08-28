@@ -16,35 +16,19 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wlobs.wilqor.server.persistence.model.Observation;
 
 /**
  * @author wilqor
  */
 public class ExistingObservationDto {
-    @JsonProperty("id")
     private final String id;
-
-    @JsonProperty("author")
     private final String author;
-
-    @JsonProperty("votes_count")
     private final long votesCount;
-
-    @JsonProperty("date_utc_timestamp")
     private final long dateUtcTimestamp;
-
-    @JsonProperty("species_stub")
     private final Observation.SpeciesStub speciesStub;
-
-    @JsonProperty("restricted")
     private final boolean restricted;
-
-    @JsonProperty("longitude")
     private final double longitude;
-
-    @JsonProperty("latitude")
     private final double latitude;
 
     ExistingObservationDto(String id,

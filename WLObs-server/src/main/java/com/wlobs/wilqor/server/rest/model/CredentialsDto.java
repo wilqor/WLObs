@@ -16,7 +16,6 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
@@ -29,12 +28,10 @@ public final class CredentialsDto {
     @NotNull
     @Length(min = 4, max = 25)
     @Pattern(regexp = "^[A-Za-z0-9]*$")
-    @JsonProperty("login")
     private String login;
 
     @NotNull
     @Length(min = 8, max = 40)
-    @JsonProperty("password")
     private String password;
 
     public String getLogin() {
