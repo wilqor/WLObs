@@ -30,8 +30,8 @@ import java.io.IOException;
 public final class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        // Accessing secured REST resource without any credentials should result in 403 Forbidden response
+        // Accessing secured REST resource without any credentials should result in 401 Unauthorized response
         // instead of default Spring redirecting behavior
-        response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access forbidden");
+        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Client not authorized");
     }
 }

@@ -20,10 +20,7 @@ import com.wlobs.wilqor.server.persistence.model.User;
 import com.wlobs.wilqor.server.persistence.model.UserStatType;
 import com.wlobs.wilqor.server.persistence.repository.UserRepository;
 import com.wlobs.wilqor.server.rest.model.*;
-import com.wlobs.wilqor.server.service.exceptions.InvalidPasswordException;
-import com.wlobs.wilqor.server.service.exceptions.InvalidRefreshTokenException;
-import com.wlobs.wilqor.server.service.exceptions.LoginAlreadyTakenException;
-import com.wlobs.wilqor.server.service.exceptions.UserNotFoundException;
+import com.wlobs.wilqor.server.service.exceptions.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -76,7 +73,10 @@ public final class UserServiceImpl implements UserService {
 
     @Override
     public AuthAndRefreshTokensDto resetPassword(String login, ResetPasswordDto resetPasswordDto) {
-        User user = findUserWithMatchingPasswordOrThrow(login, resetPasswordDto.getOldPassword());
+        User user = findUserOrThrowNotFound(login);
+        if (!passwordMatching(user.getPasswordHash(), resetPasswordDto.getOldPassword())) {
+            throw new InvalidPasswordResetCredentials();
+        }
         String newAuthToken = tokenService.buildAuthToken(user.getLogin(), user.getRoles());
         String newRefreshToken = tokenService.generateRefreshToken();
         user.setPasswordHash(passwordEncoder.encode(resetPasswordDto.getNewPassword()));
@@ -90,7 +90,10 @@ public final class UserServiceImpl implements UserService {
 
     @Override
     public AuthAndRefreshTokensDto authorize(CredentialsDto credentialsDto) {
-        User user = findUserWithMatchingPasswordOrThrow(credentialsDto.getLogin(), credentialsDto.getPassword());
+        User user = findUserOrThrowNotFound(credentialsDto.getLogin());
+        if (!passwordMatching(user.getPasswordHash(), credentialsDto.getPassword())) {
+            throw new InvalidPasswordException();
+        }
         String newAuthToken = tokenService.buildAuthToken(user.getLogin(), user.getRoles());
         String newRefreshToken = tokenService.generateRefreshToken();
         user.setRefreshTokens(addTokens(user.getRefreshTokens(), newRefreshToken));
@@ -103,7 +106,7 @@ public final class UserServiceImpl implements UserService {
 
     @Override
     public AuthTokenDto refreshToken(LoginAndRefreshTokenDto loginAndRefreshTokenDto) {
-        User user = findUserOrThrow(loginAndRefreshTokenDto.getLogin());
+        User user = findUserOrThrowNotFound(loginAndRefreshTokenDto.getLogin());
         if (!user.getRefreshTokens().contains(loginAndRefreshTokenDto.getRefreshToken())) {
             throw new InvalidRefreshTokenException(loginAndRefreshTokenDto.getLogin(), loginAndRefreshTokenDto.getRefreshToken());
         }
@@ -129,15 +132,7 @@ public final class UserServiceImpl implements UserService {
         return new RecordsPageDto<>(flatUserDtos, page.getTotalElements(), page.getTotalPages());
     }
 
-    private User findUserWithMatchingPasswordOrThrow(String login, String password) {
-        User user = findUserOrThrow(login);
-        if (!passwordMatching(user.getPasswordHash(), password)) {
-            throw new InvalidPasswordException();
-        }
-        return user;
-    }
-
-    private User findUserOrThrow(String login) {
+    private User findUserOrThrowNotFound(String login) {
         Optional<User> requested = userRepository.findByLogin(login);
         return requested.orElseThrow(() -> new UserNotFoundException(login));
     }

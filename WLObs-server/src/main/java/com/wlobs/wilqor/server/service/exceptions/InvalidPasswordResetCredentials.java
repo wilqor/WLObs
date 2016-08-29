@@ -22,9 +22,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 /**
  * @author wilqor
  */
-@ResponseStatus(HttpStatus.UNAUTHORIZED)
-public class InvalidPasswordException extends RuntimeException {
-    public InvalidPasswordException() {
-        super("Provided password does not match!");
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+public class InvalidPasswordResetCredentials extends RuntimeException {
+    public InvalidPasswordResetCredentials() {
+        super("Invalid credentials for password reset");
     }
 }

@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 /**
  * @author wilqor
  */
-@ResponseStatus(HttpStatus.FORBIDDEN)
+@ResponseStatus(HttpStatus.BAD_REQUEST)
 public class InvalidRefreshTokenException extends RuntimeException {
     public InvalidRefreshTokenException(String login, String refreshToken) {
         super(String.format("Invalid refresh token: %s for user with login: %s!", login, refreshToken));
