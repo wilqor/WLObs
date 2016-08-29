@@ -16,14 +16,25 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * @author wilqor
  */
 public class FlatSpeciesDto {
+    @JsonProperty
     private final String id;
+
+    @JsonProperty
     private final String speciesClass;
+
+    @JsonProperty
     private final String latinName;
+
+    @JsonProperty
     private final String englishName;
+
+    @JsonProperty
     private final int observationsCount;
 
     public FlatSpeciesDto(String id, String speciesClass, String latinName, String englishName, int observationsCount) {

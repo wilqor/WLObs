@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
@@ -25,10 +26,12 @@ import javax.validation.constraints.NotNull;
  */
 public final class ResetPasswordDto {
     @NotNull
+    @JsonProperty
     private String oldPassword;
 
     @NotNull
     @Length(min = 8, max = 40)
+    @JsonProperty
     private String newPassword;
 
     public String getOldPassword() {

@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.server.service.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wlobs.wilqor.server.persistence.model.Species;
 
 import java.util.Optional;
@@ -63,9 +64,16 @@ public class AggregationRequest {
     }
 
     public static class Area {
+        @JsonProperty
         private double bottom;
+
+        @JsonProperty
         private double top;
+
+        @JsonProperty
         private double left;
+
+        @JsonProperty
         private double right;
 
         public double getBottom() {
@@ -112,7 +120,10 @@ public class AggregationRequest {
     }
 
     public static class TimeRange {
+        @JsonProperty
         private double dateFromUtcTimestamp;
+
+        @JsonProperty
         private double dateToUtcTimestamp;
 
         public double getDateFromUtcTimestamp() {

@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wlobs.wilqor.server.persistence.model.Species;
 import com.wlobs.wilqor.server.service.model.AggregationRequest;
 
@@ -23,9 +24,16 @@ import com.wlobs.wilqor.server.service.model.AggregationRequest;
  * @author wilqor
  */
 public class AggregationRequestDto {
+    @JsonProperty
     private AggregationRequest.Area area;
+
+    @JsonProperty
     private AggregationRequest.TimeRange timeRange;
+
+    @JsonProperty
     private Species.Class speciesClass;
+
+    @JsonProperty
     private String speciesLatinName;
 
     public AggregationRequest.Area getArea() {

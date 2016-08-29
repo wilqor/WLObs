@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Min;
@@ -25,9 +26,11 @@ import javax.validation.constraints.Min;
  */
 public class NewVoteDto {
     @NotEmpty
+    @JsonProperty
     private String observationId;
 
     @Min(0)
+    @JsonProperty
     private long dateUtcTimestamp;
 
     public String getObservationId() {

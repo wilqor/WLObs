@@ -16,16 +16,31 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * @author wilqor
  */
 public class FlatVoteDto {
+    @JsonProperty
     private final String id;
+
+    @JsonProperty
     private final String observationId;
+
+    @JsonProperty
     private final long dateUtcTimestamp;
+
+    @JsonProperty
     private final String voter;
+
+    @JsonProperty
     private final String observationOwner;
+
+    @JsonProperty
     private final String speciesClass;
+
+    @JsonProperty
     private final String speciesLatinName;
 
     private FlatVoteDto(String id, String observationId, long dateUtcTimestamp, String voter, String observationOwner, String speciesClass, String speciesLatinName) {

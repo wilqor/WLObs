@@ -16,11 +16,16 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * @author wilqor
  */
 public final class AuthAndRefreshTokensDto {
+    @JsonProperty
     private final String authToken;
+
+    @JsonProperty
     private final String refreshToken;
 
     public AuthAndRefreshTokensDto(String authToken, String refreshToken) {

@@ -16,6 +16,8 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -24,6 +26,7 @@ import java.util.List;
  */
 public class SpeciesListDto {
     @Valid
+    @JsonProperty
     private List<SpeciesDto> speciesDtoList;
 
     public List<SpeciesDto> getSpeciesDtoList() {

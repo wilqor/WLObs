@@ -16,18 +16,37 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * @author wilqor
  */
 public class FlatObservationDto {
+    @JsonProperty
     private final String id;
+
+    @JsonProperty
     private final long dateTimestamp;
+
+    @JsonProperty
     private final boolean restricted;
+
+    @JsonProperty
     private final String author;
+
+    @JsonProperty
     private final long votesCount;
+
+    @JsonProperty
     private final String speciesClass;
+
+    @JsonProperty
     private final String speciesLatinName;
+
+    @JsonProperty
     private final double longitude;
+
+    @JsonProperty
     private final double latitude;
 
     private FlatObservationDto(String id,

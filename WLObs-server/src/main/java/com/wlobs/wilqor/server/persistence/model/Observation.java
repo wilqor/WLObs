@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.server.persistence.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
@@ -69,8 +70,11 @@ public class Observation {
 
     public static class SpeciesStub {
         @NotNull
+        @JsonProperty
         private Species.Class speciesClass;
+
         @NotEmpty
+        @JsonProperty
         private String latinName;
 
         public SpeciesStub() {

@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.server.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wlobs.wilqor.server.persistence.model.Observation;
 
 import javax.validation.Valid;
@@ -27,16 +28,21 @@ import javax.validation.constraints.NotNull;
  */
 public class NewObservationDto {
     @Min(0)
+    @JsonProperty
     private long dateUtcTimestamp;
 
     @NotNull
     @Valid
+    @JsonProperty
     private Observation.SpeciesStub speciesStub;
 
+    @JsonProperty
     private boolean restricted;
 
+    @JsonProperty
     private double longitude;
 
+    @JsonProperty
     private double latitude;
 
     public long getDateUtcTimestamp() {
