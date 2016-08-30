@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<!--
+  ~ Copyright 2016 wilqor
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<div class="loginForm" xmlns="http://www.w3.org/1999/html">
+    <form name="credentialsForm" ng-submit="credentialsForm.$valid && loginCtrl.attemptLogin()" novalidate>
+        <md-input-container class="md-block">
+            <label>Login</label>
+            <input name="login"
+                   ng-model="loginCtrl.login"
+                   minlength="4"
+                   md-maxlength="30"
+                   required
+                   ng-pattern="/^[a-zA-Z0-9]*$/"
+                   md-no-asterisk="">
+            <div ng-messages="credentialsForm.login.$error">
+                <div ng-message="required">Login is required.</div>
+                <div ng-message="minlength">Login must be at least 4 characters long.</div>
+                <div ng-message="md-maxlength">Login must be less than 30 characters long.</div>
+                <div ng-message="pattern">Only letters and digits allowed in login</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Password</label>
+            <input name="password"
+                   ng-model="loginCtrl.password"
+                   minlength="8"
+                   md-maxlength="40"
+                   required
+                   type="password"
+                   md-no-asterisk="">
+            <div ng-messages="credentialsForm.password.$error">
+                <div ng-message="required">Password is required</div>
+                <div ng-message="minlength">Password must be at least 8 characters long</div>
+                <div ng-message="md-maxlength">Password must be less than 40 characters long</div>
+            </div>
+        </md-input-container>
+        <div class="formError" ng-if="loginCtrl.error">
+            {{loginCtrl.error}}
+        </div>
+        <md-input-container class="md-block">
+            <input type="submit" class="md-raised md-primary wideButton" value="Log in"/>
+        </md-input-container>
+    </form>
+</div>

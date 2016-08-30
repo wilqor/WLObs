@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright 2016 wilqor
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en" ng-app="AdminPanelApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WLObs - Wild Life Observer</title>
+    <link rel="stylesheet" type="text/css" href="webjars/angular-material/1.1.0/angular-material.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <script src="webjars/angularjs/1.5.5/angular.min.js"></script>
+    <script src="webjars/angularjs/1.5.5/angular-route.min.js"></script>
+    <script src="webjars/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="webjars/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="webjars/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="webjars/angular-material/1.1.0/angular-material.min.js"></script>
+    <script src="webjars/ngstorage/0.3.11/ngStorage.min.js"></script>
+    <script src="webjars/angular-jwt/0.0.9/dist/angular-jwt.min.js"></script>
+</head>
+<body layout="column" ng-controller="IndexController as indexCtrl" ng-cloak>
+<md-toolbar class="md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+        <div>
+            <md-button
+                    ng-click="indexCtrl.toggleSidenav()"
+                    aria-label="Menu toggle"
+                    hide-gt-sm
+                    class="md-icon-button"
+                    ng-show="indexCtrl.shouldDisplayNav()">
+                <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+            </md-button>
+        </div>
+        <h1>
+            Wild Life Observer Admin Panel
+        </h1>
+    </div>
+</md-toolbar>
+<section layout="row" flex class="wrapper">
+    <md-sidenav
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-sm')"
+            md-whiteframe="4"
+            ng-show="indexCtrl.shouldDisplayNav()">
+        <md-content layout-padding>
+            <md-list flex>
+                <md-list-item
+                        ng-class="{active: indexCtrl.isActive('/users')}"
+                        ng-click="indexCtrl.goTo('/users')">
+                    Users
+                </md-list-item>
+                <md-list-item
+                        ng-class="{active: indexCtrl.isActive('/species')}"
+                        ng-click="indexCtrl.goTo('/species')">
+                    Species
+                </md-list-item>
+                <md-list-item
+                        ng-class="{active: indexCtrl.isActive('/observations')}"
+                        ng-click="indexCtrl.goTo('/observations')">
+                    Observations
+                </md-list-item>
+                <md-list-item
+                        ng-class="{active: indexCtrl.isActive('/votes')}"
+                        ng-click="indexCtrl.goTo('/votes')">
+                    Votes
+                </md-list-item>
+                <md-list-item
+                        ng-class="{active: indexCtrl.isActive('/stats')}"
+                        ng-click="indexCtrl.goTo('/stats')">
+                    Statistics
+                </md-list-item>
+                <md-list-item
+                        ng-click="indexCtrl.logOut()">
+                    Log out
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </md-sidenav>
+    <md-content flex layout-padding>
+        <div layout="column" layout-align="top center">
+            <ng-view class="viewContent"></ng-view>
+        </div>
+    </md-content>
+</section>
+<script src="js/app.js"></script>
+<script src="js/controllers/IndexController.js"></script>
+<script src="js/controllers/LoginController.js"></script>
+<script src="js/services/TokenService.js"></script>
+<script src="js/services/AuthService.js"></script>
+</body>
+</html>
