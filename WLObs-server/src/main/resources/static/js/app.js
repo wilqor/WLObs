@@ -17,7 +17,7 @@
 /**
  * @author wilqor
  */
-var app = angular.module('AdminPanelApp', ['ngRoute', 'ngStorage', 'ngMaterial', 'ngMessages', 'angular-jwt']);
+var app = angular.module('AdminPanelApp', ['ngRoute', 'ngStorage', 'ngMaterial', 'ngMessages', 'angular-jwt', 'chart.js']);
 
 app.config(function ($routeProvider) {
     $routeProvider
@@ -39,7 +39,9 @@ app.config(function ($routeProvider) {
         })
         .when('/stats', {
             templateUrl: 'views/stats.html',
-            title: 'WLObs Admin Panel - Statistics'
+            title: 'WLObs Admin Panel - Statistics',
+            controller: 'StatsController',
+            controllerAs: 'statsCtrl'
         })
         .when('/login', {
             templateUrl: 'views/login.html',
@@ -63,4 +65,20 @@ app.run(function ($rootScope, $route, $location, AuthService) {
             $location.path('/login');
         }
     });
+});
+
+app.factory('authTokenInjector', ['TokenService', function (TokenService) {
+    var authTokenInjector = {
+        request: function (config) {
+            var authToken = TokenService.getAuthToken();
+            if (authToken != undefined) {
+                config.headers['Authorization'] = 'Bearer ' + authToken;
+            }
+            return config;
+        }
+    };
+    return authTokenInjector;
+}]);
+app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('authTokenInjector');
 });

@@ -15,4 +15,37 @@
   ~ limitations under the License.
   -->
 
-<h3>stats charts table</h3>
+<h3 class="md-headline">Select statistics parameters</h3>
+<md-content layout="column">
+    <md-input-container>
+        <label>Operation type</label>
+        <md-select ng-model="statsCtrl.operation" ng-model-options="{trackBy: '$value.name'}">
+            <md-option ng-repeat="op in statsCtrl.operations" ng-value="op">
+                {{op.name}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+    <md-input-container>
+        <label>Year</label>
+        <md-select ng-model="statsCtrl.year">
+            <md-option ng-repeat="y in statsCtrl.years" ng-value="y">
+                {{y}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+    <md-switch ng-model="statsCtrl.monthly" aria-label="Should get monthly stats" class="switch md-primary">
+        Select monthly stats? {{statsCtrl.monthly}}
+    </md-switch>
+    <md-input-container ng-show="statsCtrl.monthly">
+        <label>Month</label>
+        <md-select ng-model="statsCtrl.month">
+            <md-option ng-repeat="m in statsCtrl.months" ng-value="m">
+                {{m}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+    <md-button class="md-raised md-primary" ng-click="statsCtrl.showResults()">Show results</md-button>
+    <div class="chartArea" ng-show="statsCtrl.showChart">
+        <canvas class="chart chart-bar" chart-data="statsCtrl.data" chart-labels="statsCtrl.labels"></canvas>
+    </div>
+</md-content>

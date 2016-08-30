@@ -38,3 +38,11 @@
 .formError {
     color: #dd2c00;
 }
+
+.switch {
+    padding-left: 20px;
+}
+
+.chartArea {
+    margin-top: 20px;
+}
