@@ -47,4 +47,5 @@ dependencies {
     runtime 'org.webjars:angular-material:1.1.0'
     runtime 'org.webjars.bower:ngstorage:0.3.11'
     runtime 'org.webjars.bower:angular-jwt:0.0.9'
+    runtime 'org.webjars:md-data-table:0.10.9'
 }

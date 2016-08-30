@@ -14,5 +14,30 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
-<h3>users table</h3>
+<h3 class="md-headline">View users</h3>
+<md-table-container>
+    <table md-table>
+        <thead md-head md-order="order" md-on-reorder="getUsersPage">
+        <tr md-row>
+            <th md-column md-order-by="ID">Id</th>
+            <th md-column md-order-by="LOGIN">Login</th>
+            <th md-column md-order-by="ROLES">Roles</th>
+            <th md-column md-numeric md-order-by="OBSERVATIONS_COUNT">Observations</th>
+            <th md-column md-numeric md-order-by="VOTES_CASTED">Votes casted</th>
+            <th md-column md-numeric md-order-by="VOTES_RECEIVED">Votes received</th>
+        </tr>
+        </thead>
+        <tbody md-body>
+        <tr md-row ng-repeat="user in users">
+            <td md-cell>{{user.id}}</td>
+            <td md-cell>{{user.login}}</td>
+            <td md-cell>{{user.rolesCsv}}</td>
+            <td md-cell>{{user.observationsCount}}</td>
+            <td md-cell>{{user.votesCasted}}</td>
+            <td md-cell>{{user.votesReceived}}</td>
+        </tr>
+        </tbody>
+    </table>
+</md-table-container>
+<md-table-pagination md-limit="20" md-page="page" md-total="{{total}}" md-page-select md-on-paginate="getUsersPage"
+></md-table-pagination>

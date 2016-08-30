@@ -17,13 +17,16 @@
 /**
  * @author wilqor
  */
-var app = angular.module('AdminPanelApp', ['ngRoute', 'ngStorage', 'ngMaterial', 'ngMessages', 'angular-jwt', 'chart.js']);
+var app = angular.module('AdminPanelApp',
+    ['ngRoute', 'ngStorage', 'ngMaterial', 'ngMessages', 'angular-jwt', 'chart.js', 'md.data.table']);
 
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/users', {
             templateUrl: 'views/users.html',
-            title: 'WLObs Admin Panel - Users'
+            title: 'WLObs Admin Panel - Users',
+            controller: 'UsersController',
+            controllerAs: 'usersCtrl'
         })
         .when('/species', {
             templateUrl: 'views/species.html',
