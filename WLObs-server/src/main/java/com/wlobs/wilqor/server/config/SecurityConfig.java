@@ -41,13 +41,17 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    private final TokenService tokenService;
+
+    @Autowired
+    public SecurityConfig(TokenService tokenService) {
+        this.tokenService = tokenService;
+    }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-    @Autowired
-    private TokenService tokenService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -65,6 +69,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(
                         "/users/**",
                         "/auth/**"
+                )
+                .permitAll()
+                .antMatchers(
+                        HttpMethod.GET,
+                        "/",
+                        "/*.html",
+                        "/js/**",
+                        "/views/**",
+                        "/css/**",
+                        "/img/**",
+                        "/webjars/**"
                 )
                 .permitAll()
                 .anyRequest().authenticated().and()
