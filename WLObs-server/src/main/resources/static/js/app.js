@@ -79,6 +79,21 @@ app.factory('authTokenInjector', ['TokenService', function (TokenService) {
     };
     return authTokenInjector;
 }]);
+
+app.factory('unauthorizedHandler', ['$injector', function ($injector) {
+    var unauthorizedHandler = {
+        responseError: function (response) {
+            if (response.status == 401) {
+                var authService = $injector.get('AuthService');
+                authService.logOut();
+            }
+            return response;
+        }
+    };
+    return unauthorizedHandler;
+}]);
+
 app.config(function ($httpProvider) {
     $httpProvider.interceptors.push('authTokenInjector');
+    $httpProvider.interceptors.push('unauthorizedHandler');
 });
