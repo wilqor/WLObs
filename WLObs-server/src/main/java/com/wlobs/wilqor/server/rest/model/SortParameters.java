@@ -52,6 +52,7 @@ public class SortParameters {
     public enum SpeciesSort implements TranslatesToParameter {
         ID("id"),
         LATIN_NAME("latinName"),
+        SPECIES_CLASS("speciesClass"),
         NAME("localizedNames." + LocaleConstants.DEFAULT_LOCALE.toString()),
         OBSERVATIONS_COUNT("observationsCount");
 
