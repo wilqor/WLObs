@@ -83,14 +83,14 @@ app.factory('authTokenInjector', ['TokenService', function (TokenService) {
     return authTokenInjector;
 }]);
 
-app.factory('unauthorizedHandler', ['$injector', function ($injector) {
+app.factory('unauthorizedHandler', ['$injector', function ($q, $injector) {
     var unauthorizedHandler = {
-        responseError: function (response) {
-            if (response.status == 401) {
-                var authService = $injector.get('AuthService');
+        responseError: function (rejection) {
+            var authService = $injector.get('AuthService');
+            if (authService.isLoggedIn() && rejection.status == 401) {
                 authService.logOut();
             }
-            return response;
+            return $q.reject(rejection);
         }
     };
     return unauthorizedHandler;
