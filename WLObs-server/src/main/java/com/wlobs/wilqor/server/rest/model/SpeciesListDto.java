@@ -19,12 +19,14 @@ package com.wlobs.wilqor.server.rest.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
  * @author wilqor
  */
 public class SpeciesListDto {
+    @NotNull
     @Valid
     @JsonProperty
     private List<SpeciesDto> speciesDtoList;
