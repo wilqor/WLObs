@@ -19,7 +19,7 @@
  */
 app.factory('StatsService', function ($http) {
     function convertToChartFormat(response) {
-        var labelToValue = response.labelToValue;
+        var labelToValue = response.data.labelToValue;
         var labels = [];
         var data = [];
         for (var point in labelToValue) {
@@ -33,26 +33,31 @@ app.factory('StatsService', function ($http) {
     }
 
     var StatsService = {
-        getYearlyStats: function (operationParam, year, callback) {
-            $http.get('/stats/yearly', {
+        getYearlyStats: function (operationParam, year) {
+            return $http.get('/stats/yearly', {
                 params: {
                     operation: operationParam,
                     year: year
                 }
-            }).success(function (data) {
-                callback(convertToChartFormat(data));
             })
+                .then(
+                    function (response) {
+                        return convertToChartFormat(response);
+                    }
+                );
         },
-        getMonthlyStats: function (operationParam, year, month, callback) {
-            $http.get('/stats/monthly', {
+        getMonthlyStats: function (operationParam, year, month) {
+            return $http.get('/stats/monthly', {
                 params: {
                     operation: operationParam,
                     year: year,
                     month: month
                 }
-            }).success(function (data) {
-                callback(convertToChartFormat(data));
             })
+                .then(function (response) {
+                        return convertToChartFormat(response);
+                    }
+                );
         }
     };
     return StatsService;

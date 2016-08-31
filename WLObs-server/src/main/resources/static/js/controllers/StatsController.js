@@ -19,11 +19,12 @@
  */
 app.controller('StatsController', function (StatsService) {
     this.showResults = function () {
-        this.showChart = false;
         if (this.monthly) {
-            StatsService.getMonthlyStats(this.operation.param, this.year, this.month, this.statsCallback);
+            StatsService.getMonthlyStats(this.operation.param, this.year, this.month)
+                .then(this.statsCallback);
         } else {
-            StatsService.getYearlyStats(this.operation.param, this.year, this.statsCallback);
+            StatsService.getYearlyStats(this.operation.param, this.year)
+                .then(this.statsCallback);
         }
     };
     this.init = function () {
