@@ -35,7 +35,6 @@ app.factory('SortParameterService', function () {
     }
 
     function convertPageNumberToOneStartingWithZero(pageParameter) {
-        console.log('received page parameter: ' + pageParameter);
         return pageParameter - 1;
     }
 

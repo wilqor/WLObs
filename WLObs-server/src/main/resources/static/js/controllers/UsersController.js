@@ -26,7 +26,6 @@ app.controller('UsersController', function (UsersService, $scope) {
     $scope.getUsersPage = function () {
         UsersService.getUsersPage($scope.order, $scope.page, function (data) {
             $scope.users = data.records;
-            console.log('setting total to: ' + data.totalElements);
             $scope.total = data.totalElements;
         });
     };
