@@ -87,12 +87,20 @@ app.factory('authTokenInjector', ['TokenService', function (TokenService) {
 
 app.factory('unauthorizedHandler', ['$q', '$injector', function ($q, $injector) {
     var unauthorizedHandler = {
-        responseError: function (rejection) {
+        responseError: function (response) {
             var authService = $injector.get('AuthService');
-            if (authService.isLoggedIn() && rejection.status == 401) {
-                authService.logOut();
+            if (authService.isLoggedIn() && response.status == 401) {
+                var $http = $injector.get('$http');
+                var deferred = $q.defer();
+                authService.refreshAuthToken().then(deferred.resolve, deferred.reject);
+                return deferred.promise.then(function (authToken) {
+                    response.config.headers['Authorization'] = 'Bearer ' + authToken;
+                    return $http(response.config);
+                }, function () {
+                    authService.logOut();
+                });
             }
-            return $q.reject(rejection);
+            return $q.reject(response);
         }
     };
     return unauthorizedHandler;

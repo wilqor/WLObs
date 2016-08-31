@@ -19,9 +19,10 @@
  */
 app.factory('TokenService', function ($localStorage, jwtHelper) {
     var TokenService = {
-        saveTokens: function (authToken, refreshToken) {
+        saveTokensAndLogin: function (authToken, refreshToken, login) {
             TokenService.saveAuthToken(authToken);
             TokenService.saveRefreshToken(refreshToken);
+            TokenService.saveLogin(login);
         },
         saveAuthToken: function (token) {
             $localStorage.authToken = token;
@@ -29,15 +30,22 @@ app.factory('TokenService', function ($localStorage, jwtHelper) {
         saveRefreshToken: function (token) {
             $localStorage.refreshToken = token;
         },
+        saveLogin: function (login) {
+            $localStorage.login = login;
+        },
         clearTokens: function () {
             delete $localStorage.authToken;
             delete $localStorage.refreshToken;
+            delete $localStorage.login;
         },
         getAuthToken: function () {
             return $localStorage.authToken;
         },
         getRefreshToken: function () {
             return $localStorage.refreshToken;
+        },
+        getLogin: function () {
+            return $localStorage.login;
         },
         hasAdminRole: function (authToken) {
             var roles = jwtHelper.decodeToken(authToken).roles;

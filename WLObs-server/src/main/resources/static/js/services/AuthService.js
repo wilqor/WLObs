@@ -28,12 +28,24 @@ app.factory('AuthService', function ($http, $location, TokenService, $q) {
                     var authToken = response.data.authToken;
                     var refreshToken = response.data.refreshToken;
                     if (TokenService.hasAdminRole(authToken)) {
-                        TokenService.saveTokens(authToken, refreshToken);
+                        TokenService.saveTokensAndLogin(authToken, refreshToken, login);
                     } else {
                         return $q.reject('Insufficient permissions, only admins allowed.');
                     }
                 }, function () {
                     return $q.reject('Invalid login or password, try again.')
+                });
+        },
+        refreshAuthToken: function () {
+            return $http.post('/auth/refresh', {
+                login: TokenService.getLogin(),
+                refreshToken: TokenService.getRefreshToken()
+            })
+                .then(function (response) {
+                    TokenService.saveAuthToken(response.data.authToken);
+                    return TokenService.getAuthToken();
+                }, function () {
+                    return $q.reject();
                 });
         },
         logOut: function () {
