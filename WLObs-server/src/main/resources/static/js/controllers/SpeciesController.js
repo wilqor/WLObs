@@ -17,19 +17,19 @@
 /**
  * @author wilqor
  */
-app.controller('UsersController', function (UsersService, $scope) {
+app.controller('SpeciesController', function (SpeciesService, $scope) {
     $scope.page = 1;
-    $scope.order = "LOGIN";
-    $scope.users = [];
+    $scope.order = "LATIN_NAME";
+    $scope.votes = [];
     $scope.total = 1;
 
-    $scope.getUsersPage = function () {
-        $scope.promise = UsersService.getUsersPage($scope.order, $scope.page)
+    $scope.getSpeciesPage = function () {
+        $scope.promise = SpeciesService.getSpeciesPage($scope.order, $scope.page)
             .then(function (data) {
-                $scope.users = data.records;
+                $scope.species = data.records;
                 $scope.total = data.totalElements;
             });
     };
 
-    $scope.getUsersPage();
+    $scope.getSpeciesPage();
 });

@@ -25,20 +25,22 @@ app.config(function ($routeProvider) {
         .when('/users', {
             templateUrl: 'views/users.html',
             title: 'WLObs Admin Panel - Users',
-            controller: 'UsersController',
-            controllerAs: 'usersCtrl'
+            controller: 'UsersController'
         })
         .when('/species', {
             templateUrl: 'views/species.html',
-            title: 'WLObs Admin Panel - Species'
+            title: 'WLObs Admin Panel - Species',
+            controller: 'SpeciesController'
         })
         .when('/observations', {
             templateUrl: 'views/observations.html',
-            title: 'WLObs Admin Panel - Observations'
+            title: 'WLObs Admin Panel - Observations',
+            controller: 'ObservationsController'
         })
         .when('/votes', {
             templateUrl: 'views/votes.html',
-            title: 'WLObs Admin Panel - Votes'
+            title: 'WLObs Admin Panel - Votes',
+            controller: 'VotesController'
         })
         .when('/stats', {
             templateUrl: 'views/stats.html',

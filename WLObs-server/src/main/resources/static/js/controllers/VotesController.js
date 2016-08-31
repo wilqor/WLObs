@@ -17,19 +17,19 @@
 /**
  * @author wilqor
  */
-app.controller('UsersController', function (UsersService, $scope) {
+app.controller('VotesController', function (VotesService, $scope) {
     $scope.page = 1;
-    $scope.order = "LOGIN";
-    $scope.users = [];
+    $scope.order = "VOTER";
+    $scope.votes = [];
     $scope.total = 1;
 
-    $scope.getUsersPage = function () {
-        $scope.promise = UsersService.getUsersPage($scope.order, $scope.page)
+    $scope.getVotesPage = function () {
+        $scope.promise = VotesService.getVotesPage($scope.order, $scope.page)
             .then(function (data) {
-                $scope.users = data.records;
+                $scope.votes = data.records;
                 $scope.total = data.totalElements;
             });
     };
 
-    $scope.getUsersPage();
+    $scope.getVotesPage();
 });

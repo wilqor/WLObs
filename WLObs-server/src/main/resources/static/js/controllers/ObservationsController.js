@@ -17,19 +17,19 @@
 /**
  * @author wilqor
  */
-app.controller('UsersController', function (UsersService, $scope) {
+app.controller('ObservationsController', function (ObservationsService, $scope) {
     $scope.page = 1;
-    $scope.order = "LOGIN";
-    $scope.users = [];
+    $scope.order = "AUTHOR";
+    $scope.observations = [];
     $scope.total = 1;
 
-    $scope.getUsersPage = function () {
-        $scope.promise = UsersService.getUsersPage($scope.order, $scope.page)
+    $scope.getObservationsPage = function () {
+        $scope.promise = ObservationsService.getObservationsPage($scope.order, $scope.page)
             .then(function (data) {
-                $scope.users = data.records;
+                $scope.observations = data.records;
                 $scope.total = data.totalElements;
             });
     };
 
-    $scope.getUsersPage();
+    $scope.getObservationsPage();
 });

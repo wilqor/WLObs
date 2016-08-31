@@ -19,11 +19,11 @@
  */
 app.factory('UsersService', function ($http, SortParameterService) {
     var UsersService = {
-        getUsersPage: function (sortParameter, pageNumber, callback) {
-            $http.get('/users', {
+        getUsersPage: function (sortParameter, pageNumber) {
+            return $http.get('/users', {
                 params: SortParameterService.convertToPaginationParameters(sortParameter, pageNumber)
-            }).success(function (data) {
-                callback(data);
+            }).then(function (response) {
+                return response.data;
             })
         }
     };

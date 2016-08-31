@@ -15,4 +15,29 @@
   ~ limitations under the License.
   -->
 
-<h3>species table</h3>
+<h3 class="md-headline">View species</h3>
+<md-table-container>
+    <table md-table md-progress="promise">
+        <thead md-head md-order="order" md-on-reorder="getSpeciesPage">
+        <tr md-row>
+            <th md-column md-order-by="ID">Id</th>
+            <th md-column>Class</th>
+            <th md-column md-order-by="LATIN_NAME">Latin name</th>
+            <th md-column md-order-by="NAME">English name</th>
+            <th md-column md-order-by="OBSERVATIONS_COUNT">Observations</th>
+        </tr>
+        </thead>
+        <tbody md-body>
+        <tr md-row ng-repeat="s in species">
+            <td md-cell>{{s.id}}</td>
+            <td md-cell>{{s.speciesClass}}</td>
+            <td md-cell>{{s.latinName}}</td>
+            <td md-cell>{{s.englishName}}</td>
+            <td md-cell>{{s.observationsCount}}</td>
+        </tr>
+        </tbody>
+    </table>
+</md-table-container>
+<md-table-pagination md-limit="20" md-page="page" md-total="{{total}}" md-page-select
+                     md-on-paginate="getSpeciesPage"
+></md-table-pagination>

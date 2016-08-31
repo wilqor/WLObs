@@ -15,4 +15,33 @@
   ~ limitations under the License.
   -->
 
-<h3>votes table</h3>
+<h3 class="md-headline">View votes</h3>
+<md-table-container>
+    <table md-table md-progress="promise">
+        <thead md-head md-order="order" md-on-reorder="getVotesPage">
+        <tr md-row>
+            <th md-column md-order-by="ID">Id</th>
+            <th md-column md-order-by="OBSERVATION_ID">Observation id</th>
+            <th md-column md-order-by="DATE">Date</th>
+            <th md-column md-order-by="VOTER">Voter</th>
+            <th md-column md-order-by="OBSERVATION_OWNER">Observation owner</th>
+            <th md-column md-order-by="SPECIES_CLASS">Class</th>
+            <th md-column md-order-by="SPECIES_LATIN_NAME">Species latin name</th>
+        </tr>
+        </thead>
+        <tbody md-body>
+        <tr md-row ng-repeat="v in votes">
+            <td md-cell>{{v.id}}</td>
+            <td md-cell>{{v.observationId}}</td>
+            <td md-cell>{{v.dateUtcTimestamp | date}}</td>
+            <td md-cell>{{v.voter}}</td>
+            <td md-cell>{{v.observationOwner}}</td>
+            <td md-cell>{{v.speciesClass}}</td>
+            <td md-cell>{{v.speciesLatinName}}</td>
+        </tr>
+        </tbody>
+    </table>
+</md-table-container>
+<md-table-pagination md-limit="20" md-page="page" md-total="{{total}}" md-page-select
+                     md-on-paginate="getVotesPage"
+></md-table-pagination>

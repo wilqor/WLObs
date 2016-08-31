@@ -15,4 +15,37 @@
   ~ limitations under the License.
   -->
 
-<h3>observations table</h3>
+<h3 class="md-headline">View observations</h3>
+<md-table-container>
+    <table md-table md-progress="promise">
+        <thead md-head md-order="order" md-on-reorder="getObservationsPage">
+        <tr md-row>
+            <th md-column md-order-by="ID">Id</th>
+            <th md-column md-order-by="DATE">Date</th>
+            <th md-column md-order-by="RESTRICTED">Restricted</th>
+            <th md-column md-order-by="AUTHOR">Author</th>
+            <th md-column md-numeric md-order-by="VOTES">Votes</th>
+            <th md-column md-order-by="SPECIES_CLASS">Class</th>
+            <th md-column md-order-by="SPECIES_LATIN_NAME">Species latin name</th>
+            <th md-column>Longitude</th>
+            <th md-column>Latitude</th>
+        </tr>
+        </thead>
+        <tbody md-body>
+        <tr md-row ng-repeat="obs in observations">
+            <td md-cell>{{obs.id}}</td>
+            <td md-cell>{{obs.dateTimestamp | date}}</td>
+            <td md-cell>{{obs.restricted}}</td>
+            <td md-cell>{{obs.author}}</td>
+            <td md-cell>{{obs.votesCount}}</td>
+            <td md-cell>{{obs.speciesClass}}</td>
+            <td md-cell>{{obs.speciesLatinName}}</td>
+            <td md-cell>{{obs.longitude}}</td>
+            <td md-cell>{{obs.latitude}}</td>
+        </tr>
+        </tbody>
+    </table>
+</md-table-container>
+<md-table-pagination md-limit="20" md-page="page" md-total="{{total}}" md-page-select
+                     md-on-paginate="getObservationsPage"
+></md-table-pagination>

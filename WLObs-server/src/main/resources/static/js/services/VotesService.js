@@ -17,19 +17,15 @@
 /**
  * @author wilqor
  */
-app.controller('UsersController', function (UsersService, $scope) {
-    $scope.page = 1;
-    $scope.order = "LOGIN";
-    $scope.users = [];
-    $scope.total = 1;
-
-    $scope.getUsersPage = function () {
-        $scope.promise = UsersService.getUsersPage($scope.order, $scope.page)
-            .then(function (data) {
-                $scope.users = data.records;
-                $scope.total = data.totalElements;
-            });
+app.factory('VotesService', function ($http, SortParameterService) {
+    var VotesService = {
+        getVotesPage: function (sortParameter, pageNumber) {
+            return $http.get('/votes', {
+                params: SortParameterService.convertToPaginationParameters(sortParameter, pageNumber)
+            }).then(function (response) {
+                return response.data;
+            })
+        }
     };
-
-    $scope.getUsersPage();
+    return VotesService;
 });
