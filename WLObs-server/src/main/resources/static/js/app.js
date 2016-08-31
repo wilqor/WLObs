@@ -85,7 +85,7 @@ app.factory('authTokenInjector', ['TokenService', function (TokenService) {
     return authTokenInjector;
 }]);
 
-app.factory('unauthorizedHandler', ['$injector', function ($q, $injector) {
+app.factory('unauthorizedHandler', ['$q', '$injector', function ($q, $injector) {
     var unauthorizedHandler = {
         responseError: function (rejection) {
             var authService = $injector.get('AuthService');

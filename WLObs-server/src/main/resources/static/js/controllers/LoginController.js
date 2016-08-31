@@ -25,13 +25,12 @@ app.controller('LoginController', function (AuthService, $location) {
     };
     this.attemptLogin = function () {
         var ctrl = this;
-        AuthService.logIn(this.login, this.password, function (loginResult) {
-            if (loginResult.success === true) {
+        AuthService.logIn(this.login, this.password)
+            .then(function () {
                 $location.path('/');
-            } else {
-                ctrl.error = loginResult.errorMessage;
-            }
-        });
+            }, function (error) {
+                ctrl.error = error;
+            });
     };
     this.init();
 });
