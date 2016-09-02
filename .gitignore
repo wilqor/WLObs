@@ -16,3 +16,12 @@ WLObs-server/.idea/
 WLObs-server/.gradle/
 WLObs-server/build/
 WLobs-server/src/main/resources/application.properties
+
+# WLOBS-mobile files
+WLObs-mobile/.idea/
+WLObs-mobile/.gradle/
+WLObs-mobile/.build/
+WLObs-mobile/*.iml
+WLObs-mobile/local.properties
+WLObs-mobile/captures/
+WLObs-mobile/.DS_Store/
