@@ -17,4 +17,5 @@
     <string name="action_register">Register</string>
     <string name="registration_prompt">Not registered? Register now!</string>
     <string name="logging_in_prompt">Already registered? Log in now!</string>
+    <string name="server_api_path" translatable="false">http://localhost:8080/</string>
 </resources>
