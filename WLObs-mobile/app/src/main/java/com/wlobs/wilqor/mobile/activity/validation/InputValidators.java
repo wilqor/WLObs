@@ -23,7 +23,7 @@ import com.wlobs.wilqor.mobile.R;
 /**
  * @author wilqor
  */
-public class InputValidators {
+public final class InputValidators {
     public static final int MIN_LOGIN_LENGTH = 4;
     public static final int MAX_LOGIN_LENGTH = 25;
     public static final String ALPHANUMERIC_PATTERN = "^[a-zA-Z0-9]*$";
