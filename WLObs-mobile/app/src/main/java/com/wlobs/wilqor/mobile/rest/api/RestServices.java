@@ -31,11 +31,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public final class RestServices {
     private RestServices() {}
 
-    public UsersService getUsersService(Context ctx) {
+    public static UsersService getUsersService(Context ctx) {
         String baseUrl = ctx.getString(R.string.server_api_path);
         Gson gson = new GsonBuilder()
                 .create();
         Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         return retrofit.create(UsersService.class);

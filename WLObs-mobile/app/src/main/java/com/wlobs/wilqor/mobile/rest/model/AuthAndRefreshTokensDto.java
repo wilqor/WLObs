@@ -28,7 +28,7 @@ public final class AuthAndRefreshTokensDto {
     private String authToken;
 
     @Expose
-    @SerializedName("authToken")
+    @SerializedName("refreshToken")
     private String refreshToken;
 
     public String getAuthToken() {
@@ -37,6 +37,14 @@ public final class AuthAndRefreshTokensDto {
 
     public String getRefreshToken() {
         return refreshToken;
+    }
+
+    public void setAuthToken(String authToken) {
+        this.authToken = authToken;
+    }
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
     }
 
     @Override

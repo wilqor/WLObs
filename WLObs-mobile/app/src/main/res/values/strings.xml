@@ -12,10 +12,13 @@
     <string name="error_login_invalid">Only letters and digits allowed</string>
     <string name="error_password_too_short">This password is too short</string>
     <string name="error_password_too_long">This password is too long</string>
-
-    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_login_already_taken">Could not register, login already taken</string>
+    <string name="error_invalid_credentials">Invalid login or password</string>
+    <string name="network_error">Cannot connect to the server!</string>
+    <string name="retry">RETRY</string>
     <string name="action_register">Register</string>
     <string name="registration_prompt">Not registered? Register now!</string>
     <string name="logging_in_prompt">Already registered? Log in now!</string>
-    <string name="server_api_path" translatable="false">http://localhost:8080/</string>
+    <string name="server_api_path" translatable="false">http://192.168.2.103:8080/</string>
+    <string name="log_out">Log out</string>
 </resources>

@@ -20,7 +20,6 @@
     <string name="action_log_in">Zaloguj</string>
     <string name="action_register">Zarejestruj</string>
     <string name="error_field_required">Pole wymagane</string>
-    <string name="error_incorrect_password">Nieprawidłowe hasło</string>
     <string name="error_login_invalid">Tylko litery i cyfry dozwolone</string>
     <string name="error_login_too_long">Za długi login</string>
     <string name="error_login_too_short">Za krótki login</string>
@@ -30,4 +29,9 @@
     <string name="prompt_login">Login</string>
     <string name="prompt_password">Hasło</string>
     <string name="registration_prompt">Nie masz konta? Zarejestruj się!</string>
+    <string name="network_error">Nie udało się połączyć z serwerem!</string>
+    <string name="error_invalid_credentials">Niewłaściwy login lub hasło</string>
+    <string name="error_login_already_taken">Rejestracja nieudana, login jest już zajęty</string>
+    <string name="log_out">Wyloguj</string>
+    <string name="retry">PONÓW PRÓBĘ</string>
 </resources>

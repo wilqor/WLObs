@@ -27,7 +27,7 @@ public final class CredentialsDto {
     @Expose
     private final String login;
 
-    @SerializedName("login")
+    @SerializedName("password")
     @Expose
     private final String password;
 
