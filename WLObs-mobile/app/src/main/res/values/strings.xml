@@ -4,13 +4,17 @@
     <!-- Strings related to login -->
     <string name="prompt_login">Login</string>
     <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_login">This login is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="action_log_in">Log in</string>
+
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="error_login_too_short">This login is too short</string>
+    <string name="error_login_too_long">This login is too long</string>
+    <string name="error_login_invalid">Only letters and digits allowed</string>
+    <string name="error_password_too_short">This password is too short</string>
+    <string name="error_password_too_long">This password is too long</string>
+
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="action_register">Register</string>
+    <string name="registration_prompt">Not registered? Register now!</string>
+    <string name="logging_in_prompt">Already registered? Log in now!</string>
 </resources>

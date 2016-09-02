@@ -10,7 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".activity.LoginActivity">
 
-    <!-- Login progress -->
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
@@ -20,7 +19,7 @@
         android:visibility="gone" />
 
     <ScrollView
-        android:id="@+id/login_form"
+        android:id="@+id/login_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -42,7 +41,6 @@
                     android:inputType="text"
                     android:maxLines="1"
                     android:singleLine="true" />
-
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -54,23 +52,59 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
-                    android:imeActionId="@+id/passwordAction"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true" />
-
             </android.support.design.widget.TextInputLayout>
 
-            <Button
-                android:id="@+id/login_sign_in_button"
-                style="?android:textAppearanceSmall"
+            <RelativeLayout
+                android:id="@+id/login_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/login_button"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/action_log_in"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/register_prompt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/login_button"
+                    android:gravity="center"
+                    android:text="@string/registration_prompt"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/registration_wrapper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_sign_in"
-                android:textStyle="bold" />
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/register_button"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/action_register"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/login_prompt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/register_button"
+                    android:gravity="center"
+                    android:text="@string/logging_in_prompt"
+                    android:textSize="16sp" />
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>
