@@ -27,6 +27,14 @@
             android:name=".activity.ObservationsActivity"
             android:label="@string/navigation_observations_header"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.SearchActivity"
+            android:label="@string/navigation_search_header"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.VotesActivity"
+            android:label="@string/navigation_votes_header"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

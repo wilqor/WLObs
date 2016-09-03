@@ -78,9 +78,9 @@ public abstract class NavigationActivity extends AppCompatActivity
         if (id == R.id.nav_observations) {
             startActivity(new Intent(this, ObservationsActivity.class));
         } else if (id == R.id.nav_search) {
-
+            startActivity(new Intent(this, SearchActivity.class));
         } else if (id == R.id.nav_votes) {
-
+            startActivity(new Intent(this, VotesActivity.class));
         } else if (id == R.id.nav_log_out) {
             authUtility.clearAllTokens();
             startActivity(new Intent(this, MainActivity.class));
