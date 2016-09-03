@@ -82,9 +82,9 @@ public class VoteController {
 
     @RequiredAdminRole
     @RequestMapping(method = RequestMethod.GET)
-    public RecordsPageDto<FlatVoteDto> getObservationsPage(@RequestParam(value = "pageNo") Optional<Integer> pageNumber,
-                                                           @RequestParam(value = "sortBy") Optional<SortParameters.VoteSort> sort,
-                                                           @RequestParam(value = "direction") Optional<Sort.Direction> direction) {
+    public RecordsPageDto<FlatVoteDto> getVotesPage(@RequestParam(value = "pageNo") Optional<Integer> pageNumber,
+                                                    @RequestParam(value = "sortBy") Optional<SortParameters.VoteSort> sort,
+                                                    @RequestParam(value = "direction") Optional<Sort.Direction> direction) {
         int requestPageNumber = pageNumber.orElse(RecordsPageDto.DEFAULT_PAGE_NUMBER);
         SortParameters.VoteSort requestSort = sort.orElse(SortParameters.VoteSort.VOTER);
         Sort.Direction requestDirection = direction.orElse(Sort.Direction.ASC);
