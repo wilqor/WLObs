@@ -38,12 +38,12 @@ final class AuthUtilityImpl implements AuthUtility {
 
     @Override
     public Optional<String> getRefreshToken() {
-        return Optional.fromNullable(preferences.getString(AUTH_TOKEN_KEY, null));
+        return Optional.fromNullable(preferences.getString(REFRESH_TOKEN_KEY, null));
     }
 
     @Override
     public Optional<String> getAuthToken() {
-        return Optional.fromNullable(preferences.getString(REFRESH_TOKEN_KEY, null));
+        return Optional.fromNullable(preferences.getString(AUTH_TOKEN_KEY, null));
     }
 
     @Override
