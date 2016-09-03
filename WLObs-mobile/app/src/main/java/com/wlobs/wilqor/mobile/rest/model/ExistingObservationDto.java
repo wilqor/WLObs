@@ -54,4 +54,82 @@ public final class ExistingObservationDto {
     @SerializedName("latitude")
     @Expose
     private double latitude;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public long getVotesCount() {
+        return votesCount;
+    }
+
+    public void setVotesCount(long votesCount) {
+        this.votesCount = votesCount;
+    }
+
+    public long getDateUtcTimestamp() {
+        return dateUtcTimestamp;
+    }
+
+    public void setDateUtcTimestamp(long dateUtcTimestamp) {
+        this.dateUtcTimestamp = dateUtcTimestamp;
+    }
+
+    public SpeciesStub getSpeciesStub() {
+        return speciesStub;
+    }
+
+    public void setSpeciesStub(SpeciesStub speciesStub) {
+        this.speciesStub = speciesStub;
+    }
+
+    public boolean isRestricted() {
+        return restricted;
+    }
+
+    public void setRestricted(boolean restricted) {
+        this.restricted = restricted;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    @Override
+    public String toString() {
+        return "ExistingObservationDto{" +
+                "id='" + id + '\'' +
+                ", author='" + author + '\'' +
+                ", votesCount=" + votesCount +
+                ", dateUtcTimestamp=" + dateUtcTimestamp +
+                ", speciesStub=" + speciesStub +
+                ", restricted=" + restricted +
+                ", longitude=" + longitude +
+                ", latitude=" + latitude +
+                '}';
+    }
 }
