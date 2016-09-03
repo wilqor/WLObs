@@ -17,46 +17,37 @@
 package com.wlobs.wilqor.mobile.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.wlobs.wilqor.mobile.R;
 import com.wlobs.wilqor.mobile.persistence.auth.AuthUtilities;
 import com.wlobs.wilqor.mobile.persistence.auth.AuthUtility;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
-
+/**
+ * This activity plays the role of application entry point and does not present
+ * a concrete view. Its role is to redirect user to the default logged in activity
+ * or to the log in activity, depending on the authentication state.
+ */
 public class MainActivity extends AppCompatActivity {
     private AuthUtility authUtility;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-        ButterKnife.bind(this);
         authUtility = AuthUtilities.getAuthUtility(getApplicationContext());
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
         if (!authUtility.isUserLoggedIn()) {
-            startLoginActivity();
+            startActivity(new Intent(this, LoginActivity.class));
+        } else {
+            startActivity(new Intent(this, ObservationsActivity.class));
         }
-    }
-
-    @OnClick(R.id.logout_button)
-    public void onClickLogoutButton() {
-        authUtility.clearAllTokens();
-        startLoginActivity();
-    }
-
-    private void startLoginActivity() {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
     }
 }

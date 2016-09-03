@@ -34,4 +34,10 @@
     <string name="error_login_already_taken">Rejestracja nieudana, login jest już zajęty</string>
     <string name="log_out">Wyloguj</string>
     <string name="retry">PONÓW PRÓBĘ</string>
+    <string name="navigation_drawer_close">Zamknij panel nawigacji</string>
+    <string name="navigation_drawer_open">Otwórz panel nawigacji</string>
+    <string name="navigation_observations_header">Obserwacje</string>
+    <string name="navigation_search_header">Szukaj</string>
+    <string name="navigation_votes_header">Głosy</string>
+    <string name="login_activity_label">Zaloguj się do WLObs</string>
 </resources>

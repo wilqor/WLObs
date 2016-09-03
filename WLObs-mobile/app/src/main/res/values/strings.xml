@@ -21,4 +21,13 @@
     <string name="logging_in_prompt">Already registered? Log in now!</string>
     <string name="server_api_path" translatable="false">http://192.168.2.103:8080/</string>
     <string name="log_out">Log out</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_header" translatable="false">WLObs</string>
+    <string name="navigation_votes_header">Votes</string>
+    <string name="navigation_search_header">Search</string>
+    <string name="navigation_observations_header">Observations</string>
+    <string name="navigation_sub_header" translatable="false">Wild Life Observer</string>
+    <string name="login_activity_label">Log in to WLObs</string>
 </resources>
