@@ -22,6 +22,8 @@ import android.widget.FrameLayout;
 
 import com.wlobs.wilqor.mobile.R;
 
+import butterknife.ButterKnife;
+
 public class ObservationsActivity extends NavigationActivity {
 
     @Override
@@ -30,6 +32,7 @@ public class ObservationsActivity extends NavigationActivity {
 
         FrameLayout contentFrameLayout = (FrameLayout) findViewById(R.id.contentFrame);
         getLayoutInflater().inflate(R.layout.activity_observations, contentFrameLayout);
+        ButterKnife.bind(this);
     }
 
     @Override

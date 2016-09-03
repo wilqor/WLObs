@@ -17,11 +17,13 @@
 package com.wlobs.wilqor.mobile.rest.api;
 
 import android.content.Context;
+import android.content.res.Resources;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.wlobs.wilqor.mobile.R;
+import com.wlobs.wilqor.mobile.persistence.auth.AuthUtility;
+import com.wlobs.wilqor.mobile.rest.api.interceptors.Interceptors;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -29,16 +31,71 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @author wilqor
  */
 public final class RestServices {
-    private RestServices() {}
+    private RestServices() {
+    }
 
     public static UsersService getUsersService(Context ctx) {
-        String baseUrl = ctx.getString(R.string.server_api_path);
-        Gson gson = new GsonBuilder()
-                .create();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .baseUrl(getBaseUrl(ctx))
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit.create(UsersService.class);
+    }
+
+    public static AggregationService getAggregationService(Context ctx,
+                                                           AuthUtility authUtility) {
+        Retrofit retrofit = getRetrofitWithClient(ctx, getHttpClientWithAuthentication(ctx, authUtility));
+        return retrofit.create(AggregationService.class);
+    }
+
+    public static ObservationsService getObservationsService(Context ctx,
+                                                             AuthUtility authUtility,
+                                                             Resources resources) {
+        Retrofit retrofit = getRetrofitWithClient(ctx, getHttpClientWithAuthenticationAndLocale(ctx, authUtility, resources));
+        return retrofit.create(ObservationsService.class);
+    }
+
+    public static SpeciesService getSpeciesService(Context ctx,
+                                                   AuthUtility authUtility,
+                                                   Resources resources) {
+        Retrofit retrofit = getRetrofitWithClient(ctx, getHttpClientWithAuthenticationAndLocale(ctx, authUtility, resources));
+        return retrofit.create(SpeciesService.class);
+    }
+
+    public static VotesService getVotesService(Context ctx,
+                                               AuthUtility authUtility,
+                                               Resources resources) {
+        Retrofit retrofit = getRetrofitWithClient(ctx, getHttpClientWithAuthenticationAndLocale(ctx, authUtility, resources));
+        return retrofit.create(VotesService.class);
+    }
+
+    private static OkHttpClient getHttpClientWithAuthentication(Context ctx, AuthUtility authUtility) {
+        return new OkHttpClient.Builder()
+                .authenticator(Interceptors.getRefreshTokenAuthenticator(getUsersService(ctx), authUtility))
+                .addInterceptor(Interceptors.getAuthorizationHeaderInterceptor(authUtility))
+                .build();
+    }
+
+    private static OkHttpClient getHttpClientWithAuthenticationAndLocale(Context ctx,
+                                                                         AuthUtility authUtility,
+                                                                         Resources resources) {
+        return new OkHttpClient.Builder()
+                .authenticator(Interceptors.getRefreshTokenAuthenticator(getUsersService(ctx), authUtility))
+                .addInterceptor(Interceptors.getAuthorizationHeaderInterceptor(authUtility))
+                .addInterceptor(Interceptors.getAcceptLocaleInterceptor(resources))
+                .build();
+    }
+
+    private static Retrofit getRetrofitWithClient(Context ctx,
+                                                  OkHttpClient okHttpClient) {
+        return new Retrofit.Builder()
+                .baseUrl(getBaseUrl(ctx))
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(okHttpClient)
+                .build();
+    }
+
+    private static String getBaseUrl(Context ctx) {
+        return ctx.getString(R.string.server_api_path);
     }
 }

@@ -45,7 +45,7 @@ public interface ObservationsService {
     @DELETE("observations/{login}/{observationId}")
     Call<Void> deleteObservation(@Path("login") String login, @Path("observationId") String observationId);
 
-    @GET("observations")
+    @GET("observations/{login}")
     Call<List<ExistingObservationDto>> getObservations(@Path("login") String login);
 
     @GET("observations/{author}/{observationId}")
