@@ -35,9 +35,9 @@ public interface VotesService {
     @POST("votes/{login}")
     Call<Void> addVote(@Path("login") String login, @Body NewVoteDto voteDto);
 
-    @GET("votes")
+    @GET("votes/{login}")
     Call<List<ExistingVoteDto>> getVotes(@Path("login") String login);
 
-    @DELETE("votes/login/voteId")
+    @DELETE("votes/{login}/{voteId}")
     Call<Void> deleteVote(@Path("login") String login, @Path("voteId") String voteId);
 }
