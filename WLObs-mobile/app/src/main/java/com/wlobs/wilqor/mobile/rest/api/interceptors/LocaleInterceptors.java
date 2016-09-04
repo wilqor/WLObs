@@ -44,7 +44,7 @@ final class LocaleInterceptors {
         public Response intercept(Chain chain) throws IOException {
             return chain.proceed(
                     chain.request().newBuilder()
-                            .header(LOCALE_HEADER_NAME, acceptLocale.toString())
+                            .header(LOCALE_HEADER_NAME, acceptLocale.getLanguage())
                             .build());
         }
     }
