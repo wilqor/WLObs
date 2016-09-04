@@ -22,7 +22,7 @@ import android.content.Context;
  * @author wilqor
  */
 public final class SyncUtilities {
-    private static final String DEFAULT_DATE_PATTERN = "dd.MM.yyyy";
+    private static final String DEFAULT_DATE_PATTERN = "HH:mm dd.MM.yy";
 
     private SyncUtilities() {}
 
