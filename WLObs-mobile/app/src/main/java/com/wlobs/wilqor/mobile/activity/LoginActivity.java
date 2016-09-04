@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.registration_wrapper)
     View registrationWrapperView;
 
-    @BindView(R.id.topLayout)
+    @BindView(R.id.topLoginLayout)
     View topLayout;
 
     @BindView(R.id.operation_error)
