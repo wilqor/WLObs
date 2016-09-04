@@ -21,6 +21,7 @@ import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 import com.wlobs.wilqor.mobile.persistence.db.LocalDatabase;
+import com.wlobs.wilqor.mobile.rest.model.SpeciesDto;
 import com.wlobs.wilqor.mobile.rest.model.SpeciesStub;
 
 /**
@@ -40,6 +41,15 @@ public class Species extends BaseModel {
 
     @Column
     private String name;
+
+    public Species() {
+    }
+
+    public Species(SpeciesDto speciesDto) {
+        speciesClass = speciesDto.getSpeciesClass();
+        latinName = speciesDto.getLatinName();
+        name = speciesDto.getName();
+    }
 
     public SpeciesStub.Class getSpeciesClass() {
         return speciesClass;

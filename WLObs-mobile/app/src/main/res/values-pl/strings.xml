@@ -42,4 +42,6 @@
     <string name="login_activity_label">Zaloguj się do WLObs</string>
     <string name="observations_last_sync_label">Ostatnia synchronizacja: </string>
     <string name="observations_last_sync_never">nigdy</string>
+    <string name="observations_sync_progress_message">Synchronizacja w toku…</string>
+    <string name="error_sync_failed">Synchronizacja zakończona niepowodzeniem!</string>
 </resources>

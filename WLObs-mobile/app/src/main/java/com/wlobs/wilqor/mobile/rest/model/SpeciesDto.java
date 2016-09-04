@@ -27,13 +27,13 @@ public final class SpeciesDto {
     @Expose
     private String latinName;
 
-    @SerializedName("name")
+    @SerializedName("localizedName")
     @Expose
     private String name;
 
     @SerializedName("speciesClass")
     @Expose
-    private Class speciesClass;
+    private SpeciesStub.Class speciesClass;
 
     public String getLatinName() {
         return latinName;
@@ -51,11 +51,11 @@ public final class SpeciesDto {
         this.name = name;
     }
 
-    public Class getSpeciesClass() {
+    public SpeciesStub.Class getSpeciesClass() {
         return speciesClass;
     }
 
-    public void setSpeciesClass(Class speciesClass) {
+    public void setSpeciesClass(SpeciesStub.Class speciesClass) {
         this.speciesClass = speciesClass;
     }
 

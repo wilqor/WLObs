@@ -32,4 +32,7 @@
     <string name="login_activity_label">Log in to WLObs</string>
     <string name="observations_last_sync_label">Last synchronization: </string>
     <string name="observations_last_sync_never">never</string>
+    <string name="observations_sync_progress_message">Synchronization in progress…</string>
+    <string name="error_sync_failed">Synchronization failed!</string>
+    <string name="synchronization_button_description">Synchronization button</string>
 </resources>
