@@ -56,11 +56,6 @@ public class SpeciesController {
         return speciesService.findSpeciesForLocaleAndClass(getTargetLocale(locale), speciesClass);
     }
 
-    private Locale getTargetLocale(String requestHeaderLocale) {
-        Optional<Locale> matched = Optional.ofNullable(Locale.lookup(Locale.LanguageRange.parse(requestHeaderLocale), LocaleConstants.supportedLocale));
-        return matched.orElse(LocaleConstants.DEFAULT_LOCALE);
-    }
-
     @RequiredAdminRole
     @RequestMapping(method = RequestMethod.GET)
     public RecordsPageDto<FlatSpeciesDto> getSpeciesPage(@RequestParam(value = "pageNo") Optional<Integer> pageNumber,
@@ -70,5 +65,15 @@ public class SpeciesController {
         SortParameters.SpeciesSort requestSort = sort.orElse(SortParameters.SpeciesSort.LATIN_NAME);
         Sort.Direction requestDirection = direction.orElse(Sort.Direction.ASC);
         return speciesService.getSpeciesPage(requestPageNumber, requestSort.asParameter(), requestDirection);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/count")
+    public SpeciesCountDto getSpeciesCount() {
+        return speciesService.getSpeciesCount();
+    }
+
+    private Locale getTargetLocale(String requestHeaderLocale) {
+        Optional<Locale> matched = Optional.ofNullable(Locale.lookup(Locale.LanguageRange.parse(requestHeaderLocale), LocaleConstants.supportedLocale));
+        return matched.orElse(LocaleConstants.DEFAULT_LOCALE);
     }
 }

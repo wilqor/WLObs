@@ -20,20 +20,14 @@ import com.wlobs.wilqor.server.config.LocaleConstants;
 import com.wlobs.wilqor.server.persistence.model.Observation;
 import com.wlobs.wilqor.server.persistence.model.Species;
 import com.wlobs.wilqor.server.persistence.repository.SpeciesRepository;
-import com.wlobs.wilqor.server.rest.model.FlatSpeciesDto;
-import com.wlobs.wilqor.server.rest.model.LocalizedSpeciesDto;
-import com.wlobs.wilqor.server.rest.model.RecordsPageDto;
-import com.wlobs.wilqor.server.rest.model.SpeciesDto;
+import com.wlobs.wilqor.server.rest.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -73,6 +67,16 @@ public class SpeciesServiceImpl implements SpeciesService {
                 .map(this::convertToFlatSpeciesDto)
                 .collect(Collectors.toList());
         return new RecordsPageDto<>(flatSpeciesDtos, page.getTotalElements(), page.getTotalPages());
+    }
+
+    @Override
+    public SpeciesCountDto getSpeciesCount() {
+        Map<Species.Class, Long> result = new HashMap<>();
+        for (Species.Class s : Species.Class.values()) {
+            Long count = speciesRepository.countBySpeciesClass(s);
+            result.put(s, count == null ? 0 : count);
+        }
+        return new SpeciesCountDto(result);
     }
 
     @Override

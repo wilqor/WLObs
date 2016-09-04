@@ -14,21 +14,30 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.server.persistence.repository;
+package com.wlobs.wilqor.server.rest.model;
 
 import com.wlobs.wilqor.server.persistence.model.Species;
-import org.springframework.data.repository.PagingAndSortingRepository;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.Map;
 
 /**
  * @author wilqor
  */
-public interface SpeciesRepository extends PagingAndSortingRepository<Species, String>, CustomSpeciesRepository {
-    List<Species> findBySpeciesClass(Species.Class speciesClass);
+public class SpeciesCountDto {
+    private final Map<Species.Class, Long> speciesCount;
 
-    Optional<Species> findBySpeciesClassAndLatinName(Species.Class speciesClass, String latinName);
+    public SpeciesCountDto(Map<Species.Class, Long> speciesCount) {
+        this.speciesCount = speciesCount;
+    }
 
-    Long countBySpeciesClass(Species.Class speciesClass);
+    public Map<Species.Class, Long> getSpeciesCount() {
+        return speciesCount;
+    }
+
+    @Override
+    public String toString() {
+        return "SpeciesCountDto{" +
+                "speciesCount=" + speciesCount +
+                '}';
+    }
 }

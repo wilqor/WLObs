@@ -19,10 +19,7 @@ package com.wlobs.wilqor.server.service;
 import com.wlobs.wilqor.server.persistence.model.Observation;
 import com.wlobs.wilqor.server.persistence.model.Species;
 import com.wlobs.wilqor.server.persistence.repository.SpeciesStatsModifier;
-import com.wlobs.wilqor.server.rest.model.FlatSpeciesDto;
-import com.wlobs.wilqor.server.rest.model.LocalizedSpeciesDto;
-import com.wlobs.wilqor.server.rest.model.RecordsPageDto;
-import com.wlobs.wilqor.server.rest.model.SpeciesDto;
+import com.wlobs.wilqor.server.rest.model.*;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
@@ -40,4 +37,6 @@ public interface SpeciesService extends SpeciesStatsModifier {
     Optional<Species> findSpeciesForStub(Observation.SpeciesStub speciesStub);
 
     RecordsPageDto<FlatSpeciesDto> getSpeciesPage(int pageNumber, String sort, Sort.Direction direction);
+
+    SpeciesCountDto getSpeciesCount();
 }
