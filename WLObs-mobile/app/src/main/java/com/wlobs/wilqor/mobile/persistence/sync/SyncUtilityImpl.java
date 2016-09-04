@@ -20,6 +20,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.wlobs.wilqor.mobile.R;
+
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -39,9 +41,12 @@ final class SyncUtilityImpl implements SyncUtility {
     private static final long DEFAULT_SYNC_TIMESTAMP = 0;
 
     private final SharedPreferences preferences;
+    private final Context context;
+    private final SyncDateFormatter dateFormatter;
 
-    SyncUtilityImpl(Context context) {
-        TimeUnit.MINUTES.toMillis(30);
+    SyncUtilityImpl(Context context, SyncDateFormatter dateFormatter) {
+        this.context = context;
+        this.dateFormatter = dateFormatter;
         this.preferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
@@ -53,7 +58,7 @@ final class SyncUtilityImpl implements SyncUtility {
     @Override
     public boolean shouldSync() {
         long timestampOfNow = new Date().getTime();
-        long storedTimestamp = preferences.getLong(LAST_SYNC_TIMESTAMP_KEY, DEFAULT_SYNC_TIMESTAMP);
+        long storedTimestamp = getStoredTimestamp();
         return timestampOfNow - storedTimestamp > MAX_TIME_BETWEEN_SYNCS_IN_MILLISECONDS;
     }
 
@@ -62,9 +67,23 @@ final class SyncUtilityImpl implements SyncUtility {
         updateLastSyncTimestamp(DEFAULT_SYNC_TIMESTAMP);
     }
 
+    @Override
+    public String getLastSyncDateString() {
+        String dateString = context.getString(R.string.observations_last_sync_never);
+        long storedTimestamp = getStoredTimestamp();
+        if (storedTimestamp != DEFAULT_SYNC_TIMESTAMP) {
+            dateString = dateFormatter.formatSyncDate(new Date(storedTimestamp));
+        }
+        return dateString;
+    }
+
     private void updateLastSyncTimestamp(long timestamp) {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putLong(LAST_SYNC_TIMESTAMP_KEY, timestamp);
         editor.apply();
+    }
+
+    private long getStoredTimestamp() {
+        return preferences.getLong(LAST_SYNC_TIMESTAMP_KEY, DEFAULT_SYNC_TIMESTAMP);
     }
 }

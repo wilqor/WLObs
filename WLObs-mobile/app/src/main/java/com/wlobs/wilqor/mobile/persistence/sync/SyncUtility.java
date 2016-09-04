@@ -25,4 +25,6 @@ public interface SyncUtility {
     void resetLastSyncTimestamp();
 
     boolean shouldSync();
+
+    String getLastSyncDateString();
 }

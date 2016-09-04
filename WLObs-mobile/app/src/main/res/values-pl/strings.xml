@@ -40,4 +40,6 @@
     <string name="navigation_search_header">Szukaj</string>
     <string name="navigation_votes_header">Głosy</string>
     <string name="login_activity_label">Zaloguj się do WLObs</string>
+    <string name="observations_last_sync_label">Ostatnia synchronizacja: </string>
+    <string name="observations_last_sync_never">nigdy</string>
 </resources>

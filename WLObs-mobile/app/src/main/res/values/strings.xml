@@ -30,4 +30,6 @@
     <string name="navigation_observations_header">Observations</string>
     <string name="navigation_sub_header" translatable="false">Wild Life Observer</string>
     <string name="login_activity_label">Log in to WLObs</string>
+    <string name="observations_last_sync_label">Last synchronization: </string>
+    <string name="observations_last_sync_never">never</string>
 </resources>

@@ -16,18 +16,21 @@
 
 package com.wlobs.wilqor.mobile.persistence.sync;
 
-import android.content.Context;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @author wilqor
  */
-public final class SyncUtilities {
-    private static final String DEFAULT_DATE_PATTERN = "dd.MM.yyyy";
+class SyncDateFormatterImpl implements SyncDateFormatter {
+    private final SimpleDateFormat formatter;
 
-    private SyncUtilities() {}
+    public SyncDateFormatterImpl(String datePattern) {
+        formatter = new SimpleDateFormat(datePattern);
+    }
 
-
-    public static SyncUtility getSyncUtility(Context context) {
-        return new SyncUtilityImpl(context, new SyncDateFormatterImpl(DEFAULT_DATE_PATTERN));
+    @Override
+    public String formatSyncDate(Date date) {
+        return formatter.format(date);
     }
 }
