@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.mobile.rest.api;
 
+import com.wlobs.wilqor.mobile.rest.model.SpeciesCountDto;
 import com.wlobs.wilqor.mobile.rest.model.SpeciesDto;
 import com.wlobs.wilqor.mobile.rest.model.SpeciesStub;
 
@@ -31,4 +32,7 @@ import retrofit2.http.Path;
 public interface SpeciesService {
     @GET("species/{speciesClass}")
     Call<List<SpeciesDto>> getSpeciesForClass(@Path("speciesClass") SpeciesStub.Class speciesClass);
+
+    @GET("species/count")
+    Call<SpeciesCountDto> getSpeciesCount();
 }
