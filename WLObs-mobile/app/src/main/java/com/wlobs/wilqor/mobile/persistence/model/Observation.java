@@ -22,12 +22,16 @@ import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 import com.wlobs.wilqor.mobile.persistence.db.LocalDatabase;
+import com.wlobs.wilqor.mobile.rest.model.NewObservationDto;
+import com.wlobs.wilqor.mobile.rest.model.SpeciesStub;
 
 /**
  * @author wilqor
  */
 @Table(database = LocalDatabase.class)
 public class Observation extends BaseModel {
+    public static final String ID_NOT_SET = "NOT_SET";
+
     @Column
     @PrimaryKey(autoincrement = true)
     private int localId;
@@ -62,6 +66,9 @@ public class Observation extends BaseModel {
     @Column
     @ForeignKey(saveForeignKeyModel = false)
     private Species species;
+
+    public Observation() {
+    }
 
     public int getLocalId() {
         return localId;
@@ -170,5 +177,18 @@ public class Observation extends BaseModel {
                 ", restrictionChanged=" + restrictionChanged +
                 ", species=" + species +
                 '}';
+    }
+
+    public NewObservationDto asNewObservationDto() {
+        NewObservationDto dto = new NewObservationDto();
+        dto.setDateUtcTimestamp(dateUtcTimestamp);
+        dto.setLatitude(latitude);
+        dto.setLongitude(longitude);
+        dto.setRestricted(restricted);
+        SpeciesStub speciesStub = new SpeciesStub();
+        speciesStub.setLatinName(species.getLatinName());
+        speciesStub.setSpeciesClass(species.getSpeciesClass());
+        dto.setSpeciesStub(speciesStub);
+        return dto;
     }
 }

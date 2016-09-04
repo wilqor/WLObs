@@ -33,8 +33,10 @@ import com.wlobs.wilqor.mobile.persistence.auth.AuthUtilities;
 import com.wlobs.wilqor.mobile.persistence.auth.AuthUtility;
 import com.wlobs.wilqor.mobile.persistence.sync.SyncUtilities;
 import com.wlobs.wilqor.mobile.persistence.sync.SyncUtility;
+import com.wlobs.wilqor.mobile.rest.api.ObservationsService;
 import com.wlobs.wilqor.mobile.rest.api.RestServices;
 import com.wlobs.wilqor.mobile.rest.api.SpeciesService;
+import com.wlobs.wilqor.mobile.rest.api.VotesService;
 import com.wlobs.wilqor.mobile.rest.task.RemoteTask;
 import com.wlobs.wilqor.mobile.rest.task.RemoteTasks;
 import com.wlobs.wilqor.mobile.rest.task.exceptions.ErrorResponseException;
@@ -60,6 +62,8 @@ public class ObservationsActivity extends NavigationActivity {
     private SyncUtility syncUtility;
     private AuthUtility authUtility;
     private SpeciesService speciesService;
+    private ObservationsService observationsService;
+    private VotesService votesService;
     private Optional<SynchronizationTask> currentSyncTask;
 
     @Override
@@ -72,6 +76,8 @@ public class ObservationsActivity extends NavigationActivity {
         syncUtility = SyncUtilities.getSyncUtility(getApplicationContext());
         authUtility = AuthUtilities.getAuthUtility(getApplicationContext());
         speciesService = RestServices.getSpeciesService(getApplicationContext(), authUtility, getResources());
+        observationsService = RestServices.getObservationsService(getApplicationContext(), authUtility, getResources());
+        votesService = RestServices.getVotesService(getApplicationContext(), authUtility, getResources());
     }
 
     @OnClick(R.id.observations_sync_button)
@@ -116,7 +122,11 @@ public class ObservationsActivity extends NavigationActivity {
         SynchronizationTask syncTask = new SynchronizationTask(
                 syncUtility,
                 authUtility,
-                RemoteTasks.getSyncTasks(speciesService));
+                RemoteTasks.getSyncTasks(
+                        speciesService,
+                        observationsService,
+                        votesService,
+                        authUtility.getLogin().get()));
         currentSyncTask = Optional.of(syncTask);
         syncTask.execute();
     }

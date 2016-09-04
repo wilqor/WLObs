@@ -22,12 +22,15 @@ import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 import com.wlobs.wilqor.mobile.persistence.db.LocalDatabase;
+import com.wlobs.wilqor.mobile.rest.model.NewVoteDto;
 
 /**
  * @author wilqor
  */
 @Table(database = LocalDatabase.class)
 public class Vote extends BaseModel {
+    public static final String ID_NOT_SET = "NOT_SET";
+
     @Column
     @PrimaryKey(autoincrement = true)
     private int localId;
@@ -134,5 +137,9 @@ public class Vote extends BaseModel {
                 ", deleted=" + deleted +
                 ", species=" + species +
                 '}';
+    }
+
+    public NewVoteDto asNewVoteDto() {
+        return new NewVoteDto(remoteObservationId, dateUtcTimestamp);
     }
 }
