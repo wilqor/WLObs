@@ -19,15 +19,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_observations"
+            android:icon="@drawable/ic_pets_white_24dp"
             android:title="@string/navigation_observations_header" />
         <item
             android:id="@+id/nav_search"
+            android:icon="@drawable/ic_search_white_24dp"
             android:title="@string/navigation_search_header" />
         <item
             android:id="@+id/nav_votes"
+            android:icon="@drawable/ic_check_box_white_24dp"
             android:title="@string/navigation_votes_header" />
         <item
             android:id="@+id/nav_log_out"
+            android:icon="@drawable/ic_power_settings_new_white_24dp"
             android:title="@string/log_out" />
     </group>
 </menu>
