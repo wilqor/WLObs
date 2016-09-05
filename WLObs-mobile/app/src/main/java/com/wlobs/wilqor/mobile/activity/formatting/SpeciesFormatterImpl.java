@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.mobile.persistence.sync;
+package com.wlobs.wilqor.mobile.activity.formatting;
 
-import android.content.Context;
-
-import com.wlobs.wilqor.mobile.activity.formatting.DateFormatters;
+import com.wlobs.wilqor.mobile.persistence.model.Species;
 
 /**
  * @author wilqor
  */
-public final class SyncUtilities {
-    private SyncUtilities() {
-    }
-
-    public static SyncUtility getSyncUtility(Context context) {
-        return new SyncUtilityImpl(context, DateFormatters.getSyncDateFormatter());
+class SpeciesFormatterImpl implements SpeciesFormatter {
+    @Override
+    public String format(Species species) {
+        return String.format("%s (%s)", species.getName(), species.getLatinName());
     }
 }

@@ -14,20 +14,15 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.mobile.persistence.sync;
-
-import android.content.Context;
-
-import com.wlobs.wilqor.mobile.activity.formatting.DateFormatters;
+package com.wlobs.wilqor.mobile.activity.formatting;
 
 /**
  * @author wilqor
  */
-public final class SyncUtilities {
-    private SyncUtilities() {
-    }
+public final class SpeciesFormatters {
+    private SpeciesFormatters() {}
 
-    public static SyncUtility getSyncUtility(Context context) {
-        return new SyncUtilityImpl(context, DateFormatters.getSyncDateFormatter());
+    public static SpeciesFormatter getSpeciesFormatter() {
+        return new SpeciesFormatterImpl();
     }
 }

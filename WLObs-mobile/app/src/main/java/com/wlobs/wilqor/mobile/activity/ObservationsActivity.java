@@ -22,15 +22,27 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fernandocejas.arrow.optional.Optional;
+import com.raizlabs.android.dbflow.list.FlowCursorList;
+import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.wlobs.wilqor.mobile.R;
+import com.wlobs.wilqor.mobile.activity.formatting.DateFormatters;
+import com.wlobs.wilqor.mobile.activity.formatting.SpeciesFormatters;
+import com.wlobs.wilqor.mobile.activity.recycler.DividerItemDecoration;
+import com.wlobs.wilqor.mobile.activity.recycler.ObservationsAdapter;
+import com.wlobs.wilqor.mobile.activity.recycler.OnItemClickListener;
 import com.wlobs.wilqor.mobile.persistence.auth.AuthUtilities;
 import com.wlobs.wilqor.mobile.persistence.auth.AuthUtility;
+import com.wlobs.wilqor.mobile.persistence.model.Observation;
+import com.wlobs.wilqor.mobile.persistence.model.Observation_Table;
 import com.wlobs.wilqor.mobile.persistence.sync.SyncUtilities;
 import com.wlobs.wilqor.mobile.persistence.sync.SyncUtility;
 import com.wlobs.wilqor.mobile.rest.api.ObservationsService;
@@ -49,7 +61,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ObservationsActivity extends NavigationActivity {
+public class ObservationsActivity extends NavigationActivity implements OnItemClickListener {
     @BindView(R.id.observations_last_sync_date)
     TextView lastSyncDate;
 
@@ -59,12 +71,18 @@ public class ObservationsActivity extends NavigationActivity {
     @BindView(R.id.drawer_layout)
     View topLevelLayout;
 
+    @BindView(R.id.observations_recycler_view)
+    RecyclerView recyclerView;
+
     private SyncUtility syncUtility;
     private AuthUtility authUtility;
     private SpeciesService speciesService;
     private ObservationsService observationsService;
     private VotesService votesService;
     private Optional<SynchronizationTask> currentSyncTask;
+    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.Adapter adapter;
+    private FlowCursorList<Observation> observationsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +96,27 @@ public class ObservationsActivity extends NavigationActivity {
         speciesService = RestServices.getSpeciesService(getApplicationContext(), authUtility, getResources());
         observationsService = RestServices.getObservationsService(getApplicationContext(), authUtility, getResources());
         votesService = RestServices.getVotesService(getApplicationContext(), authUtility, getResources());
+
+        layoutManager = new LinearLayoutManager(this);
+        observationsList = SQLite.select()
+                .from(Observation.class)
+                .where(Observation_Table.author.eq(authUtility.getLogin().get()))
+                .orderBy(Observation_Table.dateUtcTimestamp, false)
+                .cursorList();
+        adapter = new ObservationsAdapter(observationsList,
+                this,
+                DateFormatters.getRecyclerDateFormatter(),
+                SpeciesFormatters.getSpeciesFormatter());
+        // set if all item views are of the same height and width for performance
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        recyclerView.setAdapter(adapter);
+    }
+
+    @OnClick(R.id.observations_fab)
+    public void onFabClick() {
+        // TODO handle FAB click
     }
 
     @OnClick(R.id.observations_sync_button)
@@ -90,10 +129,18 @@ public class ObservationsActivity extends NavigationActivity {
         super.onResume();
 
         currentSyncTask = Optional.absent();
-        updateLastSyncDate();
+        updateLastSyncDateLabel();
+        refreshObservationsList();
         if (syncUtility.shouldSync()) {
             performSynchronization();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        observationsList.close();
     }
 
     @Override
@@ -114,7 +161,7 @@ public class ObservationsActivity extends NavigationActivity {
         }
     }
 
-    private void updateLastSyncDate() {
+    private void updateLastSyncDateLabel() {
         lastSyncDate.setText(syncUtility.getLastSyncDateString());
     }
 
@@ -153,11 +200,22 @@ public class ObservationsActivity extends NavigationActivity {
         return dialog;
     }
 
+    @Override
+    public void onItemClick(int position) {
+        Observation clicked = observationsList.getItem(position);
+        // TODO handle click on item
+    }
+
     private enum SynchronizationResult {
         SUCCESS,
         FAILURE,
         UNAUTHORIZED,
         CANCELLED
+    }
+
+    private void refreshObservationsList() {
+        observationsList.refresh();
+        adapter.notifyDataSetChanged();
     }
 
     private class SynchronizationTask extends AsyncTask<Void, Void, SynchronizationResult> {
@@ -208,7 +266,8 @@ public class ObservationsActivity extends NavigationActivity {
             switch (synchronizationResult) {
                 case SUCCESS:
                     syncUtility.updateLastSyncTimestampToNow();
-                    ObservationsActivity.this.updateLastSyncDate();
+                    ObservationsActivity.this.updateLastSyncDateLabel();
+                    ObservationsActivity.this.refreshObservationsList();
                     break;
                 case FAILURE:
                     ObservationsActivity.this.getSyncErrorSnackbar().show();

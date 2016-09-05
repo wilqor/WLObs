@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.mobile.persistence.sync;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
+package com.wlobs.wilqor.mobile.activity.formatting;
 
 /**
  * @author wilqor
  */
-class SyncDateFormatterImpl implements SyncDateFormatter {
-    private final SimpleDateFormat formatter;
+public final class DateFormatters {
+    private static final String SYNC_DATE_PATTERN = "HH:mm dd.MM.yy";
+    private static final String RECYCLER_DATE_PATTERN = "HH:mm dd.MM.yyyy";
 
-    public SyncDateFormatterImpl(String datePattern) {
-        formatter = new SimpleDateFormat(datePattern);
+    private DateFormatters() {
     }
 
-    @Override
-    public String formatSyncDate(Date date) {
-        return formatter.format(date);
+    public static DateFormatter getSyncDateFormatter() {
+        return new DateFormatterImpl(SYNC_DATE_PATTERN);
+    }
+
+    public static DateFormatter getRecyclerDateFormatter() {
+        return new DateFormatterImpl(RECYCLER_DATE_PATTERN);
     }
 }

@@ -14,13 +14,24 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.mobile.persistence.sync;
+package com.wlobs.wilqor.mobile.activity.formatting;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * @author wilqor
  */
-interface SyncDateFormatter {
-    String formatSyncDate(Date date);
+final class DateFormatterImpl implements DateFormatter {
+    private final SimpleDateFormat formatter;
+
+    DateFormatterImpl(String datePattern) {
+        formatter = new SimpleDateFormat(datePattern);
+
+    }
+
+    @Override
+    public String format(long dateTimestamp) {
+        return formatter.format(new Date(dateTimestamp));
+    }
 }

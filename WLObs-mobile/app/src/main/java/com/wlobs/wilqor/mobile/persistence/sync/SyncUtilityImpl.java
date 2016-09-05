@@ -21,6 +21,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import com.wlobs.wilqor.mobile.R;
+import com.wlobs.wilqor.mobile.activity.formatting.DateFormatter;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -42,9 +43,9 @@ final class SyncUtilityImpl implements SyncUtility {
 
     private final SharedPreferences preferences;
     private final Context context;
-    private final SyncDateFormatter dateFormatter;
+    private final DateFormatter dateFormatter;
 
-    SyncUtilityImpl(Context context, SyncDateFormatter dateFormatter) {
+    SyncUtilityImpl(Context context, DateFormatter dateFormatter) {
         this.context = context;
         this.dateFormatter = dateFormatter;
         this.preferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -72,7 +73,7 @@ final class SyncUtilityImpl implements SyncUtility {
         String dateString = context.getString(R.string.observations_last_sync_never);
         long storedTimestamp = getStoredTimestamp();
         if (storedTimestamp != DEFAULT_SYNC_TIMESTAMP) {
-            dateString = dateFormatter.formatSyncDate(new Date(storedTimestamp));
+            dateString = dateFormatter.format(storedTimestamp);
         }
         return dateString;
     }
