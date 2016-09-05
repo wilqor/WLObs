@@ -17,11 +17,37 @@
 package com.wlobs.wilqor.mobile.activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.FrameLayout;
 
+import com.raizlabs.android.dbflow.list.FlowCursorList;
+import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.wlobs.wilqor.mobile.R;
+import com.wlobs.wilqor.mobile.activity.formatting.DateFormatters;
+import com.wlobs.wilqor.mobile.activity.formatting.SpeciesFormatters;
+import com.wlobs.wilqor.mobile.activity.recycler.DividerItemDecoration;
+import com.wlobs.wilqor.mobile.activity.recycler.ObservationsAdapter;
+import com.wlobs.wilqor.mobile.activity.recycler.OnItemClickListener;
+import com.wlobs.wilqor.mobile.activity.recycler.VotesAdapter;
+import com.wlobs.wilqor.mobile.persistence.auth.AuthUtilities;
+import com.wlobs.wilqor.mobile.persistence.auth.AuthUtility;
+import com.wlobs.wilqor.mobile.persistence.model.Observation;
+import com.wlobs.wilqor.mobile.persistence.model.Observation_Table;
+import com.wlobs.wilqor.mobile.persistence.model.Vote;
+import com.wlobs.wilqor.mobile.persistence.model.Vote_Table;
 
-public class VotesActivity extends NavigationActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class VotesActivity extends NavigationActivity implements OnItemClickListener {
+    @BindView(R.id.votes_recycler_view)
+    RecyclerView recyclerView;
+
+    private AuthUtility authUtility;
+    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.Adapter adapter;
+    private FlowCursorList<Vote> votesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,5 +55,47 @@ public class VotesActivity extends NavigationActivity {
 
         FrameLayout contentFrameLayout = (FrameLayout) findViewById(R.id.contentFrame);
         getLayoutInflater().inflate(R.layout.activity_votes, contentFrameLayout);
+        ButterKnife.bind(this);
+        authUtility = AuthUtilities.getAuthUtility(getApplicationContext());
+        layoutManager = new LinearLayoutManager(this);
+        votesList = SQLite.select()
+                .from(Vote.class)
+                .where(Vote_Table.voter.eq(authUtility.getLogin().get()))
+                .orderBy(Vote_Table.dateUtcTimestamp, false)
+                .cursorList();
+        adapter = new VotesAdapter(votesList,
+                this,
+                DateFormatters.getRecyclerDateFormatter(),
+                SpeciesFormatters.getSpeciesFormatter());
+        // set if all item views are of the same height and width for performance
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        refreshVotesList();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        votesList.close();
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Vote clicked = votesList.getItem(position);
+        // TODO handle click on vote item
+    }
+
+    private void refreshVotesList() {
+        votesList.refresh();
+        adapter.notifyDataSetChanged();
     }
 }
