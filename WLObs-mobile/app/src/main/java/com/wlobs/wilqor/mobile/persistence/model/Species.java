@@ -24,11 +24,13 @@ import com.wlobs.wilqor.mobile.persistence.db.LocalDatabase;
 import com.wlobs.wilqor.mobile.rest.model.SpeciesDto;
 import com.wlobs.wilqor.mobile.rest.model.SpeciesStub;
 
+import java.io.Serializable;
+
 /**
  * @author wilqor
  */
 @Table(database = LocalDatabase.class)
-public class Species extends BaseModel {
+public class Species extends BaseModel implements Serializable {
     @Column
     @PrimaryKey(autoincrement = true)
     private int localId;

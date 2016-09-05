@@ -36,6 +36,10 @@
             android:name=".activity.VotesActivity"
             android:label="@string/navigation_votes_header"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.VoteDetailsActivity"
+            android:label="@string/vote_details_activity_header"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

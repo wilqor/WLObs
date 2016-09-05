@@ -100,11 +100,12 @@ public class ObservationsActivity extends NavigationActivity implements OnItemCl
         observationsList = SQLite.select()
                 .from(Observation.class)
                 .where(Observation_Table.author.eq(authUtility.getLogin().get()))
+                .and(Observation_Table.deleted.eq(false))
                 .orderBy(Observation_Table.dateUtcTimestamp, false)
                 .cursorList();
         adapter = new ObservationsAdapter(observationsList,
                 this,
-                DateFormatters.getRecyclerDateFormatter(),
+                DateFormatters.getFullDateFormatter(),
                 SpeciesFormatters.getSpeciesFormatter());
         // set if all item views are of the same height and width for performance
         recyclerView.setHasFixedSize(true);

@@ -52,4 +52,13 @@
     <string name="synchronization_button_description">Przycisk synchronizacji</string>
     <string name="observation_item_votes_label">Liczba głosów:</string>
     <string name="observation_restriction_icon">ikona zastrzeżenia obserwacji</string>
+    <string name="vote_details_activity_header">Szczegóły głosu</string>
+    <string name="vote_details_author_label">Autor obserwacji:</string>
+    <string name="vote_details_class_label">Gromada:</string>
+    <string name="vote_details_species_label">Gatunek:</string>
+    <string name="vote_details_delete_label">Usuń głos</string>
+    <string name="vote_details_date_voted">Data oddania głosu:</string>
+    <string name="no">Nie</string>
+    <string name="delete_details_confirmation">Czy na pewno chcesz usunąć ten głos?</string>
+    <string name="yes">Tak</string>
 </resources>

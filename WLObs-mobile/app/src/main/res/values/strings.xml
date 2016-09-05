@@ -42,4 +42,13 @@
     <string name="species_class_mammal">mammal</string>
     <string name="observation_item_votes_label">Votes:</string>
     <string name="observation_restriction_icon">observation restriction icon</string>
+    <string name="vote_details_activity_header">Vote details</string>
+    <string name="vote_details_date_voted">Date voted:</string>
+    <string name="vote_details_class_label">Class:</string>
+    <string name="vote_details_species_label">Species:</string>
+    <string name="vote_details_author_label">Observation author:</string>
+    <string name="vote_details_delete_label">Delete vote</string>
+    <string name="delete_details_confirmation">Do you really want to delete this vote?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

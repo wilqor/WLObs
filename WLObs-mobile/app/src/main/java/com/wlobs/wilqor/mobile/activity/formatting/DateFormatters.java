@@ -21,7 +21,7 @@ package com.wlobs.wilqor.mobile.activity.formatting;
  */
 public final class DateFormatters {
     private static final String SYNC_DATE_PATTERN = "HH:mm dd.MM.yy";
-    private static final String RECYCLER_DATE_PATTERN = "HH:mm dd.MM.yyyy";
+    private static final String FULL_DATE_PATTERN = "HH:mm dd.MM.yyyy";
 
     private DateFormatters() {
     }
@@ -30,7 +30,7 @@ public final class DateFormatters {
         return new DateFormatterImpl(SYNC_DATE_PATTERN);
     }
 
-    public static DateFormatter getRecyclerDateFormatter() {
-        return new DateFormatterImpl(RECYCLER_DATE_PATTERN);
+    public static DateFormatter getFullDateFormatter() {
+        return new DateFormatterImpl(FULL_DATE_PATTERN);
     }
 }

@@ -76,6 +76,12 @@ public class VotesAdapter extends RecyclerView.Adapter<VotesAdapter.ViewHolder> 
             speciesClassLabel = (TextView) itemView.findViewById(R.id.vote_item_species_class);
             dateLabel = (TextView) itemView.findViewById(R.id.vote_item_date);
             speciesDescriptionLabel = (TextView) itemView.findViewById(R.id.vote_item_species_description);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clickListener.onItemClick(getLayoutPosition());
+                }
+            });
         }
 
         public void setSpeciesClassLabelText(String text) {

@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.mobile.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,13 +28,10 @@ import com.wlobs.wilqor.mobile.R;
 import com.wlobs.wilqor.mobile.activity.formatting.DateFormatters;
 import com.wlobs.wilqor.mobile.activity.formatting.SpeciesFormatters;
 import com.wlobs.wilqor.mobile.activity.recycler.DividerItemDecoration;
-import com.wlobs.wilqor.mobile.activity.recycler.ObservationsAdapter;
 import com.wlobs.wilqor.mobile.activity.recycler.OnItemClickListener;
 import com.wlobs.wilqor.mobile.activity.recycler.VotesAdapter;
 import com.wlobs.wilqor.mobile.persistence.auth.AuthUtilities;
 import com.wlobs.wilqor.mobile.persistence.auth.AuthUtility;
-import com.wlobs.wilqor.mobile.persistence.model.Observation;
-import com.wlobs.wilqor.mobile.persistence.model.Observation_Table;
 import com.wlobs.wilqor.mobile.persistence.model.Vote;
 import com.wlobs.wilqor.mobile.persistence.model.Vote_Table;
 
@@ -61,11 +59,12 @@ public class VotesActivity extends NavigationActivity implements OnItemClickList
         votesList = SQLite.select()
                 .from(Vote.class)
                 .where(Vote_Table.voter.eq(authUtility.getLogin().get()))
+                .and(Vote_Table.deleted.eq(false))
                 .orderBy(Vote_Table.dateUtcTimestamp, false)
                 .cursorList();
         adapter = new VotesAdapter(votesList,
                 this,
-                DateFormatters.getRecyclerDateFormatter(),
+                DateFormatters.getFullDateFormatter(),
                 SpeciesFormatters.getSpeciesFormatter());
         // set if all item views are of the same height and width for performance
         recyclerView.setHasFixedSize(true);
@@ -90,8 +89,10 @@ public class VotesActivity extends NavigationActivity implements OnItemClickList
 
     @Override
     public void onItemClick(int position) {
-        Vote clicked = votesList.getItem(position);
-        // TODO handle click on vote item
+        Vote clickedVote = votesList.getItem(position);
+        Intent intent = new Intent(this, VoteDetailsActivity.class);
+        intent.putExtra(VoteDetailsActivity.INTENT_VOTE_KEY, clickedVote);
+        startActivity(intent);
     }
 
     private void refreshVotesList() {
