@@ -28,7 +28,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.fernandocejas.arrow.optional.Optional;
 import com.raizlabs.android.dbflow.list.FlowCursorList;
@@ -161,6 +160,12 @@ public class ObservationsActivity extends NavigationActivity implements OnItemCl
         }
     }
 
+    @Override
+    public void onItemClick(int position) {
+        Observation clicked = observationsList.getItem(position);
+        // TODO handle click on item
+    }
+
     private void updateLastSyncDateLabel() {
         lastSyncDate.setText(syncUtility.getLastSyncDateString());
     }
@@ -198,12 +203,6 @@ public class ObservationsActivity extends NavigationActivity implements OnItemCl
         dialog.setMessage(getString(R.string.observations_sync_progress_message));
         dialog.setCancelable(false);
         return dialog;
-    }
-
-    @Override
-    public void onItemClick(int position) {
-        Observation clicked = observationsList.getItem(position);
-        // TODO handle click on item
     }
 
     private enum SynchronizationResult {
