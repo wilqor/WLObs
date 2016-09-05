@@ -84,7 +84,7 @@
             android:layout_alignParentRight="true"
             android:contentDescription="@string/observation_restriction_icon"
             android:src="@drawable/ic_lock_outline_white_24dp"
-            android:tint="@color/primary_text_default_material_light"
+            android:tint="@color/background_material_dark"
             android:visibility="invisible" />
 
     </RelativeLayout>
