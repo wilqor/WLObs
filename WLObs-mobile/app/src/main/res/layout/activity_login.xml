@@ -65,7 +65,7 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:textSize="16sp"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="@color/error_color"/>
             <RelativeLayout
                 android:id="@+id/login_wrapper"
                 android:layout_width="match_parent"
