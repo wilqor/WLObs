@@ -71,12 +71,12 @@ public final class ObservationsAdapter extends RecyclerView.Adapter<Observations
         return observationsList.getCount();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView speciesClassLabel;
-        private TextView dateLabel;
-        private TextView speciesDescriptionLabel;
-        private TextView votesCountLabel;
-        private ImageView restrictionIcon;
+    public final class ViewHolder extends RecyclerView.ViewHolder {
+        private final TextView speciesClassLabel;
+        private final TextView dateLabel;
+        private final TextView speciesDescriptionLabel;
+        private final TextView votesCountLabel;
+        private final ImageView restrictionIcon;
 
         public ViewHolder(View itemView) {
             super(itemView);
