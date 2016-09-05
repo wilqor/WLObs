@@ -44,4 +44,10 @@
     <string name="observations_last_sync_never">nigdy</string>
     <string name="observations_sync_progress_message">Synchronizacja w toku…</string>
     <string name="error_sync_failed">Synchronizacja zakończona niepowodzeniem!</string>
+    <string name="species_class_amphibian">płaz</string>
+    <string name="species_class_bird">ptak</string>
+    <string name="species_class_fish">ryba</string>
+    <string name="species_class_mammal">ssak</string>
+    <string name="species_class_reptile">gad</string>
+    <string name="synchronization_button_description">Przycisk synchronizacji</string>
 </resources>

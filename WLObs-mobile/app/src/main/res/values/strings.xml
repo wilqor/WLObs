@@ -35,4 +35,9 @@
     <string name="observations_sync_progress_message">Synchronization in progress…</string>
     <string name="error_sync_failed">Synchronization failed!</string>
     <string name="synchronization_button_description">Synchronization button</string>
+    <string name="species_class_fish">fish</string>
+    <string name="species_class_amphibian">amphibian</string>
+    <string name="species_class_reptile">reptile</string>
+    <string name="species_class_bird">bird</string>
+    <string name="species_class_mammal">mammal</string>
 </resources>

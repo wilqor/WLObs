@@ -18,6 +18,8 @@ package com.wlobs.wilqor.mobile.rest.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.wlobs.wilqor.mobile.R;
+import com.wlobs.wilqor.mobile.config.WLObsApplication;
 
 /**
  * @author wilqor
@@ -48,11 +50,21 @@ public final class SpeciesStub {
     }
 
     public enum Class {
-        FISH,
-        AMPHIBIAN,
-        REPTILE,
-        BIRD,
-        MAMMAL
+        FISH(R.string.species_class_fish),
+        AMPHIBIAN(R.string.species_class_amphibian),
+        REPTILE(R.string.species_class_reptile),
+        BIRD(R.string.species_class_bird),
+        MAMMAL(R.string.species_class_mammal);
+
+        private final int resourceId;
+
+        Class(int resourceId) {
+            this.resourceId = resourceId;
+        }
+
+        public String asString() {
+            return WLObsApplication.getAppContext().getString(resourceId);
+        }
     }
 
     @Override

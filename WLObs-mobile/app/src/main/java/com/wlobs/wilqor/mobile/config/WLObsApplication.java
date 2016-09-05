@@ -17,6 +17,7 @@
 package com.wlobs.wilqor.mobile.config;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.raizlabs.android.dbflow.config.FlowConfig;
 import com.raizlabs.android.dbflow.config.FlowManager;
@@ -25,10 +26,16 @@ import com.raizlabs.android.dbflow.config.FlowManager;
  * @author wilqor
  */
 public class WLObsApplication extends Application {
+    private static Context appContext;
 
     @Override
     public void onCreate() {
         super.onCreate();
         FlowManager.init(new FlowConfig.Builder(this).build());
+        WLObsApplication.appContext = getApplicationContext();
+    }
+
+    public static Context getAppContext() {
+        return WLObsApplication.appContext;
     }
 }
