@@ -13,4 +13,5 @@
     <dimen name="recycler_view_item_normal_text_size">16sp</dimen>
     <dimen name="default_padding_between_strings">3dp</dimen>
     <dimen name="icon_row_height">24dp</dimen>
+    <dimen name="details_vertical_margin">10dp</dimen>
 </resources>

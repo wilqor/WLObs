@@ -138,9 +138,11 @@ public class ObservationDetailsActivity extends NavigationActivity {
 
     @OnCheckedChanged(R.id.observation_details_restriction_switch)
     public void handleRestrictionSwitchCheck(boolean checked) {
-        currentObservation.setRestricted(checked);
-        currentObservation.setRestrictionChanged(true);
-        currentObservation.update();
+        if (currentObservation != null) {
+            currentObservation.setRestricted(checked);
+            currentObservation.setRestrictionChanged(true);
+            currentObservation.update();
+        }
     }
 
     @OnClick(R.id.observation_details_cast_vote_button)

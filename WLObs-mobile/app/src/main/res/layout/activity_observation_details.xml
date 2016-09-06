@@ -26,158 +26,189 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".activity.ObservationDetailsActivity">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@+id/observation_details_date"
-            android:text="@string/observation_details_date_label"
-            android:textSize="@dimen/recycler_view_item_header_text_size"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/observation_details_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:textSize="@dimen/recycler_view_item_header_text_size" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/observation_details_author_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@+id/observation_details_author"
-            android:text="@string/observation_details_author_label"
-            android:textSize="@dimen/recycler_view_item_header_text_size"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/observation_details_author"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:textSize="@dimen/recycler_view_item_header_text_size" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@+id/observation_details_species_class"
-            android:text="@string/observation_details_species_class_label"
-            android:textSize="@dimen/recycler_view_item_header_text_size"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/observation_details_species_class"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:textSize="@dimen/recycler_view_item_header_text_size" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@+id/observation_details_species"
-            android:text="@string/observation_details_species_label"
-            android:textSize="@dimen/recycler_view_item_header_text_size"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/observation_details_species"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:textSize="@dimen/recycler_view_item_header_text_size" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@+id/observation_details_votes_number"
-            android:text="@string/observation_details_number_of_votes_label"
-            android:textSize="@dimen/recycler_view_item_header_text_size"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/observation_details_votes_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:textSize="@dimen/recycler_view_item_header_text_size" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/observation_details_restricted_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/observation_details_restriction_switch"
-            android:text="@string/observation_details_restriction_label"
-            android:textSize="@dimen/recycler_view_item_header_text_size"
-            android:textStyle="bold" />
-
-        <Switch
-            android:id="@+id/observation_details_restriction_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/observation_details_cast_vote_button"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/observation_detais_vote_button_label" />
+                android:layout_marginBottom="@dimen/details_vertical_margin"
+                android:layout_marginTop="@dimen/details_vertical_margin">
 
-            <Button
-                android:id="@+id/observation_details_delete_button"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/observation_details_date"
+                    android:text="@string/observation_details_date_label"
+                    android:textSize="@dimen/recycler_view_item_header_text_size"
+                     />
+
+                <TextView
+                    android:id="@+id/observation_details_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/recycler_view_item_header_text_size" />
+            </RelativeLayout>
+
+            <View style="@style/Divider" />
+
+            <RelativeLayout
+                android:id="@+id/observation_details_author_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/observation_detais_delete_button_label" />
+                android:layout_marginBottom="@dimen/details_vertical_margin"
+                android:layout_marginTop="@dimen/details_vertical_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/observation_details_author"
+                    android:text="@string/observation_details_author_label"
+                    android:textSize="@dimen/recycler_view_item_header_text_size"
+                     />
+
+                <TextView
+                    android:id="@+id/observation_details_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/recycler_view_item_header_text_size" />
+            </RelativeLayout>
+
+            <View style="@style/Divider" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/details_vertical_margin"
+                android:layout_marginTop="@dimen/details_vertical_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/observation_details_species_class"
+                    android:text="@string/observation_details_species_class_label"
+                    android:textSize="@dimen/recycler_view_item_header_text_size"
+                     />
+
+                <TextView
+                    android:id="@+id/observation_details_species_class"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/recycler_view_item_header_text_size" />
+            </RelativeLayout>
+
+            <View style="@style/Divider" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/details_vertical_margin"
+                android:layout_marginTop="@dimen/details_vertical_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/observation_details_species"
+                    android:text="@string/observation_details_species_label"
+                    android:textSize="@dimen/recycler_view_item_header_text_size"
+                     />
+
+                <TextView
+                    android:id="@+id/observation_details_species"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/recycler_view_item_header_text_size" />
+            </RelativeLayout>
+
+            <View style="@style/Divider" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/details_vertical_margin"
+                android:layout_marginTop="@dimen/details_vertical_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/observation_details_votes_number"
+                    android:text="@string/observation_details_number_of_votes_label"
+                    android:textSize="@dimen/recycler_view_item_header_text_size"
+                     />
+
+                <TextView
+                    android:id="@+id/observation_details_votes_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/recycler_view_item_header_text_size" />
+            </RelativeLayout>
+
+            <View style="@style/Divider" />
+
+            <RelativeLayout
+                android:id="@+id/observation_details_restricted_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/details_vertical_margin"
+                android:layout_marginTop="@dimen/details_vertical_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/observation_details_restriction_switch"
+                    android:text="@string/observation_details_restriction_label"
+                    android:textSize="@dimen/recycler_view_item_header_text_size"
+                     />
+
+                <Switch
+                    android:id="@+id/observation_details_restriction_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+            <View style="@style/Divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="@dimen/details_vertical_margin"
+                android:gravity="center_horizontal|bottom"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/observation_details_cast_vote_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/observation_detais_vote_button_label" />
+
+                <Button
+                    android:id="@+id/observation_details_delete_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/observation_detais_delete_button_label" />
+            </LinearLayout>
         </LinearLayout>
-    </RelativeLayout>
-
-
+    </ScrollView>
 </LinearLayout>
