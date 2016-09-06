@@ -164,7 +164,9 @@ public class ObservationsActivity extends NavigationActivity implements OnItemCl
     @Override
     public void onItemClick(int position) {
         Observation clicked = observationsList.getItem(position);
-        // TODO handle click on item
+        Intent intent = new Intent(this, ObservationDetailsActivity.class);
+        intent.putExtra(ObservationDetailsActivity.INTENT_OBSERVATION_KEY, clicked);
+        startActivity(intent);
     }
 
     private void updateLastSyncDateLabel() {

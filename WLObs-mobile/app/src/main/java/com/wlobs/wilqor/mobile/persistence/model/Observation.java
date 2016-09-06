@@ -25,11 +25,13 @@ import com.wlobs.wilqor.mobile.persistence.db.LocalDatabase;
 import com.wlobs.wilqor.mobile.rest.model.NewObservationDto;
 import com.wlobs.wilqor.mobile.rest.model.SpeciesStub;
 
+import java.io.Serializable;
+
 /**
  * @author wilqor
  */
 @Table(database = LocalDatabase.class)
-public class Observation extends BaseModel {
+public class Observation extends BaseModel implements Serializable {
     public static final String ID_NOT_SET = "NOT_SET";
 
     @Column

@@ -24,12 +24,9 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.fernandocejas.arrow.optional.Optional;
 import com.wlobs.wilqor.mobile.R;
 import com.wlobs.wilqor.mobile.activity.formatting.DateFormatter;
 import com.wlobs.wilqor.mobile.activity.formatting.DateFormatters;
-import com.wlobs.wilqor.mobile.activity.formatting.SpeciesFormatter;
-import com.wlobs.wilqor.mobile.activity.formatting.SpeciesFormatters;
 import com.wlobs.wilqor.mobile.persistence.model.Vote;
 
 import butterknife.BindView;
@@ -38,7 +35,6 @@ import butterknife.OnClick;
 
 public class VoteDetailsActivity extends NavigationActivity {
     public static final String INTENT_VOTE_KEY = "VOTE_IN_INTENT";
-    private static final String emptyLabel = "-";
 
     @BindView(R.id.vote_details_date)
     TextView dateVoted;
@@ -56,7 +52,7 @@ public class VoteDetailsActivity extends NavigationActivity {
     Button deleteButton;
 
     private DateFormatter dateFormatter;
-    private Optional<Vote> currentVote;
+    private Vote currentVote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,44 +69,37 @@ public class VoteDetailsActivity extends NavigationActivity {
         super.onResume();
 
         Intent intent = getIntent();
-        Vote tmp = (Vote) intent.getSerializableExtra(INTENT_VOTE_KEY);
-        currentVote = Optional.fromNullable(tmp);
-        if (currentVote.isPresent()) {
-            dateVoted.setText(dateFormatter.format(currentVote.get().getDateUtcTimestamp()));
-            observationAuthor.setText(currentVote.get().getObservationOwner());
-            speciesClass.setText(currentVote.get().getSpecies().getSpeciesClass().asString());
-            speciesDescription.setText(currentVote.get().getSpecies().getName());
+        currentVote = (Vote) intent.getSerializableExtra(INTENT_VOTE_KEY);
+        if (currentVote != null) {
+            dateVoted.setText(dateFormatter.format(currentVote.getDateUtcTimestamp()));
+            observationAuthor.setText(currentVote.getObservationOwner());
+            speciesClass.setText(currentVote.getSpecies().getSpeciesClass().asString());
+            speciesDescription.setText(currentVote.getSpecies().getName());
             deleteButton.setClickable(true);
         } else {
-            dateVoted.setText(emptyLabel);
-            observationAuthor.setText(emptyLabel);
-            speciesClass.setText(emptyLabel);
-            speciesDescription.setText(emptyLabel);
-            deleteButton.setClickable(false);
+            finish();
         }
     }
 
     @OnClick(R.id.vote_details_delete_button)
     public void onClickVoteDeleteButton() {
-        if (currentVote.isPresent()) {
-            new AlertDialog.Builder(this)
-                    .setMessage(R.string.delete_details_confirmation)
-                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            currentVote.get().setDeleted(true);
-                            currentVote.get().update();
-                            VoteDetailsActivity.this.finish();
-                        }
-                    })
-                    .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    })
-                    .create()
-                    .show();
-        }
+        new AlertDialog.Builder(this)
+                .setMessage(R.string.vote_details_delete_confirmation)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        currentVote.setDeleted(true);
+                        currentVote.update();
+                        VoteDetailsActivity.this.finish();
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                })
+                .create()
+                .show();
     }
 }

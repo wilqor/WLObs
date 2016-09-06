@@ -48,7 +48,18 @@
     <string name="vote_details_species_label">Species:</string>
     <string name="vote_details_author_label">Observation author:</string>
     <string name="vote_details_delete_label">Delete vote</string>
-    <string name="delete_details_confirmation">Do you really want to delete this vote?</string>
+    <string name="vote_details_delete_confirmation">Do you really want to delete this vote?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="observation_details_header">Observation details</string>
+    <string name="observation_detais_vote_button_label">Vote</string>
+    <string name="observation_detais_delete_button_label">Delete observation</string>
+    <string name="observation_details_restriction_label">Restricted:</string>
+    <string name="observation_details_number_of_votes_label">Number of votes:</string>
+    <string name="observation_details_species_label">Species:</string>
+    <string name="observation_details_species_class_label">Class:</string>
+    <string name="observation_details_author_label">Author:</string>
+    <string name="observation_details_date_label">Date:</string>
+    <string name="observation_details_delete_confirmation">Do you really want to delete this observation?</string>
+    <string name="vote_details_vote_confirmation_label">Vote casted</string>
 </resources>

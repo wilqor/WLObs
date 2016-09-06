@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2016 wilqor
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -59,6 +58,17 @@
     <string name="vote_details_delete_label">Usuń głos</string>
     <string name="vote_details_date_voted">Data oddania głosu:</string>
     <string name="no">Nie</string>
-    <string name="delete_details_confirmation">Czy na pewno chcesz usunąć ten głos?</string>
+    <string name="vote_details_delete_confirmation">Czy na pewno chcesz usunąć ten głos?</string>
     <string name="yes">Tak</string>
+    <string name="observation_details_author_label">Autor:</string>
+    <string name="observation_details_date_label">Data:</string>
+    <string name="observation_details_header">Szczegóły obserwacji</string>
+    <string name="observation_details_number_of_votes_label">Liczba głosów:</string>
+    <string name="observation_details_restriction_label">Zastrzeżenie:</string>
+    <string name="observation_details_species_class_label">Gromada:</string>
+    <string name="observation_details_species_label">Gatunek:</string>
+    <string name="observation_detais_delete_button_label">Usuń obserwację</string>
+    <string name="observation_detais_vote_button_label">Zagłosuj</string>
+    <string name="vote_details_vote_confirmation_label">Zagłosowano</string>
+    <string name="observation_details_delete_confirmation">Czy na pewno chcesz usunąć tę obserwację?</string>
 </resources>
