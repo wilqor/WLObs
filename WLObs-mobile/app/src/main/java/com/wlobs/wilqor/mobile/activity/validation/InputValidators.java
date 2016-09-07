@@ -34,20 +34,20 @@ public final class InputValidators {
     }
 
     public static InputValidator<String> getLoginValidator(Context ctx) {
-        return new CompositeInputValidator(
-                new BaseInputValidator(
+        return new CompositeInputValidator<>(
+                new BaseInputValidator<>(
                         new EmptyStringErrorChecker(),
                         ctx.getString(R.string.error_field_required)
                 ),
-                new BaseInputValidator(
+                new BaseInputValidator<>(
                         new TooShortStringErrorChecker(MIN_LOGIN_LENGTH),
                         ctx.getString(R.string.error_login_too_short)
                 ),
-                new BaseInputValidator(
+                new BaseInputValidator<>(
                         new TooLongStringErrorChecker(MAX_LOGIN_LENGTH),
                         ctx.getString(R.string.error_login_too_long)
                 ),
-                new BaseInputValidator(
+                new BaseInputValidator<>(
                         new PatternStringErrorChecker(ALPHANUMERIC_PATTERN),
                         ctx.getString(R.string.error_login_invalid)
                 )
@@ -55,16 +55,16 @@ public final class InputValidators {
     }
 
     public static InputValidator<String> getPasswordValidator(Context ctx) {
-        return new CompositeInputValidator(
-                new BaseInputValidator(
+        return new CompositeInputValidator<>(
+                new BaseInputValidator<>(
                         new EmptyStringErrorChecker(),
                         ctx.getString(R.string.error_field_required)
                 ),
-                new BaseInputValidator(
+                new BaseInputValidator<>(
                         new TooShortStringErrorChecker(MIN_PASSWORD_LENGTH),
                         ctx.getString(R.string.error_password_too_short)
                 ),
-                new BaseInputValidator(
+                new BaseInputValidator<>(
                         new TooLongStringErrorChecker(MAX_PASSWORD_LENGTH),
                         ctx.getString(R.string.error_password_too_long)
                 )
