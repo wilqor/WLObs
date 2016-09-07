@@ -65,7 +65,7 @@
     <string name="observation_creation_header">New observation</string>
     <string name="new_observation_date_change_button_text">Change date</string>
     <string name="new_observation_save_button_text">Save</string>
-    <string name="new_observation_restriction_label">Restrict observation?</string>
+    <string name="new_observation_restriction_label">Restrict observation</string>
     <string name="species_autocomplete_prompt">Type to select species</string>
     <string name="error_invalid_species_name">Please select species from dropdown list</string>
     <string name="error_species_name_empty">Species name cannot be empty</string>
