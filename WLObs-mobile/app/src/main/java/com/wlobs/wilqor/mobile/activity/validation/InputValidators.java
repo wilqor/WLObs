@@ -19,6 +19,7 @@ package com.wlobs.wilqor.mobile.activity.validation;
 import android.content.Context;
 
 import com.wlobs.wilqor.mobile.R;
+import com.wlobs.wilqor.mobile.activity.validation.model.SpeciesSelection;
 
 /**
  * @author wilqor
@@ -67,6 +68,19 @@ public final class InputValidators {
                 new BaseInputValidator<>(
                         new TooLongStringErrorChecker(MAX_PASSWORD_LENGTH),
                         ctx.getString(R.string.error_password_too_long)
+                )
+        );
+    }
+
+    public static InputValidator<SpeciesSelection> getSpeciesSelectionValidator(Context ctx) {
+        return new CompositeInputValidator<>(
+                new BaseInputValidator<>(
+                        new EmptySpeciesSelectionErrorChecker(),
+                        ctx.getString(R.string.error_species_name_empty)
+                ),
+                new BaseInputValidator<>(
+                        new NonExistentSpeciesSelectionErrorChecker(),
+                        ctx.getString(R.string.error_invalid_species_name)
                 )
         );
     }

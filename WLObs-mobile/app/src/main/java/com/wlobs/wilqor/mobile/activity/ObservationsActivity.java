@@ -33,11 +33,11 @@ import com.fernandocejas.arrow.optional.Optional;
 import com.raizlabs.android.dbflow.list.FlowCursorList;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.wlobs.wilqor.mobile.R;
+import com.wlobs.wilqor.mobile.activity.adapters.DividerItemDecoration;
+import com.wlobs.wilqor.mobile.activity.adapters.ObservationsAdapter;
+import com.wlobs.wilqor.mobile.activity.adapters.OnItemClickListener;
 import com.wlobs.wilqor.mobile.activity.formatting.DateFormatters;
 import com.wlobs.wilqor.mobile.activity.formatting.SpeciesFormatters;
-import com.wlobs.wilqor.mobile.activity.recycler.DividerItemDecoration;
-import com.wlobs.wilqor.mobile.activity.recycler.ObservationsAdapter;
-import com.wlobs.wilqor.mobile.activity.recycler.OnItemClickListener;
 import com.wlobs.wilqor.mobile.persistence.auth.AuthUtilities;
 import com.wlobs.wilqor.mobile.persistence.auth.AuthUtility;
 import com.wlobs.wilqor.mobile.persistence.model.Observation;
@@ -116,7 +116,7 @@ public class ObservationsActivity extends NavigationActivity implements OnItemCl
 
     @OnClick(R.id.observations_fab)
     public void onFabClick() {
-        // TODO handle FAB click
+        startActivity(new Intent(this, ObservationCreationActivity.class));
     }
 
     @OnClick(R.id.observations_sync_button)

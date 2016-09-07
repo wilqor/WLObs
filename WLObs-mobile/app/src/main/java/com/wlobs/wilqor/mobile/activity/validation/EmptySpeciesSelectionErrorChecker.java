@@ -14,11 +14,17 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.mobile.activity.recycler;
+package com.wlobs.wilqor.mobile.activity.validation;
+
+import com.fernandocejas.arrow.strings.Strings;
+import com.wlobs.wilqor.mobile.activity.validation.model.SpeciesSelection;
 
 /**
  * @author wilqor
  */
-public interface OnItemClickListener {
-    void onItemClick(int position);
+public class EmptySpeciesSelectionErrorChecker implements ErrorChecker<SpeciesSelection> {
+    @Override
+    public boolean hasError(SpeciesSelection input) {
+        return Strings.isNullOrEmpty(input.getSpeciesName());
+    }
 }

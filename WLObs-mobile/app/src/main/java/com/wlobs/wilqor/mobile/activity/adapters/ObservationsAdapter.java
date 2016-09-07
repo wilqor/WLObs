@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.mobile.activity.recycler;
+package com.wlobs.wilqor.mobile.activity.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

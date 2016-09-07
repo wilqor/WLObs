@@ -72,4 +72,10 @@
     <string name="vote_details_vote_confirmation_label">Zagłosowano</string>
     <string name="observation_details_delete_confirmation">Czy na pewno chcesz usunąć tę obserwację?</string>
     <string name="observation_creation_header">Nowa obserwacja</string>
+    <string name="new_observation_date_change_button_text">Zmień datę</string>
+    <string name="new_observation_restriction_label">Obserwacja zastrzeżona?</string>
+    <string name="new_observation_save_button_text">Zapisz</string>
+    <string name="error_species_name_empty">Nazwa gatunku nie może być pusta</string>
+    <string name="error_invalid_species_name">Wybierz gatunek z rozwijanej listy</string>
+    <string name="species_autocomplete_prompt">Zacznij pisać, aby wybrać gatunek</string>
 </resources>

@@ -1,5 +1,4 @@
-
-package com.wlobs.wilqor.mobile.activity.recycler;
+package com.wlobs.wilqor.mobile.activity.adapters;
 
 import android.content.Context;
 import android.content.res.TypedArray;

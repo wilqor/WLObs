@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.mobile.activity.recycler;
+package com.wlobs.wilqor.mobile.activity.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -47,7 +47,7 @@ public class VotesAdapter extends RecyclerView.Adapter<VotesAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vote_item,parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vote_item, parent, false);
         return new ViewHolder(view);
     }
 
