@@ -18,29 +18,24 @@ package com.wlobs.wilqor.mobile.activity.validation;
 
 import com.fernandocejas.arrow.optional.Optional;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @author wilqor
  */
-final class CompositeStringInputValidator implements InputValidator<String> {
-    private final List<InputValidator<String>> validators;
+final class BaseInputValidator<T> implements InputValidator<T> {
+    private final ErrorChecker<T> errorChecker;
+    private final String errorMessage;
 
-    @SafeVarargs
-    CompositeStringInputValidator(InputValidator<String>... validators) {
-        this.validators = Arrays.asList(validators);
+    public BaseInputValidator(ErrorChecker<T> errorChecker, String errorMessage) {
+        this.errorChecker = errorChecker;
+        this.errorMessage = errorMessage;
     }
 
     @Override
-    public Optional<ValidationError> validate(String input) {
-        Optional<ValidationError> result = Optional.absent();
-        for (InputValidator<String> v : validators) {
-            result = v.validate(input);
-            if (result.isPresent()) {
-                break;
-            }
+    public Optional<ValidationError> validate(T input) {
+        Optional<ValidationError> error = Optional.absent();
+        if (errorChecker.hasError(input)) {
+            error = Optional.of(new ValidationError(errorMessage));
         }
-        return result;
+        return error;
     }
 }
