@@ -36,7 +36,7 @@ import com.wlobs.wilqor.mobile.activity.adapters.SpeciesClassAdapter;
 import com.wlobs.wilqor.mobile.activity.validation.InputValidator;
 import com.wlobs.wilqor.mobile.activity.validation.InputValidators;
 import com.wlobs.wilqor.mobile.activity.validation.ValidationError;
-import com.wlobs.wilqor.mobile.activity.validation.model.SpeciesSelection;
+import com.wlobs.wilqor.mobile.activity.model.SpeciesSelection;
 import com.wlobs.wilqor.mobile.persistence.model.Species;
 import com.wlobs.wilqor.mobile.persistence.model.Species_Table;
 import com.wlobs.wilqor.mobile.rest.model.SpeciesStub;

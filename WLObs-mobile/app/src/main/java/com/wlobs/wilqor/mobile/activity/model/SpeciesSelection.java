@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wlobs.wilqor.mobile.activity.validation.model;
+package com.wlobs.wilqor.mobile.activity.model;
 
 import com.wlobs.wilqor.mobile.rest.model.SpeciesStub;
 

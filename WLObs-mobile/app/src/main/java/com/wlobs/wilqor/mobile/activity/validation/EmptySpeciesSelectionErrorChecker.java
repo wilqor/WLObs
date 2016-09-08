@@ -17,7 +17,7 @@
 package com.wlobs.wilqor.mobile.activity.validation;
 
 import com.fernandocejas.arrow.strings.Strings;
-import com.wlobs.wilqor.mobile.activity.validation.model.SpeciesSelection;
+import com.wlobs.wilqor.mobile.activity.model.SpeciesSelection;
 
 /**
  * @author wilqor

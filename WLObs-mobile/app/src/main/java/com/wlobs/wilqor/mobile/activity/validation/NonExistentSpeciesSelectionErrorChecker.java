@@ -17,7 +17,7 @@
 package com.wlobs.wilqor.mobile.activity.validation;
 
 import com.raizlabs.android.dbflow.sql.language.SQLite;
-import com.wlobs.wilqor.mobile.activity.validation.model.SpeciesSelection;
+import com.wlobs.wilqor.mobile.activity.model.SpeciesSelection;
 import com.wlobs.wilqor.mobile.persistence.model.Species;
 import com.wlobs.wilqor.mobile.persistence.model.Species_Table;
 
