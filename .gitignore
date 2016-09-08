@@ -25,3 +25,4 @@ WLObs-mobile/*.iml
 WLObs-mobile/local.properties
 WLObs-mobile/captures/
 WLObs-mobile/.DS_Store/
+WLOBs-mobile/keystore.properties
