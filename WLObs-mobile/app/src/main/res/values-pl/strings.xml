@@ -49,7 +49,7 @@
     <string name="species_class_mammal">ssak</string>
     <string name="species_class_reptile">gad</string>
     <string name="synchronization_button_description">Przycisk synchronizacji</string>
-    <string name="observation_item_votes_label">Liczba głosów</string>
+    <string name="observation_item_votes_label">Liczba głosów:</string>
     <string name="observation_restriction_icon">ikona zastrzeżenia obserwacji</string>
     <string name="vote_details_activity_header">Szczegóły głosu</string>
     <string name="vote_details_author_label">Autor obserwacji</string>

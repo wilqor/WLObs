@@ -40,7 +40,7 @@
     <string name="species_class_reptile">reptile</string>
     <string name="species_class_bird">bird</string>
     <string name="species_class_mammal">mammal</string>
-    <string name="observation_item_votes_label">Votes</string>
+    <string name="observation_item_votes_label">Votes:</string>
     <string name="observation_restriction_icon">observation restriction icon</string>
     <string name="vote_details_activity_header">Vote details</string>
     <string name="vote_details_date_voted">Date voted</string>
