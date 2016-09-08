@@ -19,6 +19,8 @@ package com.wlobs.wilqor.mobile.rest.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * @author wilqor
  */
@@ -141,28 +143,36 @@ public final class AggregationRequestDto {
         }
     }
 
-    public static final class TimeRange {
-        @Expose
-        @SerializedName("dateFromUtcTimestamp")
-        private double dateFromUtcTimestamp;
+    public static final class TimeRange implements Serializable {
+        public TimeRange() {
+        }
+
+        public TimeRange(long dateFromUtcTimestamp, long dateToUtcTimestamp) {
+            this.dateFromUtcTimestamp = dateFromUtcTimestamp;
+            this.dateToUtcTimestamp = dateToUtcTimestamp;
+        }
 
         @Expose
         @SerializedName("dateFromUtcTimestamp")
-        private double dateToUtcTimestamp;
+        private long dateFromUtcTimestamp;
 
-        public double getDateFromUtcTimestamp() {
+        @Expose
+        @SerializedName("dateFromUtcTimestamp")
+        private long dateToUtcTimestamp;
+
+        public long getDateFromUtcTimestamp() {
             return dateFromUtcTimestamp;
         }
 
-        public void setDateFromUtcTimestamp(double dateFromUtcTimestamp) {
+        public void setDateFromUtcTimestamp(long dateFromUtcTimestamp) {
             this.dateFromUtcTimestamp = dateFromUtcTimestamp;
         }
 
-        public double getDateToUtcTimestamp() {
+        public long getDateToUtcTimestamp() {
             return dateToUtcTimestamp;
         }
 
-        public void setDateToUtcTimestamp(double dateToUtcTimestamp) {
+        public void setDateToUtcTimestamp(long dateToUtcTimestamp) {
             this.dateToUtcTimestamp = dateToUtcTimestamp;
         }
 

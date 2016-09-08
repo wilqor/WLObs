@@ -33,10 +33,10 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.wlobs.wilqor.mobile.R;
 import com.wlobs.wilqor.mobile.activity.adapters.FilterableSpeciesAdapter;
 import com.wlobs.wilqor.mobile.activity.adapters.SpeciesClassAdapter;
+import com.wlobs.wilqor.mobile.activity.model.SpeciesSelection;
 import com.wlobs.wilqor.mobile.activity.validation.InputValidator;
 import com.wlobs.wilqor.mobile.activity.validation.InputValidators;
 import com.wlobs.wilqor.mobile.activity.validation.ValidationError;
-import com.wlobs.wilqor.mobile.activity.model.SpeciesSelection;
 import com.wlobs.wilqor.mobile.persistence.model.Species;
 import com.wlobs.wilqor.mobile.persistence.model.Species_Table;
 import com.wlobs.wilqor.mobile.rest.model.SpeciesStub;
@@ -55,6 +55,7 @@ public class SpeciesSelectionFragment extends Fragment implements AdapterView.On
     AutoCompleteTextView speciesAutoCompleteTextView;
 
     private Context context;
+    private SpeciesClassAdapter speciesClassAdapter;
     private FilterableSpeciesAdapter filterableSpeciesAdapter;
     private SpeciesStub.Class selectedClass;
     private InputValidator<SpeciesSelection> speciesSelectionInputValidator;
@@ -77,7 +78,7 @@ public class SpeciesSelectionFragment extends Fragment implements AdapterView.On
         View view = inflater.inflate(R.layout.fragment_species_selection, container, false);
         unbinder = ButterKnife.bind(this, view);
 
-        SpeciesClassAdapter speciesClassAdapter = new SpeciesClassAdapter(context, android.R.layout.simple_spinner_item);
+        speciesClassAdapter = new SpeciesClassAdapter(context, android.R.layout.simple_spinner_item);
         speciesClassSpinner.setAdapter(speciesClassAdapter);
         speciesClassSpinner.setOnItemSelectedListener(this);
         filterableSpeciesAdapter = new FilterableSpeciesAdapter(context, speciesClassAdapter.getItem(0));
@@ -133,5 +134,15 @@ public class SpeciesSelectionFragment extends Fragment implements AdapterView.On
                     .querySingle());
         }
         return result;
+    }
+
+    public void setSpeciesClass(SpeciesStub.Class speciesClass) {
+        selectedClass = speciesClass;
+        filterableSpeciesAdapter.setSpeciesClass(selectedClass);
+        speciesClassSpinner.setSelection(speciesClassAdapter.getPosition(speciesClass));
+    }
+
+    public void setSpeciesName(String speciesName) {
+        speciesAutoCompleteTextView.setText(speciesName);
     }
 }

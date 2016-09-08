@@ -40,6 +40,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/details_vertical_margin"
                 android:orientation="horizontal">
 
                 <TextView
@@ -57,12 +58,16 @@
                     android:text="@string/new_observation_date_change_button_text" />
             </LinearLayout>
 
+            <View style="@style/Divider" />
+
             <fragment
                 android:id="@+id/observation_creation_species_fragment"
                 class="com.wlobs.wilqor.mobile.activity.SpeciesSelectionFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:layout="@layout/fragment_species_selection" />
+
+            <View style="@style/Divider" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -86,6 +91,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true" />
             </RelativeLayout>
+
+            <View style="@style/Divider" />
 
             <RelativeLayout
                 android:layout_width="match_parent"

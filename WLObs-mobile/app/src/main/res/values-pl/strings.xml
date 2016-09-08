@@ -78,4 +78,11 @@
     <string name="error_species_name_empty">Nazwa gatunku nie może być pusta</string>
     <string name="error_invalid_species_name">Wybierz gatunek z rozwijanej listy</string>
     <string name="species_autocomplete_prompt">Zacznij pisać, aby wybrać gatunek</string>
+    <string name="search_filter_apply_button_label">Zastosuj</string>
+    <string name="search_filter_date_from_button_label">Zmień datę od</string>
+    <string name="search_filter_date_to_button_label">Zmień datę do</string>
+    <string name="search_filter_header">Filtruj wyniki wyszukiwania</string>
+    <string name="search_filter_species_checkbox_label">Filtruj po gatunku</string>
+    <string name="search_filter_time_checkbox_label">Filtruj po czasie</string>
+    <string name="search_filter_button_label">Ustaw filtr wyszukiwania</string>
 </resources>

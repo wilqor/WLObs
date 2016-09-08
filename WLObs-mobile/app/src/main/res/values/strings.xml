@@ -69,4 +69,11 @@
     <string name="species_autocomplete_prompt">Type to select species</string>
     <string name="error_invalid_species_name">Please select species from dropdown list</string>
     <string name="error_species_name_empty">Species name cannot be empty</string>
+    <string name="search_filter_header">Filter search results</string>
+    <string name="search_filter_time_checkbox_label">Filter by time</string>
+    <string name="search_filter_species_checkbox_label">Filter by species</string>
+    <string name="search_filter_apply_button_label">Apply</string>
+    <string name="search_filter_date_from_button_label">Change date from</string>
+    <string name="search_filter_date_to_button_label">Change date to</string>
+    <string name="search_filter_button_label">Set results filter</string>
 </resources>

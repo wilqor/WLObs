@@ -48,6 +48,10 @@
             android:name=".activity.ObservationCreationActivity"
             android:label="@string/observation_creation_header"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.SearchFilterActivity"
+            android:label="@string/search_filter_header"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

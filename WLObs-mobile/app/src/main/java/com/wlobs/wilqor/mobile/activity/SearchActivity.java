@@ -16,12 +16,22 @@
 
 package com.wlobs.wilqor.mobile.activity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
+import com.fernandocejas.arrow.optional.Optional;
 import com.wlobs.wilqor.mobile.R;
+import com.wlobs.wilqor.mobile.activity.model.SearchFilter;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class SearchActivity extends NavigationActivity {
+    static final int REQUEST_CODE = 1;
+
+    private Optional<SearchFilter> currentFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,5 +39,33 @@ public class SearchActivity extends NavigationActivity {
 
         FrameLayout contentFrameLayout = (FrameLayout) findViewById(R.id.contentFrame);
         getLayoutInflater().inflate(R.layout.activity_search, contentFrameLayout);
+        ButterKnife.bind(this);
+        currentFilter = Optional.absent();
+    }
+
+    @OnClick(R.id.search_filter_results_button)
+    public void onHandleResultsButtonClick() {
+        Intent intent = new Intent(this, SearchFilterActivity.class);
+        if (currentFilter.isPresent()) {
+            intent.putExtra(SearchFilterActivity.INTENT_FILTER_PARAMETER, currentFilter.get());
+        }
+        startActivityForResult(intent, REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            SearchFilter filter = (SearchFilter) data.getSerializableExtra(SearchFilterActivity.INTENT_FILTER_PARAMETER);
+            currentFilter = Optional.fromNullable(filter);
+        } else {
+            currentFilter = Optional.absent();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

@@ -18,10 +18,12 @@ package com.wlobs.wilqor.mobile.activity.model;
 
 import com.wlobs.wilqor.mobile.rest.model.SpeciesStub;
 
+import java.io.Serializable;
+
 /**
  * @author wilqor
  */
-public final class SpeciesSelection {
+public final class SpeciesSelection implements Serializable {
     private final SpeciesStub.Class speciesClass;
     private final String speciesName;
 
