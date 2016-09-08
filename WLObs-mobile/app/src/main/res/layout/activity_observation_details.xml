@@ -201,13 +201,13 @@
                     android:id="@+id/observation_details_cast_vote_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/observation_detais_vote_button_label" />
+                    android:text="@string/observation_details_vote_button_label" />
 
                 <Button
                     android:id="@+id/observation_details_delete_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/observation_detais_delete_button_label" />
+                    android:text="@string/observation_details_delete_button_label" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -52,8 +52,8 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="observation_details_header">Observation details</string>
-    <string name="observation_detais_vote_button_label">Vote</string>
-    <string name="observation_detais_delete_button_label">Delete observation</string>
+    <string name="observation_details_vote_button_label">Vote</string>
+    <string name="observation_details_delete_button_label">Delete observation</string>
     <string name="observation_details_restriction_label">Restricted</string>
     <string name="observation_details_number_of_votes_label">Number of votes</string>
     <string name="observation_details_species_label">Species</string>

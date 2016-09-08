@@ -67,8 +67,8 @@
     <string name="observation_details_restriction_label">Zastrzeżenie</string>
     <string name="observation_details_species_class_label">Gromada</string>
     <string name="observation_details_species_label">Gatunek</string>
-    <string name="observation_detais_delete_button_label">Usuń obserwację</string>
-    <string name="observation_detais_vote_button_label">Zagłosuj</string>
+    <string name="observation_details_delete_button_label">Usuń obserwację</string>
+    <string name="observation_details_vote_button_label">Zagłosuj</string>
     <string name="vote_details_vote_confirmation_label">Zagłosowano</string>
     <string name="observation_details_delete_confirmation">Czy na pewno chcesz usunąć tę obserwację?</string>
     <string name="observation_creation_header">Nowa obserwacja</string>
