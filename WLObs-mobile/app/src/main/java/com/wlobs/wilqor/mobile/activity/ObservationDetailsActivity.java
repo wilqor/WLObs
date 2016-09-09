@@ -24,14 +24,23 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import com.fernandocejas.arrow.optional.Optional;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.wlobs.wilqor.mobile.R;
 import com.wlobs.wilqor.mobile.activity.formatting.DateFormatter;
 import com.wlobs.wilqor.mobile.activity.formatting.DateFormatters;
+import com.wlobs.wilqor.mobile.activity.map.MapConstants;
+import com.wlobs.wilqor.mobile.activity.map.WorkaroundMapFragment;
 import com.wlobs.wilqor.mobile.persistence.auth.AuthUtilities;
 import com.wlobs.wilqor.mobile.persistence.auth.AuthUtility;
 import com.wlobs.wilqor.mobile.persistence.model.Observation;
@@ -45,7 +54,7 @@ import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
-public class ObservationDetailsActivity extends NavigationActivity {
+public class ObservationDetailsActivity extends NavigationActivity implements OnMapReadyCallback {
     public static final String INTENT_OBSERVATION_KEY = "OBSERVATION_IN_INTENT";
 
     @BindView(R.id.observation_details_date)
@@ -81,10 +90,14 @@ public class ObservationDetailsActivity extends NavigationActivity {
     @BindView(R.id.drawer_layout)
     View topLevelLayout;
 
+    @BindView(R.id.observation_details_scroll_view)
+    ScrollView scrollView;
+
     private AuthUtility authUtility;
 
     private DateFormatter dateFormatter;
     private Observation currentObservation;
+    private GoogleMap map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +108,14 @@ public class ObservationDetailsActivity extends NavigationActivity {
         ButterKnife.bind(this);
         dateFormatter = DateFormatters.getFullDateFormatter();
         authUtility = AuthUtilities.getAuthUtility(getApplicationContext());
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.observation_details_google_map);
+        ((WorkaroundMapFragment) getSupportFragmentManager().findFragmentById(R.id.observation_details_google_map)).setListener(new WorkaroundMapFragment.OnTouchListener() {
+            @Override
+            public void onTouch() {
+                scrollView.requestDisallowInterceptTouchEvent(true);
+            }
+        });
+        mapFragment.getMapAsync(this);
     }
 
     @Override
@@ -179,5 +200,13 @@ public class ObservationDetailsActivity extends NavigationActivity {
                 .create()
                 .show();
 
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        map = googleMap;
+        LatLng position = new LatLng(currentObservation.getLatitude(), currentObservation.getLongitude());
+        map.addMarker(new MarkerOptions().position(position));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(position, MapConstants.DEFAULT_ZOOM));
     }
 }

@@ -27,6 +27,7 @@
     tools:context=".activity.ObservationDetailsActivity">
 
     <ScrollView
+        android:id="@+id/observation_details_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
@@ -49,8 +50,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_toLeftOf="@+id/observation_details_date"
                     android:text="@string/observation_details_date_label"
-                    android:textSize="@dimen/recycler_view_item_header_text_size"
-                     />
+                    android:textSize="@dimen/recycler_view_item_header_text_size" />
 
                 <TextView
                     android:id="@+id/observation_details_date"
@@ -75,8 +75,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_toLeftOf="@+id/observation_details_author"
                     android:text="@string/observation_details_author_label"
-                    android:textSize="@dimen/recycler_view_item_header_text_size"
-                     />
+                    android:textSize="@dimen/recycler_view_item_header_text_size" />
 
                 <TextView
                     android:id="@+id/observation_details_author"
@@ -100,8 +99,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_toLeftOf="@+id/observation_details_species_class"
                     android:text="@string/observation_details_species_class_label"
-                    android:textSize="@dimen/recycler_view_item_header_text_size"
-                     />
+                    android:textSize="@dimen/recycler_view_item_header_text_size" />
 
                 <TextView
                     android:id="@+id/observation_details_species_class"
@@ -125,8 +123,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_toLeftOf="@+id/observation_details_species"
                     android:text="@string/observation_details_species_label"
-                    android:textSize="@dimen/recycler_view_item_header_text_size"
-                     />
+                    android:textSize="@dimen/recycler_view_item_header_text_size" />
 
                 <TextView
                     android:id="@+id/observation_details_species"
@@ -150,8 +147,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_toLeftOf="@+id/observation_details_votes_number"
                     android:text="@string/observation_details_number_of_votes_label"
-                    android:textSize="@dimen/recycler_view_item_header_text_size"
-                     />
+                    android:textSize="@dimen/recycler_view_item_header_text_size" />
 
                 <TextView
                     android:id="@+id/observation_details_votes_number"
@@ -177,8 +173,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/observation_details_restriction_switch"
                     android:text="@string/observation_details_restriction_label"
-                    android:textSize="@dimen/recycler_view_item_header_text_size"
-                     />
+                    android:textSize="@dimen/recycler_view_item_header_text_size" />
 
                 <Switch
                     android:id="@+id/observation_details_restriction_switch"
@@ -190,9 +185,17 @@
 
             <View style="@style/Divider" />
 
+            <fragment
+                android:id="@+id/observation_details_google_map"
+                class="com.wlobs.wilqor.mobile.activity.map.WorkaroundMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/compact_map_height" />
+
+            <View style="@style/Divider" />
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/details_vertical_margin"
                 android:gravity="center_horizontal|bottom"
                 android:orientation="vertical">

@@ -22,16 +22,20 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 
 import com.fernandocejas.arrow.optional.Optional;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.wlobs.wilqor.mobile.R;
 import com.wlobs.wilqor.mobile.activity.model.SearchFilter;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SearchActivity extends NavigationActivity {
+public class SearchActivity extends NavigationActivity implements OnMapReadyCallback {
     static final int REQUEST_CODE = 1;
 
     private Optional<SearchFilter> currentFilter;
+    private GoogleMap map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,8 @@ public class SearchActivity extends NavigationActivity {
         getLayoutInflater().inflate(R.layout.activity_search, contentFrameLayout);
         ButterKnife.bind(this);
         currentFilter = Optional.absent();
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.search_google_map);
+        mapFragment.getMapAsync(this);
     }
 
     @OnClick(R.id.search_filter_results_button)
@@ -67,5 +73,10 @@ public class SearchActivity extends NavigationActivity {
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        map = googleMap;
     }
 }

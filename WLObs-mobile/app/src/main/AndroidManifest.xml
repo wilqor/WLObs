@@ -3,6 +3,10 @@
     package="com.wlobs.wilqor.mobile">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:name=".config.WLObsApplication"
@@ -21,6 +25,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--
+            The API key for Google Maps-based APIs is defined as a string resource
+            within files of path "app/src/debug/res/values/google_maps_api.xml"
+            as well as "app/src/release/res/values/google_maps_api.xml"
+       -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <activity
             android:name=".activity.LoginActivity"
             android:label="@string/login_activity_label" />

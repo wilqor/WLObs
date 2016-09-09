@@ -15,4 +15,5 @@
     <dimen name="icon_row_height">24dp</dimen>
     <dimen name="details_vertical_margin">10dp</dimen>
     <dimen name="species_list_item_margin">8dp</dimen>
+    <dimen name="compact_map_height">175dp</dimen>
 </resources>
