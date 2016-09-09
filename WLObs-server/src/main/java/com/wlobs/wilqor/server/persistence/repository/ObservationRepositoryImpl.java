@@ -97,8 +97,8 @@ public class ObservationRepositoryImpl implements CustomObservationRepository {
     private DBObject getGeoWithinObject(AggregationRequest.Area area) {
         List<Double[]> boundingBox;
         boundingBox = new ArrayList<>(2);
-        boundingBox.add(new Double[]{area.getBottom(), area.getLeft()});
-        boundingBox.add(new Double[]{area.getTop(), area.getRight()});
+        boundingBox.add(new Double[]{area.getLeft(), area.getBottom()});
+        boundingBox.add(new Double[]{area.getRight(), area.getTop()});
         return new BasicDBObject("$geoWithin",
                 new BasicDBObject("$box", boundingBox)
         );
