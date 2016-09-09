@@ -20,7 +20,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -126,7 +125,7 @@ public class ObservationDetailsActivity extends NavigationActivity implements On
         currentObservation = (Observation) intent.getSerializableExtra(INTENT_OBSERVATION_KEY);
         if (currentObservation != null) {
             String login = authUtility.getLogin().get();
-            boolean mineObservation = login.equals(currentObservation.getAuthor());
+            boolean mineObservation = login.equals(currentObservation.getAuthor()) && currentObservation.exists();
             if (mineObservation) {
                 deleteObservationButton.setVisibility(View.VISIBLE);
                 castVoteButton.setVisibility(View.GONE);
@@ -140,9 +139,8 @@ public class ObservationDetailsActivity extends NavigationActivity implements On
                                 .and(Vote_Table.voter.eq(login))
                                 .querySingle());
                 boolean voteAlreadyCasted = castedVote.isPresent();
-                castVoteButton.setClickable(!voteAlreadyCasted);
                 deleteObservationButton.setVisibility(View.GONE);
-                castVoteButton.setVisibility(View.VISIBLE);
+                castVoteButton.setVisibility(voteAlreadyCasted ? View.GONE : View.VISIBLE);
                 authorContainer.setVisibility(View.VISIBLE);
                 restrictedContainer.setVisibility(View.GONE);
             }
@@ -175,8 +173,7 @@ public class ObservationDetailsActivity extends NavigationActivity implements On
         vote.setDateUtcTimestamp(new Date().getTime());
         vote.setVoter(authUtility.getLogin().get());
         vote.save();
-        castVoteButton.setClickable(false);
-        Snackbar.make(topLevelLayout, getString(R.string.vote_details_vote_confirmation_label), Snackbar.LENGTH_LONG).show();
+        finish();
     }
 
     @OnClick(R.id.observation_details_delete_button)

@@ -22,6 +22,7 @@ import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 import com.wlobs.wilqor.mobile.persistence.db.LocalDatabase;
+import com.wlobs.wilqor.mobile.rest.model.ExistingObservationDto;
 import com.wlobs.wilqor.mobile.rest.model.NewObservationDto;
 import com.wlobs.wilqor.mobile.rest.model.SpeciesStub;
 
@@ -68,6 +69,8 @@ public class Observation extends BaseModel implements Serializable {
     @Column
     @ForeignKey(saveForeignKeyModel = false)
     private Species species;
+
+    private long remoteVotesCount;
 
     public Observation() {
     }
@@ -192,5 +195,18 @@ public class Observation extends BaseModel implements Serializable {
         speciesStub.setSpeciesClass(species.getSpeciesClass());
         dto.setSpeciesStub(speciesStub);
         return dto;
+    }
+
+    public static Observation fromExistingObservation(ExistingObservationDto observationDto, Species matchedSpecies) {
+        Observation converted = new Observation();
+        converted.setRemoteId(observationDto.getId());
+        converted.setAuthor(observationDto.getAuthor());
+        converted.setDateUtcTimestamp(observationDto.getDateUtcTimestamp());
+        converted.setVotesCount(observationDto.getVotesCount());
+        converted.setRestricted(observationDto.isRestricted());
+        converted.setLongitude(observationDto.getLongitude());
+        converted.setLatitude(observationDto.getLatitude());
+        converted.setSpecies(matchedSpecies);
+        return converted;
     }
 }

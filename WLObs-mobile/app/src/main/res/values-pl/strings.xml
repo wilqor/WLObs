@@ -87,4 +87,6 @@
     <string name="search_filter_button_label">Ustaw filtr wyszukiwania</string>
     <string name="observation_creation_empty_location_error">Lokacja obserwacji wymagana do zapisu!</string>
     <string name="observation_creation_location_service_error">Nie udało się połączyć z serwisem lokacji!</string>
+    <string name="search_error_map_not_ready">Nie można szukać - mapa nie jest gotowa!</string>
+    <string name="search_error_request_failed">Wyszukiwanie zakończone niepowodzeniem!</string>
 </resources>

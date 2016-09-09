@@ -78,4 +78,6 @@
     <string name="search_filter_button_label">Set results filter</string>
     <string name="observation_creation_empty_location_error">Observation location required to save!</string>
     <string name="observation_creation_location_service_error">Connection to location service failed!</string>
+    <string name="search_error_map_not_ready">Cannot search - the map is not ready!</string>
+    <string name="search_error_request_failed">Search request failed!</string>
 </resources>
