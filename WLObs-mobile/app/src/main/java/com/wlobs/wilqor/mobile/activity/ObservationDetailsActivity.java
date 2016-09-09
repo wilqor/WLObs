@@ -205,8 +205,9 @@ public class ObservationDetailsActivity extends NavigationActivity implements On
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
+        map.getUiSettings().setZoomControlsEnabled(true);
         LatLng position = new LatLng(currentObservation.getLatitude(), currentObservation.getLongitude());
         map.addMarker(new MarkerOptions().position(position));
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(position, MapConstants.DEFAULT_ZOOM));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(position, MapConstants.DETAILS_ZOOM_LEVEL));
     }
 }

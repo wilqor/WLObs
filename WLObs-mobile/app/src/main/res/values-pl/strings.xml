@@ -85,4 +85,6 @@
     <string name="search_filter_species_checkbox_label">Filtruj po gatunku</string>
     <string name="search_filter_time_checkbox_label">Filtruj po czasie</string>
     <string name="search_filter_button_label">Ustaw filtr wyszukiwania</string>
+    <string name="observation_creation_empty_location_error">Lokacja obserwacji wymagana do zapisu!</string>
+    <string name="observation_creation_location_service_error">Nie udało się połączyć z serwisem lokacji!</string>
 </resources>

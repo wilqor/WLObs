@@ -76,4 +76,6 @@
     <string name="search_filter_date_from_button_label">Change date from</string>
     <string name="search_filter_date_to_button_label">Change date to</string>
     <string name="search_filter_button_label">Set results filter</string>
+    <string name="observation_creation_empty_location_error">Observation location required to save!</string>
+    <string name="observation_creation_location_service_error">Connection to location service failed!</string>
 </resources>

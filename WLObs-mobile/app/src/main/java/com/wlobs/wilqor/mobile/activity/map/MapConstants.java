@@ -23,5 +23,5 @@ public final class MapConstants {
     private MapConstants() {
     }
 
-    public static final int DEFAULT_ZOOM = 10;
+    public static final int DETAILS_ZOOM_LEVEL = 10;
 }
