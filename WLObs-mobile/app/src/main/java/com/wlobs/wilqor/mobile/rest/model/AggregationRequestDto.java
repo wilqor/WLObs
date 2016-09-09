@@ -100,6 +100,13 @@ public final class AggregationRequestDto {
         @SerializedName("right")
         private double right;
 
+        public Area(double bottom, double left, double top, double right) {
+            this.bottom = bottom;
+            this.left = left;
+            this.top = top;
+            this.right = right;
+        }
+
         public double getBottom() {
             return bottom;
         }
@@ -157,7 +164,7 @@ public final class AggregationRequestDto {
         private long dateFromUtcTimestamp;
 
         @Expose
-        @SerializedName("dateFromUtcTimestamp")
+        @SerializedName("dateToUtcTimestamp")
         private long dateToUtcTimestamp;
 
         public long getDateFromUtcTimestamp() {
