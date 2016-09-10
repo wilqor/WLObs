@@ -24,6 +24,6 @@ public class GeoHashConstants {
     }
 
     public static final int GEO_HASH_PRECISION = 12;
-    public static final int CLUSTERING_POWER = 2;
-    public static final int GEO_HASH_AGGREGATION_THRESHOLD = 7;
+    public static final int CLUSTERING_POWER = 3;
+    public static final int GEO_HASH_AGGREGATION_THRESHOLD = 6;
 }
