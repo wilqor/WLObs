@@ -28,6 +28,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -53,6 +54,8 @@ import com.wlobs.wilqor.mobile.rest.model.SpeciesStub;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,8 +64,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SearchActivity extends NavigationActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+public class SearchActivity extends NavigationActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnCameraChangeListener {
     static final int REQUEST_CODE = 1;
+    static final int INSTANT_DELAY_IN_MILLIS = 0;
+    static final int CAMERA_MOVE_DELAY_IN_MILLIS = 500;
 
     @BindView(R.id.search_top_level_layout)
     View topLevelLayout;
@@ -72,6 +77,7 @@ public class SearchActivity extends NavigationActivity implements OnMapReadyCall
     private AggregationService aggregationService;
     private AuthUtility authUtility;
     private Optional<SearchFilter> currentFilter;
+    private Optional<Timer> currentRequestTimer;
     private Optional<Call<AggregationResponseDto>> currentAggregationCall;
     private Callback<AggregationResponseDto> aggregationCallback;
     private Map<LatLng, ExistingObservationDto> rawObservationsMap;
@@ -135,7 +141,7 @@ public class SearchActivity extends NavigationActivity implements OnMapReadyCall
             currentFilter = Optional.absent();
         }
         if (isReadyForSearch()) {
-            sendSearchRequest();
+            scheduleSearch(INSTANT_DELAY_IN_MILLIS);
         } else {
             showNotReadySnackbar();
         }
@@ -145,6 +151,7 @@ public class SearchActivity extends NavigationActivity implements OnMapReadyCall
     protected void onResume() {
         super.onResume();
 
+        currentRequestTimer = Optional.absent();
         currentAggregationCall = Optional.absent();
     }
 
@@ -152,9 +159,7 @@ public class SearchActivity extends NavigationActivity implements OnMapReadyCall
     protected void onPause() {
         super.onPause();
 
-        if (currentAggregationCall.isPresent()) {
-            currentAggregationCall.get().cancel();
-        }
+        cancelCurrentSearch();
     }
 
     @Override
@@ -162,6 +167,8 @@ public class SearchActivity extends NavigationActivity implements OnMapReadyCall
         map = googleMap;
         map.getUiSettings().setZoomControlsEnabled(true);
         map.setOnMarkerClickListener(this);
+        map.setOnCameraChangeListener(this);
+        scheduleSearch(INSTANT_DELAY_IN_MILLIS);
     }
 
     private boolean isReadyForSearch() {
@@ -177,36 +184,9 @@ public class SearchActivity extends NavigationActivity implements OnMapReadyCall
                 .setAction(getString(R.string.retry), new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        sendSearchRequest();
+                        scheduleSearch(INSTANT_DELAY_IN_MILLIS);
                     }
                 }).show();
-    }
-
-    private void sendSearchRequest() {
-        AggregationRequestDto requestDto = new AggregationRequestDto();
-        LatLngBounds currentBounds = map.getProjection().getVisibleRegion().latLngBounds;
-        double bottom = currentBounds.southwest.latitude;
-        double left = currentBounds.southwest.longitude;
-        double top = currentBounds.northeast.latitude;
-        double right = currentBounds.northeast.longitude;
-        requestDto.setArea(new AggregationRequestDto.Area(bottom, left, top, right));
-        if (currentFilter.isPresent()) {
-            SearchFilter filter = currentFilter.get();
-            if (filter.getTimeRangeOptional().isPresent()) {
-                requestDto.setTimeRange(filter.getTimeRangeOptional().get());
-            }
-            if (filter.getSpeciesSelectionOptional().isPresent()) {
-                SpeciesSelection speciesSelection = filter.getSpeciesSelectionOptional().get();
-                requestDto.setSpeciesClass(speciesSelection.getSpeciesClass());
-                Optional<Species> found = findSpecies(speciesSelection.getSpeciesName());
-                if (found.isPresent()) {
-                    requestDto.setSpeciesLatinName(found.get().getLatinName());
-                }
-            }
-        }
-        Call<AggregationResponseDto> aggregationCall = aggregationService.getAggregatedObservations(requestDto);
-        aggregationCall.enqueue(aggregationCallback);
-        currentAggregationCall = Optional.of(aggregationCall);
     }
 
     private void logTheUserOut() {
@@ -215,13 +195,12 @@ public class SearchActivity extends NavigationActivity implements OnMapReadyCall
 
     private void handleResults(AggregationResponseDto aggregationResponseDto) {
         clearMapState();
-        map.clear();
         for (AggregatedObservationDto aggregated : aggregationResponseDto.getAggregatedObservations()) {
             addAggregatedObservationMarker(aggregated);
         }
         for (ExistingObservationDto raw : aggregationResponseDto.getRawObservations()) {
             LatLng rawPosition = new LatLng(raw.getLatitude(), raw.getLongitude());
-            Marker rawMarker = map.addMarker(new MarkerOptions().position(rawPosition));
+            map.addMarker(new MarkerOptions().position(rawPosition));
             rawObservationsMap.put(rawPosition, raw);
         }
     }
@@ -244,10 +223,10 @@ public class SearchActivity extends NavigationActivity implements OnMapReadyCall
         if (rawObservationsMap.containsKey(marker.getPosition())) {
             ExistingObservationDto observation = rawObservationsMap.get(marker.getPosition());
             Optional<Observation> intentParameter = Optional.absent();
-            Optional<Observation> foundByRemote = findByRemoteId(observation.getId(), authUtility.getLogin().get());
+            Optional<Observation> foundLocally = findByRemoteIdAndLogin(observation.getId(), authUtility.getLogin().get());
             // try to match by id and login
-            if (foundByRemote.isPresent()) {
-                intentParameter = Optional.fromNullable(foundByRemote.get());
+            if (foundLocally.isPresent()) {
+                intentParameter = Optional.fromNullable(foundLocally.get());
             } else {
                 Optional<Species> species = findSpecies(observation.getSpeciesStub());
                 if (species.isPresent()) {
@@ -281,11 +260,75 @@ public class SearchActivity extends NavigationActivity implements OnMapReadyCall
                 .querySingle());
     }
 
-    private Optional<Observation> findByRemoteId(String remoteId, String login) {
+    private Optional<Observation> findByRemoteIdAndLogin(String remoteId, String login) {
         return Optional.fromNullable(SQLite.select()
                 .from(Observation.class)
                 .where(Observation_Table.author.eq(login))
                 .and(Observation_Table.remoteId.eq(remoteId))
                 .querySingle());
+    }
+
+    @Override
+    public void onCameraChange(CameraPosition cameraPosition) {
+        scheduleSearch(CAMERA_MOVE_DELAY_IN_MILLIS);
+    }
+
+    private void scheduleSearch(int delay) {
+        cancelCurrentSearch();
+        Timer timer = new Timer();
+        LatLngBounds currentBounds = map.getProjection().getVisibleRegion().latLngBounds;
+        timer.schedule(new RequestTimerTask(currentBounds), delay);
+        currentRequestTimer = Optional.of(timer);
+    }
+
+    private void cancelCurrentSearch() {
+        if (currentAggregationCall.isPresent()) {
+            currentAggregationCall.get().cancel();
+        }
+        if (currentRequestTimer.isPresent()) {
+            currentRequestTimer.get().cancel();
+        }
+    }
+
+    private void sendSearchRequest(LatLngBounds currentBounds) {
+        AggregationRequestDto requestDto = new AggregationRequestDto();
+        double bottom = currentBounds.southwest.latitude;
+        double left = currentBounds.southwest.longitude;
+        double top = currentBounds.northeast.latitude;
+        double right = currentBounds.northeast.longitude;
+        requestDto.setArea(new AggregationRequestDto.Area(bottom, left, top, right));
+        if (currentFilter.isPresent()) {
+            SearchFilter filter = currentFilter.get();
+            if (filter.getTimeRangeOptional().isPresent()) {
+                requestDto.setTimeRange(filter.getTimeRangeOptional().get());
+            }
+            if (filter.getSpeciesSelectionOptional().isPresent()) {
+                SpeciesSelection speciesSelection = filter.getSpeciesSelectionOptional().get();
+                requestDto.setSpeciesClass(speciesSelection.getSpeciesClass());
+                Optional<Species> found = findSpecies(speciesSelection.getSpeciesName());
+                if (found.isPresent()) {
+                    requestDto.setSpeciesLatinName(found.get().getLatinName());
+                }
+            }
+        }
+        Call<AggregationResponseDto> aggregationCall = aggregationService.getAggregatedObservations(requestDto);
+        aggregationCall.enqueue(aggregationCallback);
+        currentAggregationCall = Optional.of(aggregationCall);
+    }
+
+    /**
+     * Has to be initialized with the current bounds, as this can only be done within the UI thread.
+     */
+    private class RequestTimerTask extends TimerTask {
+        private final LatLngBounds currentBounds;
+
+        private RequestTimerTask(LatLngBounds currentBounds) {
+            this.currentBounds = currentBounds;
+        }
+
+        @Override
+        public void run() {
+            SearchActivity.this.sendSearchRequest(currentBounds);
+        }
     }
 }
