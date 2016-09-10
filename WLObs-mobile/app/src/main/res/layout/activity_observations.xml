@@ -89,6 +89,8 @@
             android:layout_gravity="bottom|end"
             android:src="@drawable/ic_add_black_24dp"
             android:tint="@android:color/white"
+            android:elevation="0dp"
+            app:elevation="0dp"
             app:borderWidth="@dimen/fab_compat_margin" />
     </FrameLayout>
 </LinearLayout>
