@@ -16,6 +16,7 @@
 
 package com.wlobs.wilqor.mobile.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -61,12 +62,6 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.password)
     EditText passwordView;
 
-    @BindView(R.id.login_progress)
-    View progressView;
-
-    @BindView(R.id.login_container)
-    View loginFormView;
-
     @BindView(R.id.login_wrapper)
     View loginWrapperView;
 
@@ -84,6 +79,7 @@ public class LoginActivity extends AppCompatActivity {
     private UsersService usersService;
     private AuthUtility authUtility;
     private SyncUtility syncUtility;
+    private Optional<ProgressDialog> progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,10 +132,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onResume();
 
         resetErrorInfo();
+        progressDialog = Optional.absent();
     }
 
     private void attemptLogin() {
-        showProgress(true);
+        showProgress(Operation.LOGIN);
         final String login = loginView.getText().toString();
         String password = passwordView.getText().toString();
         Call<AuthAndRefreshTokensDto> call = usersService.login(
@@ -151,24 +148,24 @@ public class LoginActivity extends AppCompatActivity {
                     AuthAndRefreshTokensDto tokensDto = response.body();
                     authUtility.saveTokens(tokensDto.getAuthToken(), tokensDto.getRefreshToken(), login);
                     syncUtility.resetLastSyncTimestamp();
-                    showProgress(false);
+                    hideProgress();
                     goToMainActivity();
                 } else {
                     operationError.setText(getText(R.string.error_invalid_credentials));
-                    showProgress(false);
+                    hideProgress();
                 }
             }
 
             @Override
             public void onFailure(Call<AuthAndRefreshTokensDto> call, Throwable t) {
                 showNetworkErrorSnackbar(Operation.LOGIN);
-                showProgress(false);
+                hideProgress();
             }
         });
     }
 
     private void attemptRegistration() {
-        showProgress(true);
+        showProgress(Operation.REGISTRATION);
         final String login = loginView.getText().toString();
         String password = passwordView.getText().toString();
         Call<AuthAndRefreshTokensDto> call = usersService.register(
@@ -182,18 +179,18 @@ public class LoginActivity extends AppCompatActivity {
                     AuthAndRefreshTokensDto tokensDto = response.body();
                     authUtility.saveTokens(tokensDto.getAuthToken(), tokensDto.getRefreshToken(), login);
                     syncUtility.resetLastSyncTimestamp();
-                    showProgress(false);
+                    hideProgress();
                     goToMainActivity();
                 } else {
                     operationError.setText(getText(R.string.error_login_already_taken));
-                    showProgress(false);
+                    hideProgress();
                 }
             }
 
             @Override
             public void onFailure(Call<AuthAndRefreshTokensDto> call, Throwable t) {
                 showNetworkErrorSnackbar(Operation.REGISTRATION);
-                showProgress(false);
+                hideProgress();
             }
         });
     }
@@ -227,9 +224,16 @@ public class LoginActivity extends AppCompatActivity {
         passwordView.setError(null);
     }
 
-    private void showProgress(final boolean show) {
-        progressView.setVisibility(show ? View.VISIBLE : View.GONE);
-        loginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+    private void showProgress(final Operation op) {
+        ProgressDialog dialog = getProgressDialog(op);
+        dialog.show();
+        progressDialog = Optional.of(dialog);
+    }
+
+    private void hideProgress() {
+        if (progressDialog.isPresent()) {
+            progressDialog.get().hide();
+        }
     }
 
     private void showNetworkErrorSnackbar(final Operation op) {
@@ -255,6 +259,17 @@ public class LoginActivity extends AppCompatActivity {
     private void goToMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    private ProgressDialog getProgressDialog(final Operation op) {
+        ProgressDialog dialog = new ProgressDialog(this);
+        String message = getString(R.string.login_progess_message);
+        if (Operation.REGISTRATION == op) {
+            message = getString(R.string.register_progress_message);
+        }
+        dialog.setMessage(message);
+        dialog.setCancelable(false);
+        return dialog;
     }
 }
 

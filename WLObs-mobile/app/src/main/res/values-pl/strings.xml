@@ -89,4 +89,6 @@
     <string name="observation_creation_location_service_error">Nie udało się połączyć z serwisem lokacji!</string>
     <string name="search_error_map_not_ready">Nie można szukać - mapa nie jest gotowa!</string>
     <string name="search_error_request_failed">Wyszukiwanie zakończone niepowodzeniem!</string>
+    <string name="register_progress_message">Rejestrowanie w toku...</string>
+    <string name="login_progess_message">Logowanie w toku...</string>
 </resources>

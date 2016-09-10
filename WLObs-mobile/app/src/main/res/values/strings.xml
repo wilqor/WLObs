@@ -80,4 +80,6 @@
     <string name="observation_creation_location_service_error">Connection to location service failed!</string>
     <string name="search_error_map_not_ready">Cannot search - the map is not ready!</string>
     <string name="search_error_request_failed">Search request failed!</string>
+    <string name="login_progess_message">Log in in progress...</string>
+    <string name="register_progress_message">Registration in progress...</string>
 </resources>
