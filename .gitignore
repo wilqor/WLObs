@@ -16,6 +16,7 @@ WLObs-server/.idea/
 WLObs-server/.gradle/
 WLObs-server/build/
 WLobs-server/src/main/resources/application.properties
+WLObs-server/src/main/resources/wlobs_server_keystore.jks
 
 # WLOBS-mobile files
 WLObs-mobile/.idea/
@@ -30,3 +31,5 @@ WLObs-mobile/app/src/debug/res/values/google_maps_api.xml
 WLObs-mobile/app/src/release/res/values/google_maps_api.xml
 WLObs-mobile/app/src/debug/res/values/server_base_url.xml
 WLObs-mobile/app/src/release/res/values/server_base_url.xml
+WLObs-mobile/app/src/debug/res/raw/wlobs_server_certificate.ca
+WLObs-mobile/app/src/release/res/raw/wlobs_server_certificate.ca
