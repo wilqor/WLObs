@@ -28,3 +28,5 @@ WLObs-mobile/.DS_Store/
 WLOBs-mobile/keystore.properties
 WLObs-mobile/app/src/debug/res/values/google_maps_api.xml
 WLObs-mobile/app/src/release/res/values/google_maps_api.xml
+WLObs-mobile/app/src/debug/res/values/server_base_url.xml
+WLObs-mobile/app/src/release/res/values/server_base_url.xml

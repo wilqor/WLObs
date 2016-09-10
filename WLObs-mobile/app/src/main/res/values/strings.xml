@@ -19,7 +19,6 @@
     <string name="action_register">Register</string>
     <string name="registration_prompt">Not registered? Register now!</string>
     <string name="logging_in_prompt">Already registered? Log in now!</string>
-    <string name="server_api_path" translatable="false">http://192.168.2.103:8080/</string>
     <string name="log_out">Log out</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
