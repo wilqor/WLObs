@@ -1,0 +1,5844 @@
+{
+   "speciesDtoList":[
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Cygnus olor",
+         "localizedNames":{
+            "en":"mute swan",
+            "pl":"łabędź niemy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Cygnus columbianus",
+         "localizedNames":{
+            "en":"tundra swan",
+            "pl":"łabędź czarnodzioby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Cygnus cygnus",
+         "localizedNames":{
+            "en":"whooper swan",
+            "pl":"łabędź krzykliwy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anser fabalis fabalis",
+         "localizedNames":{
+            "en":"bean goose",
+            "pl":"gęś zbożowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anser fabalis rossicus",
+         "localizedNames":{
+            "en":"tundra bean goose",
+            "pl":"gęś tundrowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anser brachyrhynchus",
+         "localizedNames":{
+            "en":"pink-footed goose",
+            "pl":"gęś krótkodzioba"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anser albifrons albifrons",
+         "localizedNames":{
+            "en":"greater white-fronted goose",
+            "pl":"gęś białoczelna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anser erythropus",
+         "localizedNames":{
+            "en":"lesser white-fronted goose",
+            "pl":"gęś mała"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anser anser",
+         "localizedNames":{
+            "en":"greylag goose",
+            "pl":"gęgawa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anser rossii",
+         "localizedNames":{
+            "en":"Ross's goose",
+            "pl":"śnieżyca mała"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Branta canadensis",
+         "localizedNames":{
+            "en":"Canada goose",
+            "pl":"bernikla kanadyjska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Branta leucopsis",
+         "localizedNames":{
+            "en":"barnacle goose",
+            "pl":"bernikla białolica"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Branta bernicla bernicla",
+         "localizedNames":{
+            "en":"dark-bellied brant goose",
+            "pl":"bernikla obrożna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Branta bernicla hrota",
+         "localizedNames":{
+            "en":"pale-bellied brant goose",
+            "pl":"bernikla jasnobrzucha"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Branta bernicla nigricans",
+         "localizedNames":{
+            "en":"black brant",
+            "pl":"bernikla czarna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Branta ruficollis",
+         "localizedNames":{
+            "en":"red-breasted goose",
+            "pl":"bernikla rdzawoszyja"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Alopochen aegyptiaca",
+         "localizedNames":{
+            "en":"Egyptian goose",
+            "pl":"gęsiówka egipska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tadorna ferruginea",
+         "localizedNames":{
+            "en":"ruddy shelduck",
+            "pl":"kazarka rdzawa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tadorna tadorna",
+         "localizedNames":{
+            "en":"common shelduck",
+            "pl":"ohar"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aix galericulata",
+         "localizedNames":{
+            "en":"mandarin duck",
+            "pl":"mandarynka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anas penelope",
+         "localizedNames":{
+            "en":"Eurasian wigeon",
+            "pl":"świstun"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anas strepera",
+         "localizedNames":{
+            "en":"gadwall",
+            "pl":"krakwa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anas crecca",
+         "localizedNames":{
+            "en":"Eurasian teal",
+            "pl":"cyraneczka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anas carolinensis",
+         "localizedNames":{
+            "en":"green-winged teal",
+            "pl":"cyraneczka karolińska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anas platyrhynchus",
+         "localizedNames":{
+            "en":"mallard",
+            "pl":"krzyżówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anas acuta",
+         "localizedNames":{
+            "en":"pintail",
+            "pl":"rożeniec"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anas querquedula",
+         "localizedNames":{
+            "en":"garganey",
+            "pl":"cyranka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anas discors",
+         "localizedNames":{
+            "en":"blue-winged teal",
+            "pl":"cyranka modroskrzydła"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anas clypeata",
+         "localizedNames":{
+            "en":"northern shoveler",
+            "pl":"płaskonos"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Netta rufina",
+         "localizedNames":{
+            "en":"red-crested pochard",
+            "pl":"hełmiatka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aythya ferina",
+         "localizedNames":{
+            "en":"common pochard",
+            "pl":"głowienka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aythya collaris",
+         "localizedNames":{
+            "en":"ring-necked duck",
+            "pl":"czerniczka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aythya nyroca",
+         "localizedNames":{
+            "en":"ferruginous duck",
+            "pl":"podgorzałka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aythya fuligula",
+         "localizedNames":{
+            "en":"Tufted duck",
+            "pl":"czernica"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aythya affinis",
+         "localizedNames":{
+            "en":"lesser scaup",
+            "pl":"ogorzałka mała"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aythya marila",
+         "localizedNames":{
+            "en":"greater scaup",
+            "pl":"ogorzałka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Somateria mollissima",
+         "localizedNames":{
+            "en":"common eider",
+            "pl":"edredon"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Somateria spectabilis",
+         "localizedNames":{
+            "en":"kind eider",
+            "pl":"turkan"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Polysticta stelleri",
+         "localizedNames":{
+            "en":"Steller's eider",
+            "pl":"birginiak"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Histronicus histronicus",
+         "localizedNames":{
+            "en":"harlequin duck",
+            "pl":"kamieniuszka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Clangula hyemalis",
+         "localizedNames":{
+            "en":"long-tailed duck",
+            "pl":"lodówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Melanitta nigra",
+         "localizedNames":{
+            "en":"common scoter",
+            "pl":"markaczka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Melanitta americana",
+         "localizedNames":{
+            "en":"black scoter",
+            "pl":"markaczka amerykańska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Melanitta fusca",
+         "localizedNames":{
+            "en":"velvet scoter",
+            "pl":"uhla"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Melanitta deglandi",
+         "localizedNames":{
+            "en":"white-winged scoter",
+            "pl":"uhla garbonosa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Bucephala clangula",
+         "localizedNames":{
+            "en":"common goldeye",
+            "pl":"gągoł"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Mergus albellus",
+         "localizedNames":{
+            "en":"smew",
+            "pl":"bielaczek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Mergus serrator",
+         "localizedNames":{
+            "en":"red-breasted merganser",
+            "pl":"szlachar"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Mergus merganser",
+         "localizedNames":{
+            "en":"common merganser",
+            "pl":"nurogęś"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Oxyura leucocephala",
+         "localizedNames":{
+            "en":"white-headed duck",
+            "pl":"sterniczka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Oxyura jamaicensis",
+         "localizedNames":{
+            "en":"ruddy duck",
+            "pl":"sterniczka jamajska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tetrastes bonasia",
+         "localizedNames":{
+            "en":"hazel grouse",
+            "pl":"jarząbek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Lagopus lagopus",
+         "localizedNames":{
+            "en":"willow ptarmigan",
+            "pl":"pardwa mszarna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tetrao tetrix",
+         "localizedNames":{
+            "en":"black grouse",
+            "pl":"cietrzew"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tetrao urogallus",
+         "localizedNames":{
+            "en":"wood grouse",
+            "pl":"głuszec"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Perdix perdix",
+         "localizedNames":{
+            "en":"grey partridge",
+            "pl":"kuropatwa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Coturnix coturnix",
+         "localizedNames":{
+            "en":"common quail",
+            "pl":"przepiórka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phasianus colchicus",
+         "localizedNames":{
+            "en":"common pheasant",
+            "pl":"bażant"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Gavia stellata",
+         "localizedNames":{
+            "en":"red-throated loon",
+            "pl":"nur rdzawoszyi"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Gavia arctica",
+         "localizedNames":{
+            "en":"black-throated loon",
+            "pl":"nur czarnoszyi"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Gavia immer",
+         "localizedNames":{
+            "en":"common loon",
+            "pl":"lodowiec"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Gavia adamsii",
+         "localizedNames":{
+            "en":"yellow-billed loon",
+            "pl":"nur białodzioby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Podilymbus podiceps",
+         "localizedNames":{
+            "en":"pied-billed grebe",
+            "pl":"perkoz grubodzioby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tachybaptus ruficollis",
+         "localizedNames":{
+            "en":"little grebe",
+            "pl":"perkozek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Podiceps cristatus",
+         "localizedNames":{
+            "en":"great crested grebe",
+            "pl":"perkoz dwuczuby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Podiceps grisegena",
+         "localizedNames":{
+            "en":"red-necked grebe",
+            "pl":"perkoz rdzawoszyi"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Podiceps auritus",
+         "localizedNames":{
+            "en":"horned grebe",
+            "pl":"perkoz rogaty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Podiceps nigricollis",
+         "localizedNames":{
+            "en":"black-necked grebe",
+            "pl":"zausznik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Fulmarus glacialis",
+         "localizedNames":{
+            "en":"northern fulmar",
+            "pl":"fulmar"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calonectris diomedea",
+         "localizedNames":{
+            "en":"Scopoli's shearwater",
+            "pl":"burzyk żółtodzioby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Puffinus griseus",
+         "localizedNames":{
+            "en":"sooty shearwater",
+            "pl":"burzyk szary"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Puffinus puffinus",
+         "localizedNames":{
+            "en":"Manx shearwater",
+            "pl":"burzyk północny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Puffinus mauretanicus",
+         "localizedNames":{
+            "en":"Balearic shearwater",
+            "pl":"burzyk balearski"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Oceanites oceanicus",
+         "localizedNames":{
+            "en":"Wilson's storm petrel",
+            "pl":"oceannik żółtopłetwy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Hydrobates pelagicus",
+         "localizedNames":{
+            "en":"European storm petrel",
+            "pl":"nawałnik burzowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Oceanodroma leucorhoa",
+         "localizedNames":{
+            "en":"Leach's storm petrel",
+            "pl":"nawałnik duży"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Morus bassanus",
+         "localizedNames":{
+            "en":"Northern gannet",
+            "pl":"głuptak"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phalacrocorax carbo",
+         "localizedNames":{
+            "en":"great cormorant",
+            "pl":"kormoran"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phalacrocorax aristotelis",
+         "localizedNames":{
+            "en":"commonshag",
+            "pl":"kormoran czubaty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phalacrocorax pygmeus",
+         "localizedNames":{
+            "en":"pygmy cormorant",
+            "pl":"kormoran mały"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pelecanus onocrotalus",
+         "localizedNames":{
+            "en":"great white pelican",
+            "pl":"pelikan różowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pelecanus crispus",
+         "localizedNames":{
+            "en":"Dalmatian pelican",
+            "pl":"pelikan kędzierzawy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Botaurus stellaris",
+         "localizedNames":{
+            "en":"Eurasian bittern",
+            "pl":"bąk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Ixobrychus minutus",
+         "localizedNames":{
+            "en":"little bittern",
+            "pl":"bączek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Nycticorax nycticorax",
+         "localizedNames":{
+            "en":"black-crowned night heron",
+            "pl":"ślepowron"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Ardeola ralloides",
+         "localizedNames":{
+            "en":"squacco heron",
+            "pl":"czapla modronosa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Bubulcus ibis",
+         "localizedNames":{
+            "en":"cattle egret",
+            "pl":"czapla złotawa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Egretta garzetta",
+         "localizedNames":{
+            "en":"little egret",
+            "pl":"czapla nadobna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Egretta alba",
+         "localizedNames":{
+            "en":"great egret",
+            "pl":"czapla biała"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Ardea cinerea",
+         "localizedNames":{
+            "en":"grey heron",
+            "pl":"czapla siwa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Ardea purpurea",
+         "localizedNames":{
+            "en":"purple heron",
+            "pl":"czapla purpurowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Ciconia nigra",
+         "localizedNames":{
+            "en":"black stork",
+            "pl":"bocian czarny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Ciconia ciconia",
+         "localizedNames":{
+            "en":"white stork",
+            "pl":"bocian biały"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Plegadis falcinellus",
+         "localizedNames":{
+            "en":"glossy ibis",
+            "pl":"ibis kasztanowaty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Platalea leucorodia",
+         "localizedNames":{
+            "en":"Eurasian spoonbill",
+            "pl":"warzęcha"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phoenicopterus roseus",
+         "localizedNames":{
+            "en":"greater flamingo",
+            "pl":"flaming różowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pernis apivorus",
+         "localizedNames":{
+            "en":"European honey buzzard",
+            "pl":"trzmielojad"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Elanus caeruleus",
+         "localizedNames":{
+            "en":"black-winged kite",
+            "pl":"kaniuk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Milvus migrans",
+         "localizedNames":{
+            "en":"black kite",
+            "pl":"kania czarna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Milvus milvus",
+         "localizedNames":{
+            "en":"red kite",
+            "pl":"kania ruda"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Haliaeetus leucoryphus",
+         "localizedNames":{
+            "en":"Pallas's fish eagle",
+            "pl":"bielik wschodni"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Haliaeetus albicilla",
+         "localizedNames":{
+            "en":"white-tailed eagle",
+            "pl":"bielik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Gypaetus barbatus",
+         "localizedNames":{
+            "en":"bearded vulture",
+            "pl":"orłosęp"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Neophron percnopterus",
+         "localizedNames":{
+            "en":"Egyptian vulture",
+            "pl":"ścierwnik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Gyps fulvus",
+         "localizedNames":{
+            "en":"griffon vulture",
+            "pl":"sęp płowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aegypius monachus",
+         "localizedNames":{
+            "en":"cinerous vulture",
+            "pl":"sęp kasztanowaty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Circaetus gallicus",
+         "localizedNames":{
+            "en":"short-toed snake eagle",
+            "pl":"gadożer"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Circus aeruginosus",
+         "localizedNames":{
+            "en":"western marsh harrier",
+            "pl":"błotniak stawowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Circus cyaneus",
+         "localizedNames":{
+            "en":"hen harrier",
+            "pl":"błotniak zbożowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Circus macrourus",
+         "localizedNames":{
+            "en":"pale harrier",
+            "pl":"błotniak stepowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Circus pygargus",
+         "localizedNames":{
+            "en":"Montagu's harrier",
+            "pl":"błotniak łąkowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Accipiter gentilis",
+         "localizedNames":{
+            "en":"northern goshawk",
+            "pl":"jastrząb"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Accipiter nisus",
+         "localizedNames":{
+            "en":"Eurasian sparrowhawk",
+            "pl":"krogulec"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Accipiter brevipes",
+         "localizedNames":{
+            "en":"Levant sparrowhawk",
+            "pl":"krogulec krótkonogi"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Buteo buteo buteo",
+         "localizedNames":{
+            "en":"common buzzard",
+            "pl":"myszołów"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Buteo buteo vulpinus",
+         "localizedNames":{
+            "en":"steppe buzzard",
+            "pl":"myszołów wschodni"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Buteo rufinus",
+         "localizedNames":{
+            "en":"long-legged buzzard",
+            "pl":"kurhannik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Buteo lagopus",
+         "localizedNames":{
+            "en":"rough-legged buzzard",
+            "pl":"myszołów włochaty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aquila pomarina",
+         "localizedNames":{
+            "en":"lesser spotted eagle",
+            "pl":"orlik krzykliwy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aquila clanga",
+         "localizedNames":{
+            "en":"greater spotted eagle",
+            "pl":"orlik grubodzioby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aquila nipalensis",
+         "localizedNames":{
+            "en":"steppe eagle",
+            "pl":"orzeł stepowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aquila heliaca",
+         "localizedNames":{
+            "en":"eastern imperial eagle",
+            "pl":"orzeł cesarski"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aquila chrysaetos",
+         "localizedNames":{
+            "en":"golden eagle",
+            "pl":"orzeł przedni"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aquila pennata",
+         "localizedNames":{
+            "en":"booted eagle",
+            "pl":"orzełek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pandion haliaetus",
+         "localizedNames":{
+            "en":"osprey",
+            "pl":"rybołów"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Falco naumanni",
+         "localizedNames":{
+            "en":"lesser kestrel",
+            "pl":"pustułeczka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Falco tinnunculus",
+         "localizedNames":{
+            "en":"common kestrel",
+            "pl":"pustułka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Falco vespertinus",
+         "localizedNames":{
+            "en":"red-footed falcon",
+            "pl":"kobczyk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Falco columbarius",
+         "localizedNames":{
+            "en":"merlin",
+            "pl":"drzemlik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Falco subbuteo",
+         "localizedNames":{
+            "en":"Eurasian hobby",
+            "pl":"kobuz"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Falco eleonorae",
+         "localizedNames":{
+            "en":"Eleonora's falcon",
+            "pl":"sokół skalny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Falco cherrug",
+         "localizedNames":{
+            "en":"saker falcon",
+            "pl":"raróg"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Falco rusticolus",
+         "localizedNames":{
+            "en":"gyrfalcon",
+            "pl":"białozór"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Falco peregrinus",
+         "localizedNames":{
+            "en":"peregrine falcon",
+            "pl":"sokół wędrowny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Rallus aquaticus",
+         "localizedNames":{
+            "en":"water rail",
+            "pl":"wodnik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Porzana porzana",
+         "localizedNames":{
+            "en":"spotted crake",
+            "pl":"kropiatka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Porzana parva",
+         "localizedNames":{
+            "en":"little crake",
+            "pl":"zielonka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Porzana pusilla",
+         "localizedNames":{
+            "en":"Baillon's crake",
+            "pl":"karliczka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Crex crex",
+         "localizedNames":{
+            "en":"corn crake",
+            "pl":"derkacz"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Gallinula chloropus",
+         "localizedNames":{
+            "en":"common moorhen",
+            "pl":"kokoszka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Fulica atra",
+         "localizedNames":{
+            "en":"Eurasian coot",
+            "pl":"łyska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Grus grus",
+         "localizedNames":{
+            "en":"common crane",
+            "pl":"żuraw"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Grus virgo",
+         "localizedNames":{
+            "en":"demoiselle crane",
+            "pl":"żuraw stepowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tetrax tetrax",
+         "localizedNames":{
+            "en":"little bustard",
+            "pl":"strepet"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Chlamydotis macqueenii",
+         "localizedNames":{
+            "en":"MacQueen's bustard",
+            "pl":"hubara arabska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Otis tarda",
+         "localizedNames":{
+            "en":"great bustard",
+            "pl":"drop"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Haematopus ostralegus",
+         "localizedNames":{
+            "en":" Eurasian oystercatcher",
+            "pl":"ostrygojad"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Himantopus himantopus",
+         "localizedNames":{
+            "en":"black-winged stilt",
+            "pl":"szczudłak"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Recurvirostra avosetta",
+         "localizedNames":{
+            "en":"pied avocet",
+            "pl":"szablodziób"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Burhinus oedicnemus",
+         "localizedNames":{
+            "en":"Eurasian stone curlew",
+            "pl":"kulon"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Glareola pratincola",
+         "localizedNames":{
+            "en":"collared pratincole",
+            "pl":"zwirowiec łąkowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Glareola nordmanni",
+         "localizedNames":{
+            "en":"black-winged pratincole",
+            "pl":"żwirowiec stepowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Charadrius dubius",
+         "localizedNames":{
+            "en":"little ringed plover",
+            "pl":"sieweczka rzeczna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Charadrius hiaticula",
+         "localizedNames":{
+            "en":"common ringed plover",
+            "pl":"sieweczka obrożna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Charadrius alexandrinus",
+         "localizedNames":{
+            "en":"Kentish plover",
+            "pl":"sieweczka morska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Charadrius mongolus",
+         "localizedNames":{
+            "en":"lesser sand plover",
+            "pl":"sieweczka mongolska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Charadrius leschenaultii",
+         "localizedNames":{
+            "en":"greater sand plover",
+            "pl":"sieweczka pustynna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Charadrius morinellus",
+         "localizedNames":{
+            "en":"Eurasian dotterel",
+            "pl":"mornel"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pluvialis dominica",
+         "localizedNames":{
+            "en":"American golden plover",
+            "pl":"siewka szara"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pluvialis fulva",
+         "localizedNames":{
+            "en":"Pacific golden plover",
+            "pl":"siewka złotawa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pluvialis apricaria",
+         "localizedNames":{
+            "en":"European golden plover",
+            "pl":"siewka złota"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pluvialis squatarola",
+         "localizedNames":{
+            "en":"grey plover",
+            "pl":"siewnica"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Vanellus gregarius",
+         "localizedNames":{
+            "en":"sociaple lapwing",
+            "pl":"czajka towarzyska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Vanellus leucurus",
+         "localizedNames":{
+            "en":"white-tailed lapwing",
+            "pl":"czajka stepowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Vanellus vanellus",
+         "localizedNames":{
+            "en":"northern lapwing",
+            "pl":"czajka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris tenuirostris",
+         "localizedNames":{
+            "en":"great knot",
+            "pl":"biegus wielki"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris canutus",
+         "localizedNames":{
+            "en":"red knot",
+            "pl":"biegus rdzawy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris alba",
+         "localizedNames":{
+            "en":"sanderling",
+            "pl":"piaskowiec"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris pusilla",
+         "localizedNames":{
+            "en":"semipalmated sandpiper",
+            "pl":"biegus tundrowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris minuta",
+         "localizedNames":{
+            "en":"little stint",
+            "pl":"biegus malutki"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris temminckii",
+         "localizedNames":{
+            "en":"Temminck's stint",
+            "pl":"biegus mały"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris minutilla",
+         "localizedNames":{
+            "en":"least sandpiper",
+            "pl":"biegus karłowaty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris fuscicollis",
+         "localizedNames":{
+            "en":"white-rumped sandpiper",
+            "pl":"biegus białorzytny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris bairdii",
+         "localizedNames":{
+            "en":"Baird's sandpiper",
+            "pl":"biegus długoskrzydły"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris melanotos",
+         "localizedNames":{
+            "en":"pectoral sandpiper",
+            "pl":"biegus arktyczny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris ferruginea",
+         "localizedNames":{
+            "en":"curlew sandpiper",
+            "pl":"biegus krzywodzioby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris maritima",
+         "localizedNames":{
+            "en":"purple sandpiper",
+            "pl":"biegus morski"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calidris alpina",
+         "localizedNames":{
+            "en":"dunlin",
+            "pl":"biegus zmienny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Limicola falcinellus",
+         "localizedNames":{
+            "en":"broad-billed sandpiper",
+            "pl":"biegus płaskodzioby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tryngites subruficollis",
+         "localizedNames":{
+            "en":"buff-breasted sandpiper",
+            "pl":"biegus płowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Philomachus pugnax",
+         "localizedNames":{
+            "en":"ruff",
+            "pl":"batalion"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Lymnocryptes minimus",
+         "localizedNames":{
+            "en":"jack snipe",
+            "pl":"bekasik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Gallinago gallinago",
+         "localizedNames":{
+            "en":"common snipe",
+            "pl":"kszyk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Gallinago media",
+         "localizedNames":{
+            "en":"great snipe",
+            "pl":"dubelt"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Limnodromus scolopaceus",
+         "localizedNames":{
+            "en":"long-billed dowitcher",
+            "pl":"szlamiec długodzioby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Scolopax rusticola",
+         "localizedNames":{
+            "en":"Eurasian woodcock",
+            "pl":"słonka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Limosa limosa",
+         "localizedNames":{
+            "en":"black-tailed godwit",
+            "pl":"rycyk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Limosa lapponica",
+         "localizedNames":{
+            "en":"bar-tailed godwit",
+            "pl":"szlamnik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Numenius phaeopus",
+         "localizedNames":{
+            "en":"whimbrel",
+            "pl":"kulik mniejszy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Numenius tenuirostris",
+         "localizedNames":{
+            "en":"slender-billed curlew",
+            "pl":"kulik cienkodzioby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Numenius arquata",
+         "localizedNames":{
+            "en":"Eurasian curlew",
+            "pl":"kulik wielki"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Xenus cinereus",
+         "localizedNames":{
+            "en":"Terek sandpiper",
+            "pl":"terekia"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Actitis hypoleucos",
+         "localizedNames":{
+            "en":"common sandpiper",
+            "pl":"brodziec piskliwy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Actitis macularius",
+         "localizedNames":{
+            "en":"spotted sandpiper",
+            "pl":"brodziec plamisty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tringa ochropus",
+         "localizedNames":{
+            "en":"green sandpiper",
+            "pl":"samotnik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tringa erythropus",
+         "localizedNames":{
+            "en":"spotted redshank",
+            "pl":"brodziec śniady"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tringa melanoleuca",
+         "localizedNames":{
+            "en":"greater yellowlegs",
+            "pl":"brodziec piegowaty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tringa nebularia",
+         "localizedNames":{
+            "en":"common greenshank",
+            "pl":"kwokacz"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tringa flavipes",
+         "localizedNames":{
+            "en":"lesser yellowlegs",
+            "pl":"brodziec żółtonogi"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tringa stagnatilis",
+         "localizedNames":{
+            "en":"marsh sandpiper",
+            "pl":"brodziec pławny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tringa glareola",
+         "localizedNames":{
+            "en":"wood sandpiper",
+            "pl":"łęczak"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tringa totanus",
+         "localizedNames":{
+            "en":"common redshank",
+            "pl":"krwawodziób"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Arenaria interpres",
+         "localizedNames":{
+            "en":"ruddy turnstone",
+            "pl":"kamusznik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phalaropus lobatus",
+         "localizedNames":{
+            "en":"red-necked phalarope",
+            "pl":"płatkonóg szydłodzioby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phalaropus fulicarius",
+         "localizedNames":{
+            "en":"red phalarope",
+            "pl":"płatkonóg płaskodzioby"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Stercorarius pomarinus",
+         "localizedNames":{
+            "en":"pomarine skua",
+            "pl":"wydrzyk tęposterny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Stercorarius parasiticus",
+         "localizedNames":{
+            "en":"parasitic jaeger",
+            "pl":"wydrzyk ostrosterny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Stercorarius longicaudus",
+         "localizedNames":{
+            "en":"long-tailed jaeger",
+            "pl":"wydrzyk długosterny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Stercorarius skua",
+         "localizedNames":{
+            "en":"great skua",
+            "pl":"wydrzyk wielki"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pagophila eburnea",
+         "localizedNames":{
+            "en":"ivory gull",
+            "pl":"mewa modrodzioba"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Xema sabini",
+         "localizedNames":{
+            "en":"Sabine's gull",
+            "pl":"mewa obrożna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Rissa tridactyla",
+         "localizedNames":{
+            "en":"black-legged kittiwake",
+            "pl":"mewa trójpalczasta"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Chroicocephalus genei",
+         "localizedNames":{
+            "en":"slender-billed gull",
+            "pl":"mewa cienkodzioba"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Chroicocephalus ridibundus",
+         "localizedNames":{
+            "en":"black-headed gull",
+            "pl":"śmieszka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Hydrocoloeus minutus",
+         "localizedNames":{
+            "en":"little gull",
+            "pl":"mewa mała"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Rhodostethia rosea",
+         "localizedNames":{
+            "en":"Ross's gull",
+            "pl":"mewa różowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus atricilla",
+         "localizedNames":{
+            "en":"laughing gull",
+            "pl":"mewa karaibska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus pipixcan",
+         "localizedNames":{
+            "en":"Franklin's gull",
+            "pl":"mewa preriowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus melanocephalus",
+         "localizedNames":{
+            "en":"Mediterranean gull",
+            "pl":"mewa czarnogłowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus ichthyaetus",
+         "localizedNames":{
+            "en":"Pallas's gull",
+            "pl":"orlica"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus canus",
+         "localizedNames":{
+            "en":"common gull",
+            "pl":"mewa siwa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus delawarensis",
+         "localizedNames":{
+            "en":"ring-billed gull",
+            "pl":"mewa delawarska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus fuscus",
+         "localizedNames":{
+            "en":"lesser black-backed gull",
+            "pl":"mewa żółtonoga"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus argentatus",
+         "localizedNames":{
+            "en":"European herring gull",
+            "pl":"mewa srebrzysta"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus cachinnans",
+         "localizedNames":{
+            "en":"Caspian gull",
+            "pl":"mewa białogłowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus michahellis",
+         "localizedNames":{
+            "en":"yellow-legged gull",
+            "pl":"mewa romańska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus glaucoides",
+         "localizedNames":{
+            "en":"Iceland gull",
+            "pl":"mewa polarna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus hyperboreus",
+         "localizedNames":{
+            "en":"glaucous gull",
+            "pl":"mewa blada"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larus marinus",
+         "localizedNames":{
+            "en":"great black-backed gull",
+            "pl":"mewa siodłata"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Gelochelidon nilotica",
+         "localizedNames":{
+            "en":"gull-billed tern",
+            "pl":"rybitwa krótkodzioba"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Hydroprogne caspia",
+         "localizedNames":{
+            "en":"Caspian tern",
+            "pl":"rybitwa wielkodzioba"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sterna sandvicensis",
+         "localizedNames":{
+            "en":"sandwich tern",
+            "pl":"rybitwa czubata"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sterna dougallii",
+         "localizedNames":{
+            "en":"roseate tern",
+            "pl":"rybitwa różowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sterna hirundo",
+         "localizedNames":{
+            "en":"common tern",
+            "pl":"rybitwa rzeczna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sterna paradisaea",
+         "localizedNames":{
+            "en":"Arctic tern",
+            "pl":"rybitwa popielata"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sternula albifrons",
+         "localizedNames":{
+            "en":"little tern",
+            "pl":"rybitwa białoczelna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Chlidonias hybridus",
+         "localizedNames":{
+            "en":"whiskered tern",
+            "pl":"rybitwa białowąsa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Chlidonias niger",
+         "localizedNames":{
+            "en":"black tern",
+            "pl":"rybitwa czarna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Chlidonias leucopterus",
+         "localizedNames":{
+            "en":"white-winged tern",
+            "pl":"rybitwa białoskrzydła"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Uria aalge",
+         "localizedNames":{
+            "en":"common murre",
+            "pl":"nurzyk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Uria lomvia",
+         "localizedNames":{
+            "en":"thick-billed murre",
+            "pl":"nurzyk polarny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Alca torda",
+         "localizedNames":{
+            "en":"razorbill",
+            "pl":"alka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Cepphus grylle",
+         "localizedNames":{
+            "en":"black guillemot",
+            "pl":"nurnik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Alle alle",
+         "localizedNames":{
+            "en":"little auk",
+            "pl":"alczyk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Fratercula arctica",
+         "localizedNames":{
+            "en":"Atlantic puffin",
+            "pl":"maskonur"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Syrrhaptes paradoxus",
+         "localizedNames":{
+            "en":"Pallas's sandgrouse",
+            "pl":"pustynnik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Columba livia",
+         "localizedNames":{
+            "en":"rock pigeon",
+            "pl":"gołąb skalny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Columba oenas",
+         "localizedNames":{
+            "en":"stock dove",
+            "pl":"siniak"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Columba palumbus",
+         "localizedNames":{
+            "en":"common wood pigeon",
+            "pl":"grzywacz"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Streptopelia decaocto",
+         "localizedNames":{
+            "en":"Eurasian collared dove",
+            "pl":"sierpówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Streptopelia turtur",
+         "localizedNames":{
+            "en":"European turtle dove",
+            "pl":"turkawka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Streptopelia orientalis",
+         "localizedNames":{
+            "en":"Oriental turtle dove",
+            "pl":"turkawka wschodnia"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Clamator glandarius",
+         "localizedNames":{
+            "en":"great spotted cuckoo",
+            "pl":"kukułka czubata"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Cuculus canorus",
+         "localizedNames":{
+            "en":"common cuckoo",
+            "pl":"kukułka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tyto alba",
+         "localizedNames":{
+            "en":"barn owl",
+            "pl":"płomykówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Otus scops",
+         "localizedNames":{
+            "en":"Eurasian scops owl",
+            "pl":"syczek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Bubo bubo",
+         "localizedNames":{
+            "en":"Eurasian eagle-owl",
+            "pl":"puchacz"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Bubo scandiacus",
+         "localizedNames":{
+            "en":"snowy owl",
+            "pl":"sowa śnieżna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Surnia ulula",
+         "localizedNames":{
+            "en":"northern hawk-owl",
+            "pl":"sowa jarzębata"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Glaucidium passerinum",
+         "localizedNames":{
+            "en":"Eurasian pygmy owl",
+            "pl":"sóweczka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Athene noctua",
+         "localizedNames":{
+            "en":"little owl",
+            "pl":"pójdźka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Strix aluco",
+         "localizedNames":{
+            "en":"tawny owl",
+            "pl":"puszczyk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Strix uralensis",
+         "localizedNames":{
+            "en":"Ural owl",
+            "pl":"puszczyk uralski"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Strix nebulosa",
+         "localizedNames":{
+            "en":"great grey owl",
+            "pl":"puszczyk mszarny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Asio otus",
+         "localizedNames":{
+            "en":"long-eared owl",
+            "pl":"uszatka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Asio flammeus",
+         "localizedNames":{
+            "en":"short-eared owl",
+            "pl":"uszatka błotna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aegolius funereus",
+         "localizedNames":{
+            "en":"boral owl",
+            "pl":"włochatka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Caprimulgus europaeus",
+         "localizedNames":{
+            "en":"European nightjar",
+            "pl":"lelek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tachymarptis melba",
+         "localizedNames":{
+            "en":"Alpine swift",
+            "pl":"jerzyk alpejski"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Apus apus",
+         "localizedNames":{
+            "en":"common swift",
+            "pl":"jerzyk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Alcedo atthis",
+         "localizedNames":{
+            "en":"common kingfisher",
+            "pl":"zimorodek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Ceryle rudis",
+         "localizedNames":{
+            "en":"pied kingfisher",
+            "pl":"rybaczek srokaty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Merops apiaster",
+         "localizedNames":{
+            "en":"European bee-eater",
+            "pl":"żołna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Coracias garrulus",
+         "localizedNames":{
+            "en":"European roller",
+            "pl":"kraska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Upupa epops",
+         "localizedNames":{
+            "en":"hoopoe",
+            "pl":"dudek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Jynx torquilla",
+         "localizedNames":{
+            "en":"Eurasian wryneck",
+            "pl":"krętogłów"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Picus canus",
+         "localizedNames":{
+            "en":"grey-headed woodpecker",
+            "pl":"dzięcioł zielonosiwy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Picus viridis",
+         "localizedNames":{
+            "en":"European green woodpecker",
+            "pl":"dzięcioł zielony"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Dryocopus martius",
+         "localizedNames":{
+            "en":"black woodpecker",
+            "pl":"dzięcioł czarny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Dendrocopos major",
+         "localizedNames":{
+            "en":"great spotted woodpecker",
+            "pl":"dzięcioł duży"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Dendrocopos syriacus",
+         "localizedNames":{
+            "en":"Syrian woodpecker",
+            "pl":"dzięcioł białoszyi"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Dendrocopos medius",
+         "localizedNames":{
+            "en":"middle spotted woodpecker",
+            "pl":"dzięcioł średni"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Dendrocopos leucotos",
+         "localizedNames":{
+            "en":"white-backed woodpecker",
+            "pl":"dzięcioł białogrzbiety"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Dendrocopos minor",
+         "localizedNames":{
+            "en":"lesser spotted woodpecker",
+            "pl":"dzięciołek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Picoides tridactylus",
+         "localizedNames":{
+            "en":"three-toed woodpecker",
+            "pl":"dzięcioł trójpalczasty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Melanocorypha calandra",
+         "localizedNames":{
+            "en":"calandra lark",
+            "pl":"kalandra szara"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Melanocorypha leucoptera",
+         "localizedNames":{
+            "en":"white-winged lark",
+            "pl":"kalandra białoskrzydła"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Melanocorypha yeltoniensis",
+         "localizedNames":{
+            "en":"black lark",
+            "pl":"kalandra czarna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calandrella brachydactyla",
+         "localizedNames":{
+            "en":"greater short-toed lark",
+            "pl":"skowrończyk krótkopalcowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Galerida cristata",
+         "localizedNames":{
+            "en":"crested lark",
+            "pl":"dzierlatka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Lullula arborea",
+         "localizedNames":{
+            "en":"wood lark",
+            "pl":"lerka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Alauda arvensis",
+         "localizedNames":{
+            "en":"Eurasian skylark",
+            "pl":"skowronek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Eremophila alpestris",
+         "localizedNames":{
+            "en":"horned lark",
+            "pl":"górniczek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Riparia riparia",
+         "localizedNames":{
+            "en":"sand martin",
+            "pl":"brzegówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Hirundo rustica",
+         "localizedNames":{
+            "en":"barn swallow",
+            "pl":"dymówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Cecropis daurica",
+         "localizedNames":{
+            "en":"red-rumped swallow",
+            "pl":"jaskółka rudawa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Delichon urbicum",
+         "localizedNames":{
+            "en":"common house martin",
+            "pl":"oknówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anthus richardi",
+         "localizedNames":{
+            "en":"Richard's pipit",
+            "pl":"świergotek szponiasty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anthus campestris",
+         "localizedNames":{
+            "en":"tawny pipit",
+            "pl":"świergotek polny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anthus hodgsoni",
+         "localizedNames":{
+            "en":"olive-backed pipit",
+            "pl":"świergotek tajgowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anthus trivialis",
+         "localizedNames":{
+            "en":"tree pipit",
+            "pl":"świergotek drzewny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anthus gustavi",
+         "localizedNames":{
+            "en":"Pechora pipit",
+            "pl":"świergotek tundrowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anthus pratensis",
+         "localizedNames":{
+            "en":"meadrow pipit",
+            "pl":"świergotek łąkowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anthus cervinus",
+         "localizedNames":{
+            "en":"red-throated pipit",
+            "pl":"świergotek rdzawogardły"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anthus spinoletta",
+         "localizedNames":{
+            "en":"water pipit",
+            "pl":"siwerniak"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Anthus petrosus",
+         "localizedNames":{
+            "en":"Eurasian rock pipit",
+            "pl":"świergotek nadmorski"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Motacilla flava flava",
+         "localizedNames":{
+            "en":"blue-headed wagtail",
+            "pl":"pliszka żółta"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Motacilla flava thunbergi",
+         "localizedNames":{
+            "en":"grey-headed wagtail",
+            "pl":"pliszka tundrowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Motacilla flava feldegg",
+         "localizedNames":{
+            "en":"black-headed wagtail",
+            "pl":"pliszka czarnogłowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Motacilla flava flavissima",
+         "localizedNames":{
+            "en":"yellow-crowned wagtail",
+            "pl":"pliszka żółtawa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Motacilla citreola",
+         "localizedNames":{
+            "en":"citrine wagtail",
+            "pl":"pliszka cytrynowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Motacilla cinerea",
+         "localizedNames":{
+            "en":"grey wagtail",
+            "pl":"pliszka górska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Motacilla alba alba",
+         "localizedNames":{
+            "en":"white wagtail",
+            "pl":"pliszka siwa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Motacilla alba yarrellii",
+         "localizedNames":{
+            "en":"pied wagtail",
+            "pl":"pliszka brytyjska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Bombycilla garrulus",
+         "localizedNames":{
+            "en":"Bohemian waxwing",
+            "pl":"jemiołuszka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Cinclus cinclus cinclus",
+         "localizedNames":{
+            "en":"black-bellied dipper",
+            "pl":"pluszcz"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Troglodytes troglodytes",
+         "localizedNames":{
+            "en":"Eurasian wren",
+            "pl":"strzyżyk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Prunella modularis",
+         "localizedNames":{
+            "en":"dunnock",
+            "pl":"pokrzywnica"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Prunella montanella",
+         "localizedNames":{
+            "en":"Siberian accentor",
+            "pl":"płochacz syberyjski"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Prunella collaris",
+         "localizedNames":{
+            "en":"alpine accentor",
+            "pl":"płochacz halny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Erithacus rubecula",
+         "localizedNames":{
+            "en":"European robin",
+            "pl":"rudzik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Larvivora sibilans",
+         "localizedNames":{
+            "en":"rufous-tailed robin",
+            "pl":"słowik syberyjski"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Luscinia luscinia",
+         "localizedNames":{
+            "en":"thrush nightingale",
+            "pl":"słowik szary"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Luscinia megarhynchos",
+         "localizedNames":{
+            "en":"common nightingale",
+            "pl":"słowik rdzawy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Luscinia svecica",
+         "localizedNames":{
+            "en":"bluethroat",
+            "pl":"podróżniczek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tarsiger cyanurus",
+         "localizedNames":{
+            "en":"red-flanked bluetail",
+            "pl":"modraczek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phoenicurus ochruros",
+         "localizedNames":{
+            "en":"black redstart",
+            "pl":"kopciuszek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phoenicurus phoenicurus",
+         "localizedNames":{
+            "en":"common redstart",
+            "pl":"pleszka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Saxicola rubetra",
+         "localizedNames":{
+            "en":"whinchat",
+            "pl":"pokląskwa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Saxicola rubicola",
+         "localizedNames":{
+            "en":"European stonechat",
+            "pl":"kląskawka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Saxicola maurus",
+         "localizedNames":{
+            "en":"Siberian stonechat",
+            "pl":"kląskawka syberyjska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Oenanthe isabellina",
+         "localizedNames":{
+            "en":"isabelline wheatear",
+            "pl":"białorzytka płowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Oenanthe oenanthe",
+         "localizedNames":{
+            "en":"northern wheatear",
+            "pl":"białorzytka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Oenanthe pleschanka",
+         "localizedNames":{
+            "en":"pied wheatear",
+            "pl":"białorzytka pstra"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Oenanthe hispanica",
+         "localizedNames":{
+            "en":"black-eared wheatear",
+            "pl":"białorzytka rdzawa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Oenanthe deserti",
+         "localizedNames":{
+            "en":"dessert wheatear",
+            "pl":"białorzytka pustynna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Monticola saxatilis",
+         "localizedNames":{
+            "en":"common rock thrush",
+            "pl":"nagórnik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Zoothera dauma",
+         "localizedNames":{
+            "en":"scaly thrush",
+            "pl":"drozdoń pstry"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Geokichla sibirica",
+         "localizedNames":{
+            "en":"Siberian thrush",
+            "pl":"drozdoń ciemny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Turdus torquatus torquatus",
+         "localizedNames":{
+            "en":"ring ouzel",
+            "pl":"drozd obrożny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Turdus merula",
+         "localizedNames":{
+            "en":"common blackbird",
+            "pl":"kos"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Turdus obscurus",
+         "localizedNames":{
+            "en":"eyebrowed thrush",
+            "pl":"drozd oliwkowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Turdus naumanni",
+         "localizedNames":{
+            "en":"Naumann's thrush",
+            "pl":"drozd rdzawy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Turdus eunomus",
+         "localizedNames":{
+            "en":"dusky thrush",
+            "pl":"drozd rdzawoskrzydły"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Turdus ruficollis",
+         "localizedNames":{
+            "en":"red-throated thrush",
+            "pl":"drozd rdzawogardły"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Turdus atrogularis",
+         "localizedNames":{
+            "en":"black-throated thrush",
+            "pl":"drozd czarnogardły"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Turdus pilaris",
+         "localizedNames":{
+            "en":"fieldfare",
+            "pl":"kwiczoł"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Turdus philomelos",
+         "localizedNames":{
+            "en":"song thrush",
+            "pl":"śpiewak"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Turdus iliacus",
+         "localizedNames":{
+            "en":"redwing",
+            "pl":"droździk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Turdus viscivorus",
+         "localizedNames":{
+            "en":"mistle thrush",
+            "pl":"paszkot"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Locustella certhiola",
+         "localizedNames":{
+            "en":"Pallas's grasshopper warbler",
+            "pl":"świerszczak melodyjny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Locustella naevia",
+         "localizedNames":{
+            "en":"common grasshopper warbler",
+            "pl":"świerszczak"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Locustella fluviatilis",
+         "localizedNames":{
+            "en":"river warbler",
+            "pl":"strumieniówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Locustella luscinioides",
+         "localizedNames":{
+            "en":"Savi's warbler",
+            "pl":"brzęczka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Acrocephalus melanopogon",
+         "localizedNames":{
+            "en":"moustached warbler",
+            "pl":"tamaryszka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Acrocephalus paludicola",
+         "localizedNames":{
+            "en":"aquatic warbler",
+            "pl":"wodniczka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Acrocephalus schoenobaenus",
+         "localizedNames":{
+            "en":"sedge warbler",
+            "pl":"rokitniczka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Acrocephalus agricola",
+         "localizedNames":{
+            "en":"paddyfield warbler",
+            "pl":"trzcinniczek kaspijski"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Acrocephalus dumetorum",
+         "localizedNames":{
+            "en":"Blyth's reed warbler",
+            "pl":"zaroślówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Acrocephalus palustris",
+         "localizedNames":{
+            "en":"marsh warbler",
+            "pl":"łozówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Acrocephalus scirpaceus",
+         "localizedNames":{
+            "en":"Eurasian reed warbler",
+            "pl":"trzcinniczek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Acrocephalus arundinaceus",
+         "localizedNames":{
+            "en":"great reed warbler",
+            "pl":"trzciniak"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Hippolais icterina",
+         "localizedNames":{
+            "en":"icterine warbler",
+            "pl":"zaganiacz"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Hippolais polyglotta",
+         "localizedNames":{
+            "en":"melodious warbler",
+            "pl":"zaganiacz szczebiotliwy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sylvia cantillans",
+         "localizedNames":{
+            "en":"subalpine warbler",
+            "pl":"pokrzewka wąsata"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sylvia melanocephala",
+         "localizedNames":{
+            "en":"Sardinian warbler",
+            "pl":"pokrzewka aksamitna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sylvia nisoria",
+         "localizedNames":{
+            "en":"barred warbler",
+            "pl":"jarzębatka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sylvia curruca",
+         "localizedNames":{
+            "en":"lesser whitethroat",
+            "pl":"piegża"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sylvia communis",
+         "localizedNames":{
+            "en":"common whitethroat",
+            "pl":"cierniówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sylvia borin",
+         "localizedNames":{
+            "en":"garden warbler",
+            "pl":"gajówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sylvia atricapilla",
+         "localizedNames":{
+            "en":"Eurasian blackcap",
+            "pl":"kapturka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus trochiloides",
+         "localizedNames":{
+            "en":"greenish warbler",
+            "pl":"wójcik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus borealis",
+         "localizedNames":{
+            "en":"arctic warbler",
+            "pl":"świstunka północna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus proregulus",
+         "localizedNames":{
+            "en":"Pallas's leaf warbler",
+            "pl":"świstunka złotawa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus inornatus",
+         "localizedNames":{
+            "en":"yellow-browed warbler",
+            "pl":"świstunka żółtawa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus humei",
+         "localizedNames":{
+            "en":"Hume's leaf warbler",
+            "pl":"świstunka ałtajska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus schwarzi",
+         "localizedNames":{
+            "en":"Radde's warbler",
+            "pl":"świstunka grubodzioba"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus fuscatus",
+         "localizedNames":{
+            "en":"dusky warbler",
+            "pl":"świstunka brunatna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus bonelli",
+         "localizedNames":{
+            "en":"western Bonelli's warbler",
+            "pl":"świstunka górska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus sibilatrix",
+         "localizedNames":{
+            "en":"wood warbler",
+            "pl":"świstunka leśna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus collybita",
+         "localizedNames":{
+            "en":"common chiffchaff",
+            "pl":"pierwiosnek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus collybita tristis",
+         "localizedNames":{
+            "en":"Siberian chiffchaff",
+            "pl":"pierwiosnek syberyjski"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus ibericus",
+         "localizedNames":{
+            "en":"Iberian chiffchaff",
+            "pl":"świstunka iberyjska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Phylloscopus trochilus",
+         "localizedNames":{
+            "en":"willow warbler",
+            "pl":"piecuszek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Regulus regulus",
+         "localizedNames":{
+            "en":"goldcrest",
+            "pl":"mysikrólik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Regulus ignicapilla",
+         "localizedNames":{
+            "en":"common firecrest",
+            "pl":"zniczek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Muscicapa striata",
+         "localizedNames":{
+            "en":"spotted flycatcher",
+            "pl":"muchołówka szara"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Ficedula parva",
+         "localizedNames":{
+            "en":"red-breasted flycatcher",
+            "pl":"muchołówka mała"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Ficedula albicollis",
+         "localizedNames":{
+            "en":"collared flycatcher",
+            "pl":"muchołówka białoszyja"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Ficedula hypoleuca",
+         "localizedNames":{
+            "en":"European pied flycatcher",
+            "pl":"muchołówka żałobna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Panurus biarmicus",
+         "localizedNames":{
+            "en":"bearded reedling",
+            "pl":"wąsatka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Aegithalos caudatus",
+         "localizedNames":{
+            "en":"long-tailed tit",
+            "pl":"raniuszek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Poecile palustris",
+         "localizedNames":{
+            "en":"marsh tit",
+            "pl":"sikora uboga"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Poecile montanus",
+         "localizedNames":{
+            "en":"willow tit",
+            "pl":"czarnogłówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Lophophanes cristatus",
+         "localizedNames":{
+            "en":"European crested tit",
+            "pl":"czubatka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Periparus ater",
+         "localizedNames":{
+            "en":"coal tit",
+            "pl":"sosnówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Cyanistes caeruleus",
+         "localizedNames":{
+            "en":"Eurasian blue tit",
+            "pl":"modraszka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Cyanistes cyanus",
+         "localizedNames":{
+            "en":"azure tit",
+            "pl":"sikora lazurowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Parus major",
+         "localizedNames":{
+            "en":"great tit",
+            "pl":"bogatka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sitta europaea",
+         "localizedNames":{
+            "en":"Eurasian nuthatch",
+            "pl":"kowalik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Tichodroma muraria",
+         "localizedNames":{
+            "en":"wallcreeper",
+            "pl":"pomurnik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Certhia familiaris",
+         "localizedNames":{
+            "en":"Eurasian treecreeper",
+            "pl":"pełzacz leśny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Certhia brachydactyla",
+         "localizedNames":{
+            "en":"short-toead treecreeper",
+            "pl":"pełzacz ogrodowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Remiz pendulinus",
+         "localizedNames":{
+            "en":"European penduline tit",
+            "pl":"remiz"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Oriolus oriolus",
+         "localizedNames":{
+            "en":"Eurasian golden oriole",
+            "pl":"wilga"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Lanius isabellinus",
+         "localizedNames":{
+            "en":"isabelline shrike",
+            "pl":"dzierzba pustynna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Lanius collurio",
+         "localizedNames":{
+            "en":"red-backed shrike",
+            "pl":"gąsiorek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Lanius minor",
+         "localizedNames":{
+            "en":"lesser grey shrike",
+            "pl":"dzierzba czarnoczelna"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Lanius excubitor",
+         "localizedNames":{
+            "en":"great grey shrike",
+            "pl":"srokosz"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Lanius senator",
+         "localizedNames":{
+            "en":"woodchat shrike",
+            "pl":"dzierzba rudogłowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Garrulus glandarius",
+         "localizedNames":{
+            "en":"Eurasian jay",
+            "pl":"sójka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Perisoreus infaustus",
+         "localizedNames":{
+            "en":"Siberian jay",
+            "pl":"sójka syberyjska"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pica pica",
+         "localizedNames":{
+            "en":"Eurasian magpie",
+            "pl":"sroka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Nucifraga caryocatactes",
+         "localizedNames":{
+            "en":"spotted nutcracker",
+            "pl":"orzechówka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pyrrhocorax graculus",
+         "localizedNames":{
+            "en":"Alpine chough",
+            "pl":"wieszczek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Corvus monedula",
+         "localizedNames":{
+            "en":"western jackdaw",
+            "pl":"kawka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Corvus frugilegus",
+         "localizedNames":{
+            "en":"rook",
+            "pl":"gawron"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Corvus corone",
+         "localizedNames":{
+            "en":"carrion crow",
+            "pl":"czarnowron"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Corvus cornix",
+         "localizedNames":{
+            "en":"hooded crow",
+            "pl":"wrona siwa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Corvus corax",
+         "localizedNames":{
+            "en":"common raven",
+            "pl":"kruk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Sturnus vulgaris",
+         "localizedNames":{
+            "en":"common starling",
+            "pl":"szpak"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pastor roseus",
+         "localizedNames":{
+            "en":"rosy starling",
+            "pl":"pasterz"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Passer domesticus",
+         "localizedNames":{
+            "en":"house sparrow",
+            "pl":"wróbel"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Passer montanus",
+         "localizedNames":{
+            "en":"European tree sparrow",
+            "pl":"mazurek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Petronia petronia",
+         "localizedNames":{
+            "en":"rock sparrow",
+            "pl":"wróbel skalny"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Montifringilla nivalis",
+         "localizedNames":{
+            "en":"white-winged snowfinch",
+            "pl":"śnieżka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Vireo olivaceus",
+         "localizedNames":{
+            "en":"red-eyed vireo",
+            "pl":"wireonek czerwonooki"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Fringilla coelebs",
+         "localizedNames":{
+            "en":"common chaffinch",
+            "pl":"zięba"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Fringilla montifringilla",
+         "localizedNames":{
+            "en":"brambling",
+            "pl":"jer"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Serinus serinus",
+         "localizedNames":{
+            "en":"European serin",
+            "pl":"kulczyk"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Serinus citrinella",
+         "localizedNames":{
+            "en":"citril finch",
+            "pl":"osetnik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Carduelis chloris",
+         "localizedNames":{
+            "en":"European greenfinch",
+            "pl":"dzwoniec"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Carduelis carduelis",
+         "localizedNames":{
+            "en":"European goldfinch",
+            "pl":"szczygieł"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Carduelis spinus",
+         "localizedNames":{
+            "en":"Eurasian siskin",
+            "pl":"czyż"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Carduelis cannabina",
+         "localizedNames":{
+            "en":"common linnet",
+            "pl":"makolągwa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Carduelis flavirostris",
+         "localizedNames":{
+            "en":"twite",
+            "pl":"rzepołuch"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Carduelis flammea",
+         "localizedNames":{
+            "en":"common redpoll",
+            "pl":"czeczotka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Carduelis hornemanni",
+         "localizedNames":{
+            "en":"Arctic redpoll",
+            "pl":"czeczotka tundrowa"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Loxia leucoptera",
+         "localizedNames":{
+            "en":"two-barred crossbill",
+            "pl":"krzyżodziób modrzewiowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Loxia curvirostra",
+         "localizedNames":{
+            "en":"red crossbill",
+            "pl":"krzyżodziób świerkowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Loxia pytyopsittacus",
+         "localizedNames":{
+            "en":"parrot crossbill",
+            "pl":"krzyżodziób sosnowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Carpodacus erythrinus",
+         "localizedNames":{
+            "en":"common rosefinch",
+            "pl":"dziwonia"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pinicola enucleator",
+         "localizedNames":{
+            "en":"pine grosbeak",
+            "pl":"łuskowiec"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Pyrrhula pyrrhula",
+         "localizedNames":{
+            "en":"European bullfinch",
+            "pl":"gil"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Coccothraustes coccothraustes",
+         "localizedNames":{
+            "en":"hawfinch",
+            "pl":"grubodziób"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Junco hyemalis",
+         "localizedNames":{
+            "en":"dark-eyed junco",
+            "pl":"junko"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Calcarius lapponicus",
+         "localizedNames":{
+            "en":"Lapland longspur",
+            "pl":"poświerka"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Plectrophenax nivalis",
+         "localizedNames":{
+            "en":"snow bunting",
+            "pl":"śnieguła"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Emberiza leucocephalos",
+         "localizedNames":{
+            "en":"pine bunting",
+            "pl":"trznadel białogłowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Emberiza citrinella",
+         "localizedNames":{
+            "en":"yellowhammer",
+            "pl":"trznadel"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Emberiza cirlus",
+         "localizedNames":{
+            "en":"cirl bunting",
+            "pl":"cierlik"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Emberiza cia",
+         "localizedNames":{
+            "en":"rock bunting",
+            "pl":"głuszek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Emberiza hortulana",
+         "localizedNames":{
+            "en":"ortolan bunting",
+            "pl":"ortolan"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Emberiza rustica",
+         "localizedNames":{
+            "en":"rustic bunting",
+            "pl":"trznadel czubaty"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Emberiza pusilla",
+         "localizedNames":{
+            "en":"little bunting",
+            "pl":"trznadelek"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Emberiza aureola",
+         "localizedNames":{
+            "en":"yellow-breasted bunting",
+            "pl":"trznadel złotawy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Emberiza schoeniclus",
+         "localizedNames":{
+            "en":"common reed bunting",
+            "pl":"potrzos"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Emberiza melanocephala",
+         "localizedNames":{
+            "en":"black-headed bunting",
+            "pl":"trznadel czarnogłowy"
+         }
+      },
+      {
+         "speciesClass":"BIRD",
+         "latinName":"Emberiza calandra",
+         "localizedNames":{
+            "en":"corn bunting",
+            "pl":"potrzeszcz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Alosa alosa",
+         "localizedNames":{
+            "en":"allis shad",
+            "pl":"aloza"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Ctenopharyngodon idella",
+         "localizedNames":{
+            "en":"grass carp",
+            "pl":"amur biały"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Neogobius melanostomus",
+         "localizedNames":{
+            "en":"round goby",
+            "pl":"babka bycza"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Gobius niger",
+         "localizedNames":{
+            "en":"black goby",
+            "pl":"babka czarna"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Gobiusculus flavescens",
+         "localizedNames":{
+            "en":"two-spotted goby",
+            "pl":"babka czarnoplamka"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Neogobius gymnotrachelus",
+         "localizedNames":{
+            "en":"racer goby",
+            "pl":"babka łysa"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Pomatoschistus minutus",
+         "localizedNames":{
+            "en":"sand goby",
+            "pl":"babka mała"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Proterorhinus marmoratus",
+         "localizedNames":{
+            "en":"tubenose goby",
+            "pl":"babka marmurkowata"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Pomatoschistus microps",
+         "localizedNames":{
+            "en":"common goby",
+            "pl":"babka piaskowa"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Proterorhinus semilunaris",
+         "localizedNames":{
+            "en":"western tubenose goby",
+            "pl":"babka rurkonosa"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Neogobius fluviatilis",
+         "localizedNames":{
+            "en":"monkey goby",
+            "pl":"babka szczupła"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Lepomis gibbosus",
+         "localizedNames":{
+            "en":"pumpkinseed",
+            "pl":"bass słoneczny"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Micropterus salmoides",
+         "localizedNames":{
+            "en":"largemouth bass",
+            "pl":"bass wielkogębowy"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Belone belone",
+         "localizedNames":{
+            "en":"garfish",
+            "pl":"belona pospolita"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Leuciscus aspius",
+         "localizedNames":{
+            "en":"asp",
+            "pl":"boleń"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Barbus waleckii",
+         "localizedNames":{
+            "en":"Vistula barbel",
+            "pl":"brzana karpacka"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Barbus barbus",
+         "localizedNames":{
+            "en":"common barbel",
+            "pl":"brzana"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Barbus carpathicus",
+         "localizedNames":{
+            "en":"Carpathian barbel",
+            "pl":"brzanka"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Ictiobus niger",
+         "localizedNames":{
+            "en":"black buffalo",
+            "pl":"buffalo czarny"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Vimba vimba",
+         "localizedNames":{
+            "en":"vimba vimba",
+            "pl":"certa"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Pungitius pungitius",
+         "localizedNames":{
+            "en":"ninespine stickleback",
+            "pl":"cierniczek"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Gasterosteus aculeatus",
+         "localizedNames":{
+            "en":"three-spined spickleback",
+            "pl":"ciernik"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Pelecus cultratus",
+         "localizedNames":{
+            "en":"sichel",
+            "pl":"ciosa"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Pollachius virens",
+         "localizedNames":{
+            "en":"saithe",
+            "pl":"czarniak"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Oncorhynchus tshawytscha",
+         "localizedNames":{
+            "en":"Chinook salmon",
+            "pl":"czawycza"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Pseudorasbora parva",
+         "localizedNames":{
+            "en":"stone moroko",
+            "pl":"czebaczek amurski"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Liparis liparis",
+         "localizedNames":{
+            "en":"common seasnail",
+            "pl":"dennik"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Hyperoplus lanceolatus",
+         "localizedNames":{
+            "en":"great sand eel",
+            "pl":"dobijak"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Gadus morhua",
+         "localizedNames":{
+            "en":"Atlantic cod",
+            "pl":"dorsz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Pleuronectes platessa",
+         "localizedNames":{
+            "en":"European plaice",
+            "pl":"gładzica"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Hucho hucho",
+         "localizedNames":{
+            "en":"Danube salmon",
+            "pl":"głowacica"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Cottus gobio",
+         "localizedNames":{
+            "en":"bullhead",
+            "pl":"głowacz białopłetwy"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Cottus poecilopus",
+         "localizedNames":{
+            "en":"Siberian bullhead",
+            "pl":"głowacz pręgopłetwy"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Salvelinus alpinus",
+         "localizedNames":{
+            "en":"Arctic char",
+            "pl":"golec zwyczajny"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Oncorhynchus gorbuscha",
+         "localizedNames":{
+            "en":"pink salmon",
+            "pl":"gorbusza"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Syngnathus rostellatus",
+         "localizedNames":{
+            "en":"Nilsson's pipefish",
+            "pl":"igliczka"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Syngnathus typhle",
+         "localizedNames":{
+            "en":"broadnosed pipefish",
+            "pl":"iglicznia"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Gymnocephalus cernuus",
+         "localizedNames":{
+            "en":"Eurasian ruffe",
+            "pl":"jazgarz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Leuciscus idus",
+         "localizedNames":{
+            "en":"ide",
+            "pl":"jaź"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Leuciscus leuciscus",
+         "localizedNames":{
+            "en":"dace",
+            "pl":"jelec europejski"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Acipenser oxyrinchus",
+         "localizedNames":{
+            "en":"Atlantic sturgeon",
+            "pl":"jesiotr ostronosy"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Acipenser gueldenstaedti",
+         "localizedNames":{
+            "en":"Russian sturgeon",
+            "pl":"jesiotr rosyjski"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Acipenser baeri",
+         "localizedNames":{
+            "en":"Siberian sturgeon",
+            "pl":"jesiotr syberyjski"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Carassius carassius",
+         "localizedNames":{
+            "en":"crucian carp",
+            "pl":"karaś pospolity"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Carassius gibelio",
+         "localizedNames":{
+            "en":"Prussian carp",
+            "pl":"karaś srebrzysty"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Cyprinus carpio",
+         "localizedNames":{
+            "en":"European carp",
+            "pl":"karp"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Romanogobio albipinnatus",
+         "localizedNames":{
+            "en":"white-finned gudgeon",
+            "pl":"kiełb białopłetwy"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Romanogobio kessleri",
+         "localizedNames":{
+            "en":"Kessler's gudgeon",
+            "pl":"kiełb Kesslera"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Gobio gobio",
+         "localizedNames":{
+            "en":"gudgeon",
+            "pl":"kiełb"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Oncorhynchus kisutch",
+         "localizedNames":{
+            "en":"coho salmon",
+            "pl":"kiżucz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Leuciscus cephalus",
+         "localizedNames":{
+            "en":"chub",
+            "pl":"kleń"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Squalus acanthias",
+         "localizedNames":{
+            "en":"spiny dogfish",
+            "pl":"koleń pospolity"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Cobitis taenia",
+         "localizedNames":{
+            "en":"spinned loach",
+            "pl":"koza pospolita"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Sabanejewia aurata",
+         "localizedNames":{
+            "en":"Sabanajewa aurata",
+            "pl":"koza złotawa"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Blicca bjoerkna",
+         "localizedNames":{
+            "en":"white beam",
+            "pl":"krąp"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Myoxocephalus scorpius",
+         "localizedNames":{
+            "en":"shorthorn sculpin",
+            "pl":"kur diabeł"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Taurulus bubalis",
+         "localizedNames":{
+            "en":"longspined sea-scorpion",
+            "pl":"kur głowacz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Myoxocephalus quadricornis",
+         "localizedNames":{
+            "en":"fourhorn sculpin",
+            "pl":"kur rogacz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Trigla lucerna",
+         "localizedNames":{
+            "en":"tub gurnard",
+            "pl":"kurek czerwony"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Trigla guarnardus",
+         "localizedNames":{
+            "en":"grey gurnard",
+            "pl":"kurek szary"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Dicentrarchus labrax",
+         "localizedNames":{
+            "en":"European seabass",
+            "pl":"labraks"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Abramis brama",
+         "localizedNames":{
+            "en":"common beam",
+            "pl":"leszcz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Tinca tinca",
+         "localizedNames":{
+            "en":"doctor fish",
+            "pl":"lin"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Thymallus baicalensis",
+         "localizedNames":{
+            "en":"Baikal black grayling",
+            "pl":"lipień bajkalski"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Thymallus thymallus",
+         "localizedNames":{
+            "en":"grayling",
+            "pl":"lipień pospolity"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Agonus cataphractus",
+         "localizedNames":{
+            "en":"hooknose",
+            "pl":"lisica"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Salmo salar",
+         "localizedNames":{
+            "en":"Atlantic salmon",
+            "pl":"łosoś szlachetny"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Scomber scombrus",
+         "localizedNames":{
+            "en":"Atlantic mackerel",
+            "pl":"makrela atlantycka"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Scomberesox saurus",
+         "localizedNames":{
+            "en":"Atlantic saury",
+            "pl":"makrelosz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Xiphias gladius",
+         "localizedNames":{
+            "en":"swordfish",
+            "pl":"włócznik (miecznik)"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Lota lota",
+         "localizedNames":{
+            "en":"burbot",
+            "pl":"miętus pospolity"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Petromyzon marinus",
+         "localizedNames":{
+            "en":"sea lamprey",
+            "pl":"minóg morski"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Lampetra fluviatilis",
+         "localizedNames":{
+            "en":"European river lamprey",
+            "pl":"minóg rzeczny"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Lampetra planeri",
+         "localizedNames":{
+            "en":"brook lamprey",
+            "pl":"minóg strumieniowy"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Eudontomyzon mariae",
+         "localizedNames":{
+            "en":"Ukrainian brook lamprey",
+            "pl":"minóg ukraiński"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Enchelyopus cimbrius",
+         "localizedNames":{
+            "en":"fourbeard rockling",
+            "pl":"motela"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Coregonus muksun",
+         "localizedNames":{
+            "en":"muksun",
+            "pl":"muksun"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Umbra krameri",
+         "localizedNames":{
+            "en":"European mudminnow",
+            "pl":"muławka bałkańska"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Umbra pygmaea",
+         "localizedNames":{
+            "en":"eastern mudminnow",
+            "pl":"muławka wschodnioamerykańska"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Scophthalmus rhombus",
+         "localizedNames":{
+            "en":"brill",
+            "pl":"nagład"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Hippoglossoides platessoides",
+         "localizedNames":{
+            "en":"American plaice",
+            "pl":"niegładzica"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Perca fluviatilis",
+         "localizedNames":{
+            "en":"European perch",
+            "pl":"okoń europejski"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Trisopterus esmarkii",
+         "localizedNames":{
+            "en":"Norway pout",
+            "pl":"okowiel"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Trachurus trachurus",
+         "localizedNames":{
+            "en":"Atlantic horse mackerel",
+            "pl":"ostrobok pospolity"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Pholis gunnellus",
+         "localizedNames":{
+            "en":"rock gunnel",
+            "pl":"ostropłetwiec"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Alosa fallax",
+         "localizedNames":{
+            "en":"twait shad",
+            "pl":"parposz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Coregonus peled",
+         "localizedNames":{
+            "en":"peled",
+            "pl":"peluga"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Alburnoides bipunctatus",
+         "localizedNames":{
+            "en":"schneider",
+            "pl":"piekielnica"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Piaractus brachypomus",
+         "localizedNames":{
+            "en":"pirapitinga",
+            "pl":"pirapitinga"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Misgurnus fossilis",
+         "localizedNames":{
+            "en":"weatherfish",
+            "pl":"piskorz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Melanogrammus aeglefinus",
+         "localizedNames":{
+            "en":"haddock",
+            "pl":"plamiak"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Rutilus rutilus",
+         "localizedNames":{
+            "en":"rutilus",
+            "pl":"płoć"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Spinachia spinachia",
+         "localizedNames":{
+            "en":"sea stickleback",
+            "pl":"pocierniec"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Salmo trutta morpha fario",
+         "localizedNames":{
+            "en":"brown trout",
+            "pl":"pstrąg potokowy"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Oncorhynchus mykiss",
+         "localizedNames":{
+            "en":"rainbow trout",
+            "pl":"pstrąg tęczowy"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Salvelinus fontinalis",
+         "localizedNames":{
+            "en":"brook trout",
+            "pl":"pstrąg źródlany"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Pollachius pollachius",
+         "localizedNames":{
+            "en":"Pollack",
+            "pl":"rdzawiec"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Abramis ballerus",
+         "localizedNames":{
+            "en":"blue bream",
+            "pl":"rozpiór"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Rhodeus sericeus",
+         "localizedNames":{
+            "en":"Amur bitterling",
+            "pl":"różanka europejska"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Mola mola",
+         "localizedNames":{
+            "en":"sunfish",
+            "pl":"samogłów"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Sander lucioperca",
+         "localizedNames":{
+            "en":"zender",
+            "pl":"sandacz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Abramis sapa",
+         "localizedNames":{
+            "en":"white-eye beam",
+            "pl":"sapa"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Engraulis encrasicolus",
+         "localizedNames":{
+            "en":"European anchovy",
+            "pl":"sardela europejska"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Sardina pilchardus",
+         "localizedNames":{
+            "en":"European pilchard",
+            "pl":"sardynka europejska"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Coregonus lavaretus",
+         "localizedNames":{
+            "en":"European whitefish",
+            "pl":"sieja pospolita"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Coregonus albula",
+         "localizedNames":{
+            "en":"European cisco",
+            "pl":"sielawa"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Scophthalmus maxima",
+         "localizedNames":{
+            "en":"turbot",
+            "pl":"turbot"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Leucaspius delineatus",
+         "localizedNames":{
+            "en":"sunbleak",
+            "pl":"słonecznica"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Solea solea",
+         "localizedNames":{
+            "en":"common sole",
+            "pl":"sola zwyczajna"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Acipenser ruthenus",
+         "localizedNames":{
+            "en":"sterlet",
+            "pl":"sterlet"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Platichthys flesus",
+         "localizedNames":{
+            "en":"European flounder",
+            "pl":"stornia"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Phoxinus phoxinus",
+         "localizedNames":{
+            "en":"Eurasian minnow",
+            "pl":"strzebla potokowa"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Eupallasella percnurus",
+         "localizedNames":{
+            "en":"swamp minnow",
+            "pl":"strzebla błotna"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Osmerus eperlanus",
+         "localizedNames":{
+            "en":"European smelt",
+            "pl":"stynka"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Clarias gariepinus",
+         "localizedNames":{
+            "en":"North African catfish",
+            "pl":"sum afrykański"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Silurus glanis",
+         "localizedNames":{
+            "en":"wels catfish",
+            "pl":"sum europejski"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Pangasianodon hypophthalmus",
+         "localizedNames":{
+            "en":"iridescent shark",
+            "pl":"sum rekini"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Ameiurus melas",
+         "localizedNames":{
+            "en":"black bullhead catfish",
+            "pl":"sumik czarny"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Ameiurus nebulosus",
+         "localizedNames":{
+            "en":"brown bullhead",
+            "pl":"sumik karłowaty"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Esox lucius",
+         "localizedNames":{
+            "en":"northern pike",
+            "pl":"szczupak pospolity"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Sprattus sprattus",
+         "localizedNames":{
+            "en":"European sprat",
+            "pl":"szprot"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Clupea harengus",
+         "localizedNames":{
+            "en":"Atlantic herring",
+            "pl":"śledź atlantycki"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Barbatula barbatula",
+         "localizedNames":{
+            "en":"stone loach",
+            "pl":"śliz pospolity"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Chondrostoma nasus",
+         "localizedNames":{
+            "en":"common nase",
+            "pl":"świnka"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Cyclopterus lumpus",
+         "localizedNames":{
+            "en":"lumpfish",
+            "pl":"tasza"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Oreochromis niloticus",
+         "localizedNames":{
+            "en":"Nile tilapia",
+            "pl":"tilapia nilowa"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Ammodytes tobianus",
+         "localizedNames":{
+            "en":"lesser sand eel",
+            "pl":"tobiasz"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Hypophthalmichthys molitrix",
+         "localizedNames":{
+            "en":"silver carp",
+            "pl":"tołpyga biała"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Aristichthys nobilis",
+         "localizedNames":{
+            "en":"bighead carp",
+            "pl":"tołpyga pstra"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Perccottus glenii",
+         "localizedNames":{
+            "en":"Chinese sleeper",
+            "pl":"trawianka"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Salmo trutta morpha lacustris",
+         "localizedNames":{
+            "en":"brown trout",
+            "pl":"troć jeziorowa"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Salmo trutta morpha trutta",
+         "localizedNames":{
+            "en":"brown trout",
+            "pl":"troć wędrowna"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Alburnus alburnus",
+         "localizedNames":{
+            "en":"bleak",
+            "pl":"ukleja"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Anguilla anguilla",
+         "localizedNames":{
+            "en":"European eel",
+            "pl":"węgorz europejski"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Zoarces viviparus",
+         "localizedNames":{
+            "en":"viviparous eelpout",
+            "pl":"węgorzyca"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Nerophis ophidion",
+         "localizedNames":{
+            "en":"straightnose pipefish",
+            "pl":"wężynka"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Polyodon spathula",
+         "localizedNames":{
+            "en":"American paddlefish",
+            "pl":"wiosłonos amerykański"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Odontogadus merlangus",
+         "localizedNames":{
+            "en":"European whiting",
+            "pl":"witlinek"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Scardinius erythrophthalmus",
+         "localizedNames":{
+            "en":"common rudd",
+            "pl":"wzdręga"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Pterygoplichthys gibbiceps",
+         "localizedNames":{
+            "en":"leopard pleco",
+            "pl":"zbrojnik lamparci"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Limanda limanda",
+         "localizedNames":{
+            "en":"limanda",
+            "pl":"zimnica"
+         }
+      },
+      {
+         "speciesClass":"FISH",
+         "latinName":"Raniceps raninus",
+         "localizedNames":{
+            "en":"tadpole fish",
+            "pl":"żabogłów"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Salamandra salamandra",
+         "localizedNames":{
+            "en":"fire salamander",
+            "pl":"salamandra plamista"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Triturus cristatus",
+         "localizedNames":{
+            "en":"northern crested newt",
+            "pl":"traszka grzebieniasta"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Lissotriton vulgaris",
+         "localizedNames":{
+            "en":"smooth newt",
+            "pl":"traszka zwyczajna"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Lissotriton montadoni",
+         "localizedNames":{
+            "en":"Carpathian newt",
+            "pl":"traszka karpacka"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Meostriton alpestris",
+         "localizedNames":{
+            "en":"alpine newt",
+            "pl":"traszka górska"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Bombina bombina",
+         "localizedNames":{
+            "en":"European fire-bellied toad",
+            "pl":"kumak nizinny"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Bombina variegata",
+         "localizedNames":{
+            "en":"yellow-bellied toad",
+            "pl":"kumak górski"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Pelobates fuscus",
+         "localizedNames":{
+            "en":"common spadefoot",
+            "pl":"grzebiuszka ziemna"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Bufo bufo",
+         "localizedNames":{
+            "en":"common toad",
+            "pl":"ropucha szara"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Bufo virdis",
+         "localizedNames":{
+            "en":"European green toad",
+            "pl":"ropucha zielona"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Bufo calamita",
+         "localizedNames":{
+            "en":"natterjack toad",
+            "pl":"ropucha paskówka"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Hyla arborea",
+         "localizedNames":{
+            "en":"European tree frog",
+            "pl":"rzekotka drzewna"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Rana lessonae",
+         "localizedNames":{
+            "en":"marsh frog",
+            "pl":"żaba jeziorkowa"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Rana esculenta",
+         "localizedNames":{
+            "en":"edible frog",
+            "pl":"żaba wodna"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Rana ridibunda",
+         "localizedNames":{
+            "en":"marsh frog",
+            "pl":"żaba śmieszka"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Rana temporaria",
+         "localizedNames":{
+            "en":"common frog",
+            "pl":"żaba trawna"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Rana arvalis",
+         "localizedNames":{
+            "en":"moor frog",
+            "pl":"żaba moczarowa"
+         }
+      },
+      {
+         "speciesClass":"AMPHIBIAN",
+         "latinName":"Rana dalmatina",
+         "localizedNames":{
+            "en":"agile frog",
+            "pl":"żaba dalmatyńska"
+         }
+      },
+      {
+         "speciesClass":"REPTILE",
+         "latinName":"Emys orbicularis",
+         "localizedNames":{
+            "en":"European pond turtle",
+            "pl":"żółw błotny"
+         }
+      },
+      {
+         "speciesClass":"REPTILE",
+         "latinName":"Lacerta agilis",
+         "localizedNames":{
+            "en":"sand lizard",
+            "pl":"jaszczurka zwinka"
+         }
+      },
+      {
+         "speciesClass":"REPTILE",
+         "latinName":"Zootoca vivipara",
+         "localizedNames":{
+            "en":"viviparous lizard",
+            "pl":"jaszczurka żyworodna"
+         }
+      },
+      {
+         "speciesClass":"REPTILE",
+         "latinName":"Lacerta viridis",
+         "localizedNames":{
+            "en":"European green lizard",
+            "pl":"jaszczurka zielona"
+         }
+      },
+      {
+         "speciesClass":"REPTILE",
+         "latinName":"Anguis fragilis",
+         "localizedNames":{
+            "en":"slow worm",
+            "pl":"padalec zwyczajny"
+         }
+      },
+      {
+         "speciesClass":"REPTILE",
+         "latinName":"Natrix natrix",
+         "localizedNames":{
+            "en":"grass snake",
+            "pl":"zaskroniec zwyczajny"
+         }
+      },
+      {
+         "speciesClass":"REPTILE",
+         "latinName":"Natrix tesselata",
+         "localizedNames":{
+            "en":"dice snake",
+            "pl":"zaskroniec rybołów"
+         }
+      },
+      {
+         "speciesClass":"REPTILE",
+         "latinName":"Elaphe longissima",
+         "localizedNames":{
+            "en":"Aescalupian snake",
+            "pl":"wąż Eskalupa"
+         }
+      },
+      {
+         "speciesClass":"REPTILE",
+         "latinName":"Coronella austriaca",
+         "localizedNames":{
+            "en":"smooth snake",
+            "pl":"gniewosz plamisty"
+         }
+      },
+      {
+         "speciesClass":"REPTILE",
+         "latinName":"Vipera berus",
+         "localizedNames":{
+            "en":"European viper",
+            "pl":"żmija zygzakowata"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Erinaceus roumanicus",
+         "localizedNames":{
+            "en":"northern white-breasted hedgehog",
+            "pl":"jeż wschodni"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Erinaceus europaeus",
+         "localizedNames":{
+            "en":"European hedgehog",
+            "pl":"jeż zachodni"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Talpa europaea",
+         "localizedNames":{
+            "en":"European mole",
+            "pl":"kret europejski"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Crocidura leucodon",
+         "localizedNames":{
+            "en":"bicolored white-toothed shrew",
+            "pl":"zębiełek białawy"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Crocidura suaveolens",
+         "localizedNames":{
+            "en":"lesser white-toothed shrew",
+            "pl":"zębiełek karliczek"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Neomys anomalus",
+         "localizedNames":{
+            "en":"Miller's water shrew",
+            "pl":"rzęsorek mniejszy"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Neomys fodiens",
+         "localizedNames":{
+            "en":"Eurasian water shrew",
+            "pl":"rzęsorek rzeczek"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Sorex araneus",
+         "localizedNames":{
+            "en":"common shrew",
+            "pl":"ryjówka aksamitna"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Sorex alpinus",
+         "localizedNames":{
+            "en":"alipne shrew",
+            "pl":"ryjówka górska"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Sorex minutus",
+         "localizedNames":{
+            "en":"Eurasian pygmy shrew",
+            "pl":"ryjówka malutka"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Sorex caecutiens",
+         "localizedNames":{
+            "en":"Laxmann's shrew",
+            "pl":"ryjówka średnia"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Rhinolophus hipposideros",
+         "localizedNames":{
+            "en":"lesser horseshoe bat",
+            "pl":"podkowiec mały"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Rhinolophus ferrumequinum",
+         "localizedNames":{
+            "en":"greater horseshoe bat",
+            "pl":"podkowiec duży"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Barbastella barbastellus",
+         "localizedNames":{
+            "en":"western barbastelle",
+            "pl":"mopek zachodni"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Eptesicus nilssonii",
+         "localizedNames":{
+            "en":"northern bat",
+            "pl":"mroczek pozłocisty"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Eptesicus serotinus",
+         "localizedNames":{
+            "en":"serotine bat",
+            "pl":"mroczek późny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Hypsugo savii",
+         "localizedNames":{
+            "en":"Salvi's pipistrelle",
+            "pl":"przymroczek Saviego"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myotis alcathoe",
+         "localizedNames":{
+            "en":"Alcathoe's bat",
+            "pl":"nocek Alkatoe"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myotis bechsteinii",
+         "localizedNames":{
+            "en":"Bechstein's bat",
+            "pl":"nocek Bechsteina"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myotis brandtii",
+         "localizedNames":{
+            "en":"Brandt's bat",
+            "pl":"nocek Brandta"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myotis myotis",
+         "localizedNames":{
+            "en":"greater mouse-eared bat",
+            "pl":"nocek duży"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myotis oxygnathus",
+         "localizedNames":{
+            "en":"lesser mouse-eared bat",
+            "pl":"nocek ostrouszny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myotis dasycneme",
+         "localizedNames":{
+            "en":"pond bat",
+            "pl":"nocek łydkowłosy"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myotis nattereri",
+         "localizedNames":{
+            "en":"Natterer's bat",
+            "pl":"nocek Natterera"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myotis emarginatus",
+         "localizedNames":{
+            "en":"Geoffroy's bat",
+            "pl":"nocek orzęsiony"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myotis daubentonii",
+         "localizedNames":{
+            "en":"Daubenton's bat",
+            "pl":"nocek rudy"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myotis mystacinus",
+         "localizedNames":{
+            "en":"whiskered bat",
+            "pl":"nocek wąsatek"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Nyctalus leisleri",
+         "localizedNames":{
+            "en":"Leisler's bat",
+            "pl":"borowiec leśny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Nyctalus lasiopterus",
+         "localizedNames":{
+            "en":"greater noctule bat",
+            "pl":"borowiec olbrzymi"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Nyctalus noctula",
+         "localizedNames":{
+            "en":"common noctule",
+            "pl":"borowiec wielki"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Pipistrellus pygmaeus",
+         "localizedNames":{
+            "en":"soprano pipistrelle",
+            "pl":"karlik drobny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Pipistrellus pipistrellus",
+         "localizedNames":{
+            "en":"common pipistrelle",
+            "pl":"karlik malutki"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Pipistrellus nathusii",
+         "localizedNames":{
+            "en":"Nathusius's pipistrelle",
+            "pl":"karlik większy"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Pipistrellus kuhlii",
+         "localizedNames":{
+            "en":"Kuhl's pipistrelle",
+            "pl":"karlik średni"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Plecotus auritus",
+         "localizedNames":{
+            "en":"brown long-eared bat",
+            "pl":"gacek brunatny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Plecotus austriacus",
+         "localizedNames":{
+            "en":"grey long-eared bat",
+            "pl":"gacek szary"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Vespertilio murinus",
+         "localizedNames":{
+            "en":"parti-colored bat",
+            "pl":"mroczak posrebrzany"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Marmota marmota latirostris",
+         "localizedNames":{
+            "en":"alpine marmot",
+            "pl":"świstak tatrzański"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Sciurus vulgaris",
+         "localizedNames":{
+            "en":"Eurasian red squirrel",
+            "pl":"wiewiórka pospolita"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Spermophilus citellus",
+         "localizedNames":{
+            "en":"European ground squirrel",
+            "pl":"suseł moręgowany"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Spermophilus suslicus",
+         "localizedNames":{
+            "en":"speckled ground squirrel",
+            "pl":"suseł perełkowany"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Sicista betulina",
+         "localizedNames":{
+            "en":"northern birch mouse",
+            "pl":"smużka leśna"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Sicista subtilis",
+         "localizedNames":{
+            "en":"southern birch mouse",
+            "pl":"smużka stepowa"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Castor fiber",
+         "localizedNames":{
+            "en":"Eurasian beaver",
+            "pl":"bóbr europejski"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Castor canadensis",
+         "localizedNames":{
+            "en":"North American beaver",
+            "pl":"bóbr kanadyjski"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Cricetus cricetus",
+         "localizedNames":{
+            "en":"European hamster",
+            "pl":"chomik europejski"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myocastor coypus",
+         "localizedNames":{
+            "en":"coypu",
+            "pl":"nutria amerykańska"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Arvicola amphibius",
+         "localizedNames":{
+            "en":"European water vole",
+            "pl":"karczownik ziemnowodny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Arvicola scherman",
+         "localizedNames":{
+            "en":"montane water vole",
+            "pl":"karczownik górski"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Myodes glareolus",
+         "localizedNames":{
+            "en":"bank vole",
+            "pl":"nornica ruda"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Chionomys nivalis",
+         "localizedNames":{
+            "en":"European snow vole",
+            "pl":"śnieżnik europejski"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Microtus agrestis",
+         "localizedNames":{
+            "en":"short-tailed vole",
+            "pl":"nornik bury"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Microtus oeconomus",
+         "localizedNames":{
+            "en":"tundra vole",
+            "pl":"nornik północny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Microtus arvalis",
+         "localizedNames":{
+            "en":"common vole",
+            "pl":"nornik zwyczajny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Microtus subterraneus",
+         "localizedNames":{
+            "en":"European pine vole",
+            "pl":"nornik darniowy"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Microtus tatricus",
+         "localizedNames":{
+            "en":"Tatra pine vole",
+            "pl":"nornik tatrzański"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Ondatra zibethicus",
+         "localizedNames":{
+            "en":"mukskrat",
+            "pl":"piżmak amerykański"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Dryomys nitedula",
+         "localizedNames":{
+            "en":"forest dormouse",
+            "pl":"koszatka leśna"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Eliomys quercinus",
+         "localizedNames":{
+            "en":"garden dormouse",
+            "pl":"żołędnica europejska"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Glis glis",
+         "localizedNames":{
+            "en":"edible dormouse",
+            "pl":"popielica szara"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Muscardinus avellanarius",
+         "localizedNames":{
+            "en":"hazel dormouse",
+            "pl":"orzesznica leszczynowa"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Apodemus agrarius",
+         "localizedNames":{
+            "en":"striped field mouse",
+            "pl":"myszarka polna"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Apodemus flavicolis",
+         "localizedNames":{
+            "en":"yellow-necked mouse",
+            "pl":"myszarka leśna"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Apodemus uralensis",
+         "localizedNames":{
+            "en":"Ural field mouse",
+            "pl":"myszarka zielna"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Apodemus sylvaticus",
+         "localizedNames":{
+            "en":"wood mouse",
+            "pl":"myszarka zaroślowa"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Micromys minutus",
+         "localizedNames":{
+            "en":"Eurasian harvest mouse",
+            "pl":"badylarka pospolita"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Mus musculus",
+         "localizedNames":{
+            "en":"house mouse",
+            "pl":"mysz domowa"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Rattus rattus",
+         "localizedNames":{
+            "en":"black rat",
+            "pl":"szczur śniady"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Rattus norvegicus",
+         "localizedNames":{
+            "en":"wharf rat",
+            "pl":"szczur wędrowny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Oryctolagus cuniculus",
+         "localizedNames":{
+            "en":"European rabbit",
+            "pl":"królik europejski"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Lepus timidus",
+         "localizedNames":{
+            "en":"mountain hare",
+            "pl":"zając bielak"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Lepus europaeus",
+         "localizedNames":{
+            "en":"European hare",
+            "pl":"zając szarak"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Mesoplodon bidens",
+         "localizedNames":{
+            "en":"Sowerby's beaked whale",
+            "pl":"dziobowal dwuzębny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Hyperoodon ampullatus",
+         "localizedNames":{
+            "en":"northern bottlenose whale",
+            "pl":"butlogłów północny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Delphinus delphin",
+         "localizedNames":{
+            "en":"short-beaked common dolphin",
+            "pl":"delfin zwyczajny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Lagenorhynchus albirostris",
+         "localizedNames":{
+            "en":"white-beaked dolphin",
+            "pl":"delfinowiec białonosy"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Tursiops truncatus",
+         "localizedNames":{
+            "en":"common bottlenose dolphin",
+            "pl":"butlonos zwyczajny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Phocoena phocoena",
+         "localizedNames":{
+            "en":"harbour porpoise",
+            "pl":"morświn zwyczajny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Delphinapterus leucas",
+         "localizedNames":{
+            "en":"beluga whale",
+            "pl":"białucha arktyczna"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Megaptera novaeangliae",
+         "localizedNames":{
+            "en":"humpback whale",
+            "pl":"długopłetwiec oceaniczny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Balaenoptera physalus",
+         "localizedNames":{
+            "en":"fin whale",
+            "pl":"płetwal zwyczajny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Balaenoptera borealis",
+         "localizedNames":{
+            "en":"sei whale",
+            "pl":"płetwal czerniakowy"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Eubalaena glacialis",
+         "localizedNames":{
+            "en":"North Atlantic white whale",
+            "pl":"waleń biskajski"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Canis lupus",
+         "localizedNames":{
+            "en":"grey wolf",
+            "pl":"wilk szary"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Canis aureus",
+         "localizedNames":{
+            "en":"golden jackal",
+            "pl":"szakal złocisty"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Nyctereutes procyonoides",
+         "localizedNames":{
+            "en":"raccoon dog",
+            "pl":"jenot azjatycki"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Vulpes vulpes",
+         "localizedNames":{
+            "en":"red fox",
+            "pl":"lis rudy"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Ursus arctos",
+         "localizedNames":{
+            "en":"brown bear",
+            "pl":"niedźwiedź brunatny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Lutra lutra",
+         "localizedNames":{
+            "en":"Eurasian otter",
+            "pl":"wydra europejska"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Martes foina",
+         "localizedNames":{
+            "en":"beech marten",
+            "pl":"kuna domowa"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Martes martes",
+         "localizedNames":{
+            "en":"European pine marten",
+            "pl":"kuna leśna"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Martes zibellina",
+         "localizedNames":{
+            "en":"sable",
+            "pl":"soból tajgowy"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Meles meles",
+         "localizedNames":{
+            "en":"European badger",
+            "pl":"borsuk europejski"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Mustela nivalis",
+         "localizedNames":{
+            "en":"least weasel",
+            "pl":"łasica pospolita"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Mustela erminea",
+         "localizedNames":{
+            "en":"stoat",
+            "pl":"gronostaj europejski"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Mustela lutreola",
+         "localizedNames":{
+            "en":"European mink",
+            "pl":"norka europejska"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Mustela putorius",
+         "localizedNames":{
+            "en":"European polecat",
+            "pl":"tchórz zwyczajny"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Mustela eversmanni",
+         "localizedNames":{
+            "en":"steppe polecat",
+            "pl":"tchórz stepowy"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Neovison vison",
+         "localizedNames":{
+            "en":"American mink",
+            "pl":"wizon amerykański"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Procyon lotor",
+         "localizedNames":{
+            "en":"Guadelopue raccoon",
+            "pl":"szop pracz"
+         }
+      },
+      {
+         "speciesClass":"MAMMAL",
+         "latinName":"Lynx lynx",
+         "localizedNames":{
+            "en":"Eurasian lynx",
+            "pl":"ryś euroazjatycki"
+         }
+      }
+   ]
+}

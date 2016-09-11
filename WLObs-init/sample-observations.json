@@ -1,0 +1,202 @@
+[
+  {
+    "dateUtcTimestamp": 1473512301355,
+    "speciesStub": {
+      "speciesClass": "AMPHIBIAN",
+      "latinName": "Rana ridibunda"
+    },
+    "restricted": false,
+    "longitude": 23.310191072523594,
+    "latitude": 53.216299140720984
+  },
+  {
+    "dateUtcTimestamp": 1473512397686,
+    "speciesStub": {
+      "speciesClass": "AMPHIBIAN",
+      "latinName": "Bombina variegata"
+    },
+    "restricted": false,
+    "longitude": 19.951368011534214,
+    "latitude": 49.276595711298874
+  },
+  {
+    "dateUtcTimestamp": 1473512479046,
+    "speciesStub": {
+      "speciesClass": "AMPHIBIAN",
+      "latinName": "Bombina variegata"
+    },
+    "restricted": false,
+    "longitude": 19.860205426812172,
+    "latitude": 49.26045422941751
+  },
+  {
+    "dateUtcTimestamp": 1473512511931,
+    "speciesStub": {
+      "speciesClass": "AMPHIBIAN",
+      "latinName": "Lissotriton montadoni"
+    },
+    "restricted": false,
+    "longitude": 22.670813463628296,
+    "latitude": 49.078077873776415
+  },
+  {
+    "dateUtcTimestamp": 1473512559274,
+    "speciesStub": {
+      "speciesClass": "REPTILE",
+      "latinName": "Natrix natrix"
+    },
+    "restricted": false,
+    "longitude": 19.959496781229973,
+    "latitude": 50.06302219813925
+  },
+  {
+    "dateUtcTimestamp": 1473512608145,
+    "speciesStub": {
+      "speciesClass": "REPTILE",
+      "latinName": "Coronella austriaca"
+    },
+    "restricted": false,
+    "longitude": 18.47703918814659,
+    "latitude": 53.65441096352396
+  },
+  {
+    "dateUtcTimestamp": 1473512661065,
+    "speciesStub": {
+      "speciesClass": "REPTILE",
+      "latinName": "Lacerta agilis"
+    },
+    "restricted": false,
+    "longitude": 16.344254538416862,
+    "latitude": 51.913388190472524
+  },
+  {
+    "dateUtcTimestamp": 1473512777310,
+    "speciesStub": {
+      "speciesClass": "REPTILE",
+      "latinName": "Natrix natrix"
+    },
+    "restricted": false,
+    "longitude": 23.16958397626877,
+    "latitude": 53.12724973747953
+  },
+  {
+    "dateUtcTimestamp": 1473512830029,
+    "speciesStub": {
+      "speciesClass": "FISH",
+      "latinName": "Gadus morhua"
+    },
+    "restricted": false,
+    "longitude": 18.42126701027155,
+    "latitude": 54.84188327118179
+  },
+  {
+    "dateUtcTimestamp": 1473512863704,
+    "speciesStub": {
+      "speciesClass": "FISH",
+      "latinName": "Salvelinus fontinalis"
+    },
+    "restricted": false,
+    "longitude": 19.983021095395088,
+    "latitude": 49.27134312267245
+  },
+  {
+    "dateUtcTimestamp": 1473512938948,
+    "speciesStub": {
+      "speciesClass": "BIRD",
+      "latinName": "Corvus corax"
+    },
+    "restricted": false,
+    "longitude": 16.927613876760006,
+    "latitude": 52.40321131638519
+  },
+  {
+    "dateUtcTimestamp": 1473513048421,
+    "speciesStub": {
+      "speciesClass": "BIRD",
+      "latinName": "Corvus corax"
+    },
+    "restricted": false,
+    "longitude": 19.935309626162052,
+    "latitude": 50.05411283962707
+  },
+  {
+    "dateUtcTimestamp": 1473513113033,
+    "speciesStub": {
+      "speciesClass": "BIRD",
+      "latinName": "Corvus corax"
+    },
+    "restricted": false,
+    "longitude": 21.014881320297718,
+    "latitude": 52.24374270136436
+  },
+  {
+    "dateUtcTimestamp": 1473513200109,
+    "speciesStub": {
+      "speciesClass": "BIRD",
+      "latinName": "Anser erythropus"
+    },
+    "restricted": false,
+    "longitude": 18.570988923311234,
+    "latitude": 54.44723593096383
+  },
+  {
+    "dateUtcTimestamp": 1473513255312,
+    "speciesStub": {
+      "speciesClass": "BIRD",
+      "latinName": "Larus hyperboreus"
+    },
+    "restricted": false,
+    "longitude": 15.56347120553255,
+    "latitude": 54.18682085682289
+  },
+  {
+    "dateUtcTimestamp": 1473513374758,
+    "speciesStub": {
+      "speciesClass": "MAMMAL",
+      "latinName": "Sciurus vulgaris"
+    },
+    "restricted": false,
+    "longitude": 18.576590381562706,
+    "latitude": 54.39875998216259
+  },
+  {
+    "dateUtcTimestamp": 1473513481537,
+    "speciesStub": {
+      "speciesClass": "MAMMAL",
+      "latinName": "Sciurus vulgaris"
+    },
+    "restricted": false,
+    "longitude": 18.61301377415657,
+    "latitude": 54.37157578448536
+  },
+  {
+    "dateUtcTimestamp": 1473513524127,
+    "speciesStub": {
+      "speciesClass": "MAMMAL",
+      "latinName": "Erinaceus europaeus"
+    },
+    "restricted": false,
+    "longitude": 18.544131964445114,
+    "latitude": 54.51551335247046
+  },
+  {
+    "dateUtcTimestamp": 1473513671914,
+    "speciesStub": {
+      "speciesClass": "MAMMAL",
+      "latinName": "Mus musculus"
+    },
+    "restricted": false,
+    "longitude": 19.943473599851135,
+    "latitude": 50.04562469092577
+  },
+  {
+    "dateUtcTimestamp": 1473513721284,
+    "speciesStub": {
+      "speciesClass": "MAMMAL",
+      "latinName": "Plecotus auritus"
+    },
+    "restricted": false,
+    "longitude": 22.68176190555096,
+    "latitude": 49.13001313749149
+  }
+]
